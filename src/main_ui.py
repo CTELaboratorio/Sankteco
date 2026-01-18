@@ -1,8 +1,8 @@
-from qfluentwidgets import NavigationItemPosition, FluentWindow, SplashScreen
+from qfluentwidgets import NavigationItemPosition, FluentWindow
 from qfluentwidgets import FluentIcon as FIF
 from PySide2.QtGui import QIcon
-from PySide2.QtCore import QSize, QTimer, QEventLoop
 from PySide2.QtWidgets import QApplication
+from subpage_imformations_ui import SubpageInformationUI
 import sys
 
 
@@ -17,7 +17,7 @@ class MainWindow(FluentWindow):
         self.initWindow()
 
         # 导入子页面
-        
+        self.subpage_information = SubpageInformationUI(self)
 
         # 初始化导航栏
         self.initNavigation()
@@ -25,7 +25,7 @@ class MainWindow(FluentWindow):
     def initNavigation(self):
         """初始化导航栏，添加各个子界面"""
         # 添加子界面
-        
+        self.addSubInterface(self.subpage_information, FIF.INFO, "信息", NavigationItemPosition.BOTTOM)
 
     def initWindow(self):
         """初始化窗口设置"""
@@ -34,9 +34,9 @@ class MainWindow(FluentWindow):
         # 设置窗口图标
         self.setWindowIcon(QIcon("../assets/icon/appico.png"))
         # 设置窗口标题
-        self.setWindowTitle("祈福Prays - dev - new")
+        self.setWindowTitle("祈福Sankteco - dev")
 
-        
+
 if __name__ == "__main__":
     """程序入口"""
     # 创建QApplication实例
