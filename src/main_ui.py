@@ -25,7 +25,9 @@ class MainWindow(FluentWindow):
     def initNavigation(self):
         """初始化导航栏，添加各个子界面"""
         # 添加子界面
-        self.addSubInterface(self.subpage_information, FIF.INFO, "信息", NavigationItemPosition.BOTTOM)
+        self.addSubInterface(
+            self.subpage_information, FIF.INFO, "信息", NavigationItemPosition.BOTTOM
+        )
 
     def initWindow(self):
         """初始化窗口设置"""
@@ -45,4 +47,4 @@ if __name__ == "__main__":
     w = MainWindow()
     w.show()
     # 启动应用事件循环
-    app.exec_()
+    sys.exit(app.exec_())

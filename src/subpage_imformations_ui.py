@@ -1,21 +1,24 @@
 """
 子页面：信息
 此页面包含了本项目的相关信息，包含四部分：信息板、支持、语言、更新
+引用时可作 InfoUI 
 """
 
 import qfluentwidgets as qfw
 from PySide2.QtWidgets import QFrame, QVBoxLayout, QButtonGroup
 from app_config import AppCommonConfig
+from app_const_var import *
 
 
 class InformationBoardCardGroup(qfw.GroupHeaderCardWidget):
-    """信息板 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget"""
+    """信息板 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget
+    引用时可作 InfoBodCard"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
 
         # 选项卡组基本设置
-        self.setTitle("信息板")
+        self.setTitle(InfoUIString.INFOBODCARD_TITLE)
         self.setBorderRadius(8)
 
         # 图片组
@@ -26,47 +29,49 @@ class InformationBoardCardGroup(qfw.GroupHeaderCardWidget):
         # 添加组件到分组中
         self.addGroup(None, None, None, self.apppic_imagelabel)
         group = self.addGroup(
-            qfw.FluentIcon.INFO, "祈福Prays", "Copyleft,2023~2026,HXES.As is.", None
+            qfw.FluentIcon.INFO, AppString.APP_FULL_NAME, AppString.APP_COPYTYPE, None
         )
         group.setSeparatorVisible(True)
 
 
 class SupportCardGroup(qfw.GroupHeaderCardWidget):
-    """支持 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget"""
+    """支持 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget
+    引用时可作 SupptCard"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
 
         # 选项卡组基本设置
-        self.setTitle("支持")
+        self.setTitle(InfoUIString.SUPPTCARD_TITLE)
         self.setBorderRadius(8)
 
         # 帮助文档按钮
         self.offline_document_button = qfw.PushButton(
-            icon=qfw.FluentIcon.DOCUMENT, text="查看"
+            icon=qfw.FluentIcon.DOCUMENT, text=InfoUIString.SUPPTCARD_OFFLINEDOCBUTTON
         )
         self.online_document_button = qfw.PushButton(
-            icon=qfw.FluentIcon.SEARCH, text="查看"
+            icon=qfw.FluentIcon.SEARCH, text=InfoUIString.SUPPTCARD_ONLINEDOCBUTTON
         )
 
         # 添加分组到组件中
         self.addGroup(
-            qfw.FluentIcon.DOCUMENT, "离线帮助文档", None, self.offline_document_button
+            qfw.FluentIcon.DOCUMENT, InfoUIString.SUPPTCARD_OFFLINEDOCGROUP, None, self.offline_document_button
         )
         group = self.addGroup(
-            qfw.FluentIcon.GLOBE, "在线帮助文档", None, self.online_document_button
+            qfw.FluentIcon.GLOBE, InfoUIString.SUPPTCARD_ONLINEDOCGROUP, None, self.online_document_button
         )
         group.setSeparatorVisible(True)
 
 
 class LanguageCardGroup(qfw.GroupHeaderCardWidget):
-    """语言 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget"""
+    """语言 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget
+    引用时可作 LangCard"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
 
         # 选项卡组基本设置
-        self.setTitle("语言")
+        self.setTitle(InfoUIString.LANGCARD_TITLE)
         self.setBorderRadius(8)
 
         # 创建适用于该类的配置实例
@@ -79,8 +84,8 @@ class LanguageCardGroup(qfw.GroupHeaderCardWidget):
         self.languagecard = qfw.ComboBoxSettingCard(
             self.app_config.language,
             qfw.FluentIcon.LANGUAGE,
-            "语言选项",
-            "从此处更改界面语言",
+            InfoUIString.LANGCARD_LANGCARD_TITLE,
+            InfoUIString.LANGCARD_LANGCARD_DETAIL,
             ["简体中文", "Esperanto"],
         )
 
@@ -93,7 +98,8 @@ class LanguageCardGroup(qfw.GroupHeaderCardWidget):
 
 
 class UpdateCardGroup(qfw.GroupHeaderCardWidget):
-    """更新 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget"""
+    """更新 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget
+    引用时可作 UpdateCard"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
