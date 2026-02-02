@@ -4,48 +4,42 @@
 引用时可作 InfoUI 
 """
 
-from PySide2.QtWidgets import QFrame, QVBoxLayout
+from PySide2.QtWidgets import QFrame, QVBoxLayout, QWidget
+from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FIF
 from app_config import AppCommonConfig
 from app_const_var import *
 
 
-class InformationBoardCardGroup(qfw.GroupHeaderCardWidget):
-    """信息板 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget
+class InformationBoardCardGroup(qfw.ElevatedCardWidget):
+    """信息板 部分，继承自 卡片组件 ElevatedCardWidget
     引用时可作 InfoBodCard"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
-
-        # 选项卡组基本设置
-        self.setTitle(InfoUIString.INFOBODCARD_TITLE)
-        self.setBorderRadius(8)
-
-        # 图片组
+        
+        # 图片文本
         self.apppic_imagelabel = qfw.ImageLabel(
-            "../assets/images/imformations_ui_pic.png"
+            "../assets/images/imformations_ui_pic.png", 
+            self
         )
+        self.apppic_imagelabel.scaledToHeight(320)
+        self.apppic_imagelabel.scaledToWidth(640)
 
-        # 网站超链接按钮
-        self.website_linkbutton = qfw.HyperlinkButton(
-            url="https://gitee.con/ydssj233/Sankteco/", text="", icon=FIF.BASKETBALL
-        )
+        # 项目信息
+        self.infotext_bodylabel = qfw.BodyLabel(BasicString.APP_FULL_NAME, self)
+        self.infotext_captionlabel = qfw.CaptionLabel(BasicString.APP_COPYTYPE, self)
 
-        # 添加组件到分组中
-        self.addGroup(
-            FIF.INFO,
-            BasicString.NONE_TEXT,
-            BasicString.NONE_TEXT,
-            self.apppic_imagelabel,
-        )
-        group = self.addGroup(
-            FIF.INFO,
-            BasicString.APP_FULL_NAME,
-            BasicString.APP_COPYTYPE,
-            self.website_linkbutton,
-        )
-        group.setSeparatorVisible(True)
+        # 组件布局
+        self.vlayout = QVBoxLayout(self)
+        self.vlayout.setAlignment(self.vlayout, Qt.AlignLeft)
+        self.vlayout.addStretch(1)
+        self.vlayout.addWidget(self.apppic_imagelabel, 0, Qt.AlignCenter)
+        self.vlayout.addStretch(1)
+        self.vlayout.addWidget(self.infotext_bodylabel, 0, Qt.AlignLeft)
+        self.vlayout.addStretch(1)
+        self.vlayout.addWidget(self.infotext_captionlabel, 0, Qt.AlignLeft)
 
 
 class SupportCardGroup(qfw.GroupHeaderCardWidget):
@@ -83,17 +77,13 @@ class SupportCardGroup(qfw.GroupHeaderCardWidget):
         group.setSeparatorVisible(True)
 
 
-"""语言 部分即日起迁往设置页面260131
-class LanguageCardGroup(qfw.GroupHeaderCardWidget):
-    ""语言 部分，继承自 上下分组布局卡片 GroupHeaderCardWidget
+"""
+class LanguageCardGroup(QVBoxLayout):
+    ""语言 部分，继承自 QWidget
     引用时可作 LangCard""
 
     def __init__(self, parent=None):
         super().__init__(parent)
-
-        # 选项卡组基本设置
-        self.setTitle(InfoUIString.LANGCARD_TITLE)
-        self.setBorderRadius(8)
 
         # 创建适用于该类的配置实例
         self.app_config = AppCommonConfig()
@@ -109,10 +99,6 @@ class LanguageCardGroup(qfw.GroupHeaderCardWidget):
             InfoUIString.LANGCARD_LANGCARD_DETAIL,
             ["简体中文", "Esperanto"],
         )
-
-        # 添加分组到组件中
-        group = self.addGroup(BasicString.NONE_TEXT, BasicString.NONE_TEXT, BasicString.NONE_TEXT, self.languagecard)
-        group.setSeparatorVisible(True)
 
         # 响应值更改信号
         # self.app_config.language.valueChanged.connect(print)

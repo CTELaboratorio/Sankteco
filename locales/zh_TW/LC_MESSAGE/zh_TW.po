@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 21:07+0800\n"
+"PO-Revision-Date: 2026-02-02 21:52+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: src/app_const_var.py:28
+msgid "信息板"
+msgstr "資訊板"
+
+#: src/app_const_var.py:31
+msgid "支持"
+msgstr "支持"
+
+#: src/app_const_var.py:32 src/app_const_var.py:33
+msgid "查看"
+msgstr "查看"
+
+#: src/app_const_var.py:34
+msgid "离线帮助文档"
+msgstr "離線幫助文檔"
+
+#: src/app_const_var.py:35
+msgid "查看保存于本地的帮助文档，如果有的话"
+msgstr "查看保存在本地的幫助文件，如果有的話"
+
+#: src/app_const_var.py:36
+msgid "在线帮助文档"
+msgstr "線上幫助文件"
+
+#: src/app_const_var.py:37
+msgid "访问项目官网获取在线帮助文档"
+msgstr "訪問項目官網獲取線上幫助文檔"
+
+#: src/app_const_var.py:40
+msgid "语言"
+msgstr "語言"
+
+#: src/app_const_var.py:41
+msgid "语言选项"
+msgstr "語言選項"
+
+#: src/app_const_var.py:42
+msgid "从此处更改界面语言"
+msgstr "從此處更改介面語言"
+
+#: src/app_const_var.py:47
+msgid "更新"
+msgstr "更新"
+
+#: src/app_const_var.py:48
+msgid "正式版"
+msgstr "正式版"
+
+#: src/app_const_var.py:49
+msgid "测试版"
+msgstr "測試版"
+
+#: src/app_const_var.py:50
+msgid "检查更新"
+msgstr "檢查更新"
+
+#: src/app_const_var.py:51
+msgid "更新通道"
+msgstr "更新通道"
+
+#: src/app_const_var.py:52
+msgid "选择项目从何通道进行更新"
+msgstr "選擇項目從哪個通道進行更新"
+
+#: src/app_const_var.py:53
+msgid "当前版本已是最新版本"
+msgstr "當前版本已是最新版本"
+
+#: src/app_const_var.py:54
+msgid "当前版本"
+msgstr "當前版本"

@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 21:07+0800\n"
+"PO-Revision-Date: 2026-02-02 21:33+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: src/app_const_var.py:28
+msgid "信息板"
+msgstr "Informtabulo"
+
+#: src/app_const_var.py:31
+msgid "支持"
+msgstr "Subtenon"
+
+#: src/app_const_var.py:32 src/app_const_var.py:33
+msgid "查看"
+msgstr "Kontrolu"
+
+#: src/app_const_var.py:34
+msgid "离线帮助文档"
+msgstr "Senreta helpdokumentaro"
+
+#: src/app_const_var.py:35
+msgid "查看保存于本地的帮助文档，如果有的话"
+msgstr "Kontrolu la helpdokumentaron konservitan loke, se ĝi ekzistas"
+
+#: src/app_const_var.py:36
+msgid "在线帮助文档"
+msgstr "Reta helpdokumentaro"
+
+#: src/app_const_var.py:37
+msgid "访问项目官网获取在线帮助文档"
+msgstr "Vizitu la oficialan retejon de la projekto por aliri la retan helpodokumentaron"
+
+#: src/app_const_var.py:40
+msgid "语言"
+msgstr "Lingvo"
+
+#: src/app_const_var.py:41
+msgid "语言选项"
+msgstr "Lingvoopcioj"
+
+#: src/app_const_var.py:42
+msgid "从此处更改界面语言"
+msgstr "Ŝanĝu la interfacan lingvon de ĉi tie"
+
+#: src/app_const_var.py:47
+msgid "更新"
+msgstr "Ĝisdatigi"
+
+#: src/app_const_var.py:48
+msgid "正式版"
+msgstr "Oficiala eldonaĵo"
+
+#: src/app_const_var.py:49
+msgid "测试版"
+msgstr "Provetversio"
+
+#: src/app_const_var.py:50
+msgid "检查更新"
+msgstr "Kontroli ĝisdatigojn"
+
+#: src/app_const_var.py:51
+msgid "更新通道"
+msgstr "Ĝisdatiga kanalo"
+
+#: src/app_const_var.py:52
+msgid "选择项目从何通道进行更新"
+msgstr "Elektu el kiu kanalo ĝisdatigi la projekton"
+
+#: src/app_const_var.py:53
+msgid "当前版本已是最新版本"
+msgstr "La nuna versio jam estas la plej nova"
+
+#: src/app_const_var.py:54
+msgid "当前版本"
+msgstr "Aktuala versio"
