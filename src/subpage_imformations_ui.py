@@ -4,7 +4,7 @@
 引用时可作 InfoUI 
 """
 
-from PySide2.QtWidgets import QFrame, QVBoxLayout, QWidget
+from PySide2.QtWidgets import QFrame, QVBoxLayout
 from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FIF
@@ -19,9 +19,9 @@ class InformationBoardCardGroup(qfw.ElevatedCardWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         
-        # 图片文本
+        # 图片预处理其及文本
         self.apppic_imagelabel = qfw.ImageLabel(
-            "../assets/images/imformations_ui_pic.png", 
+            r"..\\assets\\images\\informations.png", 
             self
         )
         self.apppic_imagelabel.scaledToHeight(320)
