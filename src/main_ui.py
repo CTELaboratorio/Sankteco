@@ -7,7 +7,7 @@
 from PySide2.QtGui import QIcon
 from qfluentwidgets import NavigationItemPosition, FluentWindow
 from qfluentwidgets import FluentIcon as FIF
-from subpage_informations_ui import SubpageInformationUI
+from subpage.subpage_informations_ui import SubpageInformationUI
 from app_const_var import *
 
 

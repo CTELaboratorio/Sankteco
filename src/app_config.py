@@ -2,6 +2,7 @@
 应用配置类，用于保存项目的所有可调整设置
 """
 
+from enum import Enum
 import qfluentwidgets as qfw
 
 
