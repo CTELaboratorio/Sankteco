@@ -8,5 +8,5 @@
 from PySide2.QtWidgets import QFrame, QVBoxLayout
 from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
-from qfluentwidgets import FluentIcon as FIF
+from qfluentwidgets import FluentIcon as FI
 from app_const_var import *

@@ -8,8 +8,9 @@ import gettext
 _ = gettext.gettext
 
 
-
 """字符串常量"""
+
+
 class BasicString:
     """项目基础信息字符串类"""
 
@@ -43,7 +44,7 @@ class InfoUIString:
     LANGCARD_LANGCARD_TITLE = _("语言选项")
     LANGCARD_LANGCARD_DETAIL = _("从此处更改界面语言")
     LANGCARD_LANGCARD_COMBO_ZHCN = "简体中文"
-    LANGCARD_LANGCARD_COMBO_IE = "Esperanto"
+    LANGCARD_LANGCARD_COMBO_EO = "Esperanto"
 
     # 更新 部分
     UPDATECARD_TITLE = _("更新")
@@ -53,7 +54,25 @@ class InfoUIString:
     UPDATECARD_PIPEGROUP_TITLE = _("更新通道")
     UPDATECARD_PIPEGROUP_DETAIL = _("选择项目从何通道进行更新")
     UPDATECARD_VERSTATUSGROUP_TITLE = _("当前版本已是最新版本")
-    # UPDATECARD_VERNOWGROUP_TITLE = _("当前版本")
+
+
+class SettBasicUIString:
+    """首选项-基本 界面字符串，仅包含 subsubpage_setting_basic_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+    
+    # 名单 部分
+    # 多名单管理
+    NAMELISTS_CREATE_CARD_TEXT = _("管理")
+    NAMELISTS_CREATE_CARD_TITLE = _("多名单")
+    NAMELISTS_CREATE_CARD_CONTENT = _("创建或管理不同名单以供便携使用")
+
+    # 当前名单设置组
+    NOW_NAMELIST_CARD_TITLE = _("设置当前名单")
+    NOW_NAMELIST_CARD_CONTENT = _("选择要管理的名单并配置")
+    NOW_NAMELIST_CARD_CHOOSE_LABEL = _("选择要管理的名单")
+    NOW_NAMELIST_CARD_DETAIL_BUTTON = _("管理")
+    NOW_NAMELIST_CARD_DETAIL_LABEL = _("管理当前选择的名单之内容")
+    NOW_NAMELIST_CRAD_SIGN_BUTTON = _("添加")
+    NOW_NAMELIST_CARD_SIGN_LABEL = _("为所选的名单添加标记")
 
 
 class MainUIString:
@@ -66,8 +85,9 @@ class MainUIString:
     SUBPAGE_INFORMATION_NAVNAME = _("信息")
 
 
-
 """相对路径常量"""
+
+
 class ImagePath:
     """图片资源相对路径类"""
 

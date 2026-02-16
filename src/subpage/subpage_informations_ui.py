@@ -7,7 +7,7 @@
 from PySide2.QtWidgets import QFrame, QVBoxLayout
 from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
-from qfluentwidgets import FluentIcon as FIF
+from qfluentwidgets import FluentIcon as FI
 from app_const_var import *
 
 
@@ -45,21 +45,21 @@ class SupportCardGroup(qfw.GroupHeaderCardWidget):
 
         # 帮助文档按钮
         self.offline_document_button = qfw.PushButton(
-            icon=FIF.DOCUMENT, text=InfoUIString.SUPPTCARD_OFFLINEDOCBUTTON
+            icon=FI.DOCUMENT, text=InfoUIString.SUPPTCARD_OFFLINEDOCBUTTON
         )
         self.online_document_button = qfw.PushButton(
-            icon=FIF.SEARCH, text=InfoUIString.SUPPTCARD_ONLINEDOCBUTTON
+            icon=FI.SEARCH, text=InfoUIString.SUPPTCARD_ONLINEDOCBUTTON
         )
 
         # 添加分组到组件中
         self.addGroup(
-            FIF.DOCUMENT,
+            FI.DOCUMENT,
             InfoUIString.SUPPTCARD_OFFLINEDOCGROUPTITLE,
             InfoUIString.SUPPTCARD_OFFLINEDOCGROUPCONTEXT,
             self.offline_document_button,
         )
         group = self.addGroup(
-            FIF.GLOBE,
+            FI.GLOBE,
             InfoUIString.SUPPTCARD_ONLINEDOCGROUPTITLE,
             InfoUIString.SUPPTCARD_ONLINEDOCGROUPCONTEXT,
             self.online_document_button,
@@ -88,12 +88,12 @@ class UpdateCardGroup(qfw.GroupHeaderCardWidget):
 
         # 更新状态
         self.update_status_check_button = qfw.PushButton(
-            icon=FIF.CHECKBOX, text=InfoUIString.UPDATECARD_UPDATESTATUS
+            icon=FI.CHECKBOX, text=InfoUIString.UPDATECARD_UPDATESTATUS
         )
 
         # 添加分组到组件中
         self.addGroup(
-            FIF.SETTING,
+            FI.SETTING,
             InfoUIString.UPDATECARD_PIPEGROUP_TITLE,
             InfoUIString.UPDATECARD_PIPEGROUP_DETAIL,
             self.update_pipe_combobox,

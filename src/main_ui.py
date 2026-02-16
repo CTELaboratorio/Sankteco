@@ -6,7 +6,7 @@
 
 from PySide2.QtGui import QIcon
 from qfluentwidgets import NavigationItemPosition, FluentWindow
-from qfluentwidgets import FluentIcon as FIF
+from qfluentwidgets import FluentIcon as FI
 from subpage.subpage_informations_ui import SubpageInformationUI
 from app_const_var import *
 
@@ -33,7 +33,7 @@ class MainWindow(FluentWindow):
         # 添加子界面
         self.addSubInterface(
             self.subpage_information,
-            FIF.INFO,
+            FI.INFO,
             MainUIString.SUBPAGE_INFORMATION_NAVNAME,
             NavigationItemPosition.BOTTOM,
         )
