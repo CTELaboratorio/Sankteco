@@ -7,7 +7,9 @@
 from PySide2.QtGui import QIcon
 from qfluentwidgets import NavigationItemPosition, FluentWindow
 from qfluentwidgets import FluentIcon as FI
-from subpage.subpage_informations_ui import SubpageInformationUI
+from subpage.informations_ui import InformationUI
+from subpage.settings_ui import SettingsUI
+from subpage.subsubpage.setting_basic_ui import SettingBasicUI
 from app_const_var import *
 
 
@@ -22,8 +24,14 @@ class MainWindow(FluentWindow):
         self.initWindow()
 
         # 导入子页面
-        self.subpage_information = SubpageInformationUI(self)
+        self.subpage_information = InformationUI(self)
+        self.subpage_settings = SettingsUI(self)
+        self.subsubpage_setting_basic = SettingBasicUI(self)
         self.subpage_information.setObjectName(MainUIString.SUBPAGE_INFORMATION_OBJNAME)
+        self.subpage_settings.setObjectName(MainUIString.SUBPAGE_SETTINGS_OBJNAME)
+        self.subsubpage_setting_basic.setObjectName(
+            MainUIString.SUBSUBPAGE_SETTIING_BASIC_OBJNAME
+        )
 
         # 初始化导航栏
         self.initNavigation()
@@ -31,6 +39,18 @@ class MainWindow(FluentWindow):
     def initNavigation(self):
         """初始化导航栏，添加各个子界面"""
         # 添加子界面
+        self.addSubInterface(
+            self.subpage_settings,
+            FI.SETTING,
+            MainUIString.SUBPAGE_SETTINGS_NAVNAME,
+            NavigationItemPosition.BOTTOM,
+        )
+        self.addSubInterface(
+            self.subsubpage_setting_basic,
+            FI.BRIGHTNESS,
+            MainUIString.SUBSUBPAGE_SETTIING_BASIC_NAVNAME,
+            parent=self.subpage_settings,
+        )
         self.addSubInterface(
             self.subpage_information,
             FI.INFO,

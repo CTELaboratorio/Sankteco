@@ -25,7 +25,7 @@ class BasicString:
 
 
 class InfoUIString:
-    """信息 界面字符串，仅包含 subpage_imformations_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+    """信息 界面字符串，仅包含 imformations_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
 
     # 信息板 部分
     INFOBODCARD_TITLE = _("信息板")
@@ -57,7 +57,7 @@ class InfoUIString:
 
 
 class SettBasicUIString:
-    """首选项-基本 界面字符串，仅包含 subsubpage_setting_basic_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+    """首选项-基本 界面字符串，仅包含 setting_basic_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
     
     # 名单 部分
     # 多名单管理
@@ -80,9 +80,13 @@ class MainUIString:
 
     # 子页面对象名
     SUBPAGE_INFORMATION_OBJNAME = "subpage_information"
+    SUBPAGE_SETTINGS_OBJNAME = "subpage_settings"
+    SUBSUBPAGE_SETTIING_BASIC_OBJNAME = "subsubpage_setting_basic"
 
     # 子页面导航窗口显示字段
     SUBPAGE_INFORMATION_NAVNAME = _("信息")
+    SUBPAGE_SETTINGS_NAVNAME = _("首选项")
+    SUBSUBPAGE_SETTIING_BASIC_NAVNAME = _("基本")
 
 
 """相对路径常量"""

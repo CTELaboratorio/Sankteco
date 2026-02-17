@@ -1,7 +1,7 @@
 """
 子页面：信息
 此页面包含了本项目的相关信息，包含三部分：信息板、支持、更新
-引用时可作 InfoUI / subpage_information
+引用时可作 InfoUI / information_ui
 """
 
 from PySide2.QtWidgets import QFrame, QVBoxLayout
@@ -107,7 +107,7 @@ class UpdateCardGroup(qfw.GroupHeaderCardWidget):
         group.setSeparatorVisible(True)
 
 
-class SubpageInformationUI(QFrame):
+class InformationUI(QFrame):
     """子页面基础ui类"""
 
     def __init__(self, parent=None):
