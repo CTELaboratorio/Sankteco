@@ -1,6 +1,6 @@
 """
-子页面：首选项
-此页面包含了本项目的可调整设置选项，包含六个孙页面：基本、视听、联动、语言、更新、调试
+子页面：首选项，
+此页面包含了本项目的可调整设置选项，包含六个孙页面：基本、视听、联动、语言、更新、调试，
 引用时可作 SettUI / subpage_settings
 """
 
@@ -12,7 +12,9 @@ from app_const_var import *
 
 
 class SettingsUI(QFrame):
-    """子页面基础UI类"""
+    """子页面：首选项的基础UI类，
+    此页面包含了本项目的可调整设置选项，包含六个孙页面：基本、视听、联动、语言、更新、调试，
+    引用时可作 SettUI / subpage_settings"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -79,4 +81,3 @@ class SettingsUI(QFrame):
             self.vboxlayout.setAlignment(label, Qt.AlignCenter)
         for widget in self.widget_list:
             self.vboxlayout.addWidget(widget)
-            self.vboxlayout.setAlignment(widget, Qt.AlignCenter)

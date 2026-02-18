@@ -92,9 +92,10 @@ class MainUIString:
 """相对路径常量"""
 
 
-class ImagePath:
-    """图片资源相对路径类"""
+class AssetsPath:
+    """资源相对路径类"""
 
+    # 图片
     # 图标
     APP_ICON_PATH = "../assets/icon/appico.png"
 

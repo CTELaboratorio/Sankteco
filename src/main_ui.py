@@ -1,6 +1,6 @@
 """
-主页面
-此页面是本项目的主要GUI界面，包含与各子页面的交互逻辑、控件响应等
+主页面，
+此页面是本项目的主要GUI界面，包含与各子页面的交互逻辑、控件响应等，
 引用时可作 MainUI
 """
 
@@ -21,7 +21,7 @@ class MainWindow(FluentWindow):
         super().__init__()
 
         # 初始化窗口设置
-        self.initWindow()
+        self.init_window()
 
         # 导入子页面
         self.subpage_information = InformationUI(self)
@@ -34,9 +34,12 @@ class MainWindow(FluentWindow):
         )
 
         # 初始化导航栏
-        self.initNavigation()
+        self.init_navigation()
 
-    def initNavigation(self):
+        # 连接设置子页面信号
+        self.subpage_settings.to_basic_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_basic))  # type: ignore
+
+    def init_navigation(self):
         """初始化导航栏，添加各个子界面"""
         # 添加子界面
         self.addSubInterface(
@@ -58,11 +61,11 @@ class MainWindow(FluentWindow):
             NavigationItemPosition.BOTTOM,
         )
 
-    def initWindow(self):
+    def init_window(self):
         """初始化窗口设置"""
         # 设置窗口大小
         self.resize(1080, 768)
         # 设置窗口图标
-        self.setWindowIcon(QIcon(ImagePath.APP_ICON_PATH))  # type: ignore
+        self.setWindowIcon(QIcon(AssetsPath.APP_ICON_PATH))  # type: ignore
         # 设置窗口标题
         self.setWindowTitle(f"{BasicString.APP_FULL_NAME} - {BasicString.APP_VERSION}")

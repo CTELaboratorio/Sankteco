@@ -1,10 +1,10 @@
 """
-孙页面：基本（ 首选项 的子页面）
-此页面包含了本项目基本的可调整设置选项，包含三个部分：名单、普通抽选、快速抽选
+孙页面：基本（ 首选项 的子页面），
+此页面包含了本项目基本的可调整设置选项，包含三个部分：名单、普通抽选、快速抽选，
 引用时可作 SettBasicUI / subsubpage_settings_basic
 """
 
-from PySide2.QtWidgets import QFrame, QVBoxLayout, QWidget, QStackedWidget
+from PySide2.QtWidgets import QFrame, QVBoxLayout, QHBoxLayout, QWidget, QStackedWidget
 from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
@@ -43,6 +43,7 @@ class NowNamelistSettingCard(qfw.ExpandGroupSettingCard):
         self.now_namelist_detail_label = qfw.BodyLabel(
             SettBasicUIString.NOW_NAMELIST_CARD_DETAIL_LABEL
         )
+        self.now_namelist_detail_button.setFixedWidth(100)
 
         # 标记名单
         self.sign_namelist_button = qfw.PushButton(
@@ -51,6 +52,29 @@ class NowNamelistSettingCard(qfw.ExpandGroupSettingCard):
         self.sign_namelist_label = qfw.BodyLabel(
             SettBasicUIString.NOW_NAMELIST_CARD_SIGN_LABEL
         )
+        self.sign_namelist_button.setFixedWidth(100)
+
+        # 添加控件至组布局
+        self.add_widget_to_group(
+            self.choose_namelist_label, self.choose_namelist_combobox
+        )
+        self.add_widget_to_group(
+            self.now_namelist_detail_label, self.now_namelist_detail_button
+        )
+        self.add_widget_to_group(self.sign_namelist_label, self.sign_namelist_button)
+
+    def add_widget_to_group(self, added_label, added_widget):
+        """添加控件至水平布局并加入设置卡组"""
+        widget = QWidget()
+        widget.setFixedHeight(60)
+
+        layout = QHBoxLayout(widget)
+
+        layout.addWidget(added_label)
+        layout.addWidget(added_widget)
+
+        # 添加组件到设置卡组
+        self.addGroupWidget(widget)
 
 
 class NamelistSettingGroup(QWidget):
@@ -74,6 +98,11 @@ class NamelistSettingGroup(QWidget):
         # 当前名单设置组
         self.now_namelist_groupcard = NowNamelistSettingCard(self)
 
+        # 设置布局
+        self.vboxlayout.addWidget(self.namelists_create_card)
+        self.vboxlayout.addWidget(self.now_namelist_groupcard)
+        self.setLayout(self.vboxlayout)
+
 
 class BasicChooseSettingGroup(QWidget):
     """普通抽选 部分，继承自 QWidget，
@@ -93,6 +122,10 @@ class BasicChooseSettingGroup(QWidget):
             "调节抽选时的动画精美程度",
             ["华丽", "精美", "一般", "快速"],
         )
+
+        # 设置布局
+        self.vboxlayout.addWidget(self.carton_beauty_level_card)
+        self.setLayout(self.vboxlayout)
 
 
 class FastChooseSettingGroup(QWidget):
@@ -114,9 +147,15 @@ class FastChooseSettingGroup(QWidget):
             ["显示在ClassIsland", "显示在ClassWidget", "显示在临时弹窗"],
         )
 
+        # 设置布局
+        self.vboxlayout.addWidget(self.show_result_way)
+        self.setLayout(self.vboxlayout)
+
 
 class SettingBasicUI(QFrame):
-    """孙页面基础UI类"""
+    """孙页面：基本（ 首选项 的子页面）的基础UI类，
+    此页面包含了本项目基本的可调整设置选项，包含三个部分：名单、普通抽选、快速抽选，
+    引用时可作 SettBasicUI / subsubpage_settings_basic"""
 
     def __init__(self, parent=None):
         super().__init__(parent)

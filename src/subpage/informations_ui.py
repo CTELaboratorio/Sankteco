@@ -1,11 +1,10 @@
 """
-子页面：信息
-此页面包含了本项目的相关信息，包含三部分：信息板、支持、更新
+子页面：信息，
+此页面包含了本项目的相关信息，包含三部分：信息板、支持、更新，
 引用时可作 InfoUI / information_ui
 """
 
 from PySide2.QtWidgets import QFrame, QVBoxLayout
-from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import *
@@ -18,18 +17,18 @@ class InformationBoardCardGroup(qfw.ElevatedCardWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
+        # 项目详细图
+        self.app_detailed_image = qfw.ImageLabel(AssetsPath.APP_DETAILEDIMAGE_PATH)
+
         # 项目信息
         self.infotext_bodylabel = qfw.StrongBodyLabel(BasicString.APP_FULL_NAME, self)
         self.infotext_captionlabel = qfw.CaptionLabel(BasicString.APP_COPYTYPE, self)
 
         # 组件布局
-        self.vlayout = QVBoxLayout(self)
-        self.vlayout.addStretch(1)
-        self.vlayout.addWidget(self.infotext_bodylabel)
-        self.vlayout.setAlignment(self.infotext_bodylabel, Qt.AlignLeft)
-        self.vlayout.addStretch(1)
-        self.vlayout.addWidget(self.infotext_captionlabel)
-        self.vlayout.setAlignment(self.infotext_captionlabel, Qt.AlignLeft)
+        self.vboxlayout = QVBoxLayout(self)
+        self.vboxlayout.addWidget(self.app_detailed_image)
+        self.vboxlayout.addWidget(self.infotext_bodylabel)
+        self.vboxlayout.addWidget(self.infotext_captionlabel)
 
 
 class SupportCardGroup(qfw.GroupHeaderCardWidget):
