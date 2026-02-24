@@ -4,12 +4,9 @@
 引用时可作 MainUI
 """
 
-from PySide2.QtGui import QIcon
-from qfluentwidgets import NavigationItemPosition, FluentWindow
+import asyncio
+from qfluentwidgets import FluentWindow
 from qfluentwidgets import FluentIcon as FI
-from subpage.informations_ui import InformationUI
-from subpage.settings_ui import SettingsUI
-from subpage.subsubpage.setting_basic_ui import SettingBasicUI
 from app_const_var import *
 
 
@@ -20,18 +17,11 @@ class MainWindow(FluentWindow):
         """初始化主窗口"""
         super().__init__()
 
+        # 运行导入子页面的asyncio程序
+        asyncio.run(self.import_subpage_main())
+
         # 初始化窗口设置
         self.init_window()
-
-        # 导入子页面
-        self.subpage_information = InformationUI(self)
-        self.subpage_settings = SettingsUI(self)
-        self.subsubpage_setting_basic = SettingBasicUI(self)
-        self.subpage_information.setObjectName(MainUIString.SUBPAGE_INFORMATION_OBJNAME)
-        self.subpage_settings.setObjectName(MainUIString.SUBPAGE_SETTINGS_OBJNAME)
-        self.subsubpage_setting_basic.setObjectName(
-            MainUIString.SUBSUBPAGE_SETTIING_BASIC_OBJNAME
-        )
 
         # 初始化导航栏
         self.init_navigation()
@@ -39,8 +29,43 @@ class MainWindow(FluentWindow):
         # 连接设置子页面信号
         self.subpage_settings.to_basic_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_basic))  # type: ignore
 
+    async def import_subpage_information(self):
+        """导入并重命名 信息 子页面的协程"""
+        from subpage.informations_ui import InformationUI
+
+        self.subpage_information = InformationUI(self)
+        self.subpage_information.setObjectName(MainUIString.SUBPAGE_INFORMATION_OBJNAME)
+
+    async def import_subpage_settings(self):
+        """导入并重命名 设置 子页面的协程"""
+        from subpage.settings_ui import SettingsUI
+
+        self.subpage_settings = SettingsUI(self)
+        self.subpage_settings.setObjectName(MainUIString.SUBPAGE_SETTINGS_OBJNAME)
+
+    async def import_subsubpage_setting_basic(self):
+        """导入并重命名 基础 孙页面的协程"""
+        from subpage.subsubpage.setting_basic_ui import SettingBasicUI
+
+        self.subsubpage_setting_basic = SettingBasicUI(self)
+        self.subsubpage_setting_basic.setObjectName(
+            MainUIString.SUBSUBPAGE_SETTIING_BASIC_OBJNAME
+        )
+
+    async def import_subpage_main(self):
+        """导入子页面的基础函数"""
+
+        # 创建并发执行任务
+        await asyncio.gather(
+            self.import_subpage_information(),
+            self.import_subpage_settings(),
+            self.import_subsubpage_setting_basic(),
+        )
+
     def init_navigation(self):
         """初始化导航栏，添加各个子界面"""
+        from qfluentwidgets import NavigationItemPosition
+
         # 添加子界面
         self.addSubInterface(
             self.subpage_settings,
@@ -63,6 +88,8 @@ class MainWindow(FluentWindow):
 
     def init_window(self):
         """初始化窗口设置"""
+        from PySide2.QtGui import QIcon
+
         # 设置窗口大小
         self.resize(1080, 768)
         # 设置窗口图标

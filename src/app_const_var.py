@@ -21,7 +21,7 @@ class BasicString:
     APP_FULL_NAME = "祈福Sankteco"
     APP_VERSION = "Version Dev"
     APP_VERSION_TYPE = "Dev"
-    APP_COPYTYPE = "Copyleft, 2023~2026, HXES.As is."
+    APP_COPYTYPE = "Copyleft, GPL-3.0, 2023~2026, HXES.As is."
 
 
 class InfoUIString:
@@ -56,9 +56,47 @@ class InfoUIString:
     UPDATECARD_VERSTATUSGROUP_TITLE = _("当前版本已是最新版本")
 
 
+class SettUIString:
+    """首选项 界面字符串，仅包含 settings_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+
+    # 提示文本
+    TIP_TITLE = _("在此处调整程序设置")
+    TIP_CONTEXT = _("从下面的孙页面中选择其一以更改相关选项")
+
+    # 基本设置
+    TO_BASIC_CARD_TEXT = _("跳转")
+    TO_BASIC_CARD_TITLE = _("基本")
+    TO_BASIC_CARD_CONTEXT = _("更改基本设置")
+
+    # 视听设置
+    TO_AUDIOVISUAL_CARD_TEXT = _("跳转")
+    TO_AUDIOVISUAL_CARD_TITLE = _("视听")
+    TO_AUDIOVISUAL_CARD_CONTEXT = _("更改背景音乐、音效、朗读等设置")
+
+    # 联动设置
+    TO_LINKAGE_CARD_TEXT = _("跳转")
+    TO_LINKAGE_CARD_TITLE = _("联动")
+    TO_LINKAGE_CARD_CONTEXT = _("更改与课表软件的联动设置")
+
+    # 语言设置
+    TO_LANGUAGE_CARD_TEXT = _("跳转")
+    TO_LANGUAGE_CARD_TITLE = _("语言")
+    TO_LANGUAGE_CARD_CONTEXT = _("更改界面显示语言")
+
+    # 更新设置
+    TO_UPDATE_CARD_TEXT = _("跳转")
+    TO_UPDATE_CARD_TITLE = _("更新")
+    TO_UPDATE_CARD_CONTEXT = _("更新程序")
+
+    # 调试设置
+    TO_DEBUG_CARD_TEXT = _("跳转")
+    TO_DEBUG_CARD_TITLE = _("调试")
+    TO_DEBUG_CARD_CONTEXT = _("高级调试选项")
+
+
 class SettBasicUIString:
     """首选项-基本 界面字符串，仅包含 setting_basic_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
-    
+
     # 名单 部分
     # 多名单管理
     NAMELISTS_CREATE_CARD_TEXT = _("管理")
@@ -73,6 +111,33 @@ class SettBasicUIString:
     NOW_NAMELIST_CARD_DETAIL_LABEL = _("管理当前选择的名单之内容")
     NOW_NAMELIST_CRAD_SIGN_BUTTON = _("添加")
     NOW_NAMELIST_CARD_SIGN_LABEL = _("为所选的名单添加标记")
+
+    # 普通抽选 部分
+    # 动画精美度
+    CARTON_BEAUTY_LEVEL_CARD_TITLE = _("动画精美度")
+    CARTON_BEAUTY_LEVEL_CARD_CONTEXT = _("调节抽选时的动画精美程度")
+    CARTON_BEAUTY_LEVEL_CARD_TEXTS_AMAZED = _("华丽")
+    CARTON_BEAUTY_LEVEL_CARD_TEXTS_BEAUTY = _("精美")
+    CARTON_BEAUTY_LEVEL_CARD_TEXTS_BASIC = _("一般")
+    CARTON_BEAUTY_LEVEL_CARD_TEXTS_FAST = _("快速")
+
+    # 快速抽选 部分
+    # 结果推送
+    SHOW_RESULT_WAY_CARD_TITLE = _("结果推送方式")
+    SHOW_RESULT_WAY_CARD_CONTEXT = _("选择快速抽选的结果应怎样显示")
+    SHOW_RESULT_WAY_CARD_TEXTS_CI = _("显示在ClassIsland")
+    SHOW_RESULT_WAY_CARD_TEXTS_CW = _("显示在ClassWidget")
+    SHOW_RESULT_WAY_CARD_TEXTS_DIALOG = _("显示在临时弹窗")
+
+    # 各部分对象名称
+    NAMELIST_SETT_GR_OBJNAME = "namelist_sett_gr"
+    B_CHOOSE_SETT_GR_OBJNAME = "b_choose_sett_gr"
+    F_CHOOSE_SETT_GR_OBJNAME = "f_choose_sett_gr"
+
+    # 各部分显示字段
+    NAMELIST_SETT_GR_NAVNAME = _("名单")
+    B_CHOOSE_SETT_GR_NAVNAME = _("普通抽选")
+    F_CHOOSE_SETT_GR_NAVNAME = _("快速抽选")
 
 
 class MainUIString:
@@ -97,7 +162,10 @@ class AssetsPath:
 
     # 图片
     # 图标
-    APP_ICON_PATH = "../assets/icon/appico.png"
+    APP_ICON_PATH = "assets/icon/app_icon.png"
 
     # 项目详细图
-    APP_DETAILEDIMAGE_PATH = "../assets/images/informations_ui_pic.png"
+    APP_DETAILEDIMAGE_PATH = "assets/images/app_detailed_image.png"
+
+    # 配置文件
+    APP_CONFIG = "config/app_config.json"

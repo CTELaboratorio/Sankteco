@@ -20,47 +20,45 @@ class SettingsUI(QFrame):
         super().__init__(parent)
 
         # 提示文本
-        self.tip_titlelabel = qfw.TitleLabel("在此处调整程序设置")
-        self.tip_strongbodylabel = qfw.StrongBodyLabel(
-            "从下面的孙页面中选择其一以更改相关选项"
-        )
+        self.tip_titlelabel = qfw.TitleLabel(SettUIString.TIP_TITLE)
+        self.tip_strongbodylabel = qfw.StrongBodyLabel(SettUIString.TIP_CONTEXT)
 
         # 孙页面指向卡片
         self.to_basic_card = qfw.PrimaryPushSettingCard(
-            "跳转",
+            SettUIString.TO_BASIC_CARD_TEXT,
             FI.BRIGHTNESS,
-            "基本",
-            "更改基本设置",
+            SettUIString.TO_BASIC_CARD_TITLE,
+            SettUIString.TO_BASIC_CARD_CONTEXT,
         )
         self.to_audiovisual_card = qfw.PrimaryPushSettingCard(
-            "跳转",
+            SettUIString.TO_AUDIOVISUAL_CARD_TEXT,
             FI.MEDIA,
-            "视听",
-            "更改背景音乐、音效、朗读等设置",
+            SettUIString.TO_AUDIOVISUAL_CARD_TITLE,
+            SettUIString.TO_AUDIOVISUAL_CARD_CONTEXT,
         )
         self.to_linkage_card = qfw.PrimaryPushSettingCard(
-            "跳转",
+            SettUIString.TO_LINKAGE_CARD_TEXT,
             FI.CONNECT,
-            "联动",
-            "更改与课表软件的联动设置",
+            SettUIString.TO_LINKAGE_CARD_TITLE,
+            SettUIString.TO_LINKAGE_CARD_CONTEXT,
         )
         self.to_language_card = qfw.PrimaryPushSettingCard(
-            "跳转",
+            SettUIString.TO_LANGUAGE_CARD_TEXT,
             FI.LANGUAGE,
-            "语言",
-            "更改界面显示语言",
+            SettUIString.TO_LANGUAGE_CARD_TITLE,
+            SettUIString.TO_LANGUAGE_CARD_CONTEXT,
         )
         self.to_update_card = qfw.PrimaryPushSettingCard(
-            "跳转",
+            SettUIString.TO_UPDATE_CARD_TEXT,
             FI.UPDATE,
-            "更新",
-            "更新程序",
+            SettUIString.TO_UPDATE_CARD_TITLE,
+            SettUIString.TO_UPDATE_CARD_CONTEXT,
         )
         self.to_debug_card = qfw.PrimaryPushSettingCard(
-            "跳转",
+            SettUIString.TO_DEBUG_CARD_TEXT,
             FI.IOT,
-            "调试",
-            "高级调试选项",
+            SettUIString.TO_DEBUG_CARD_TITLE,
+            SettUIString.TO_DEBUG_CARD_CONTEXT,
         )
 
         # 页面布局
@@ -74,7 +72,7 @@ class SettingsUI(QFrame):
             self.to_update_card,
             self.to_debug_card,
         ]
-        
+
         # 批量导入组件
         for label in self.label_list:
             self.vboxlayout.addWidget(label)

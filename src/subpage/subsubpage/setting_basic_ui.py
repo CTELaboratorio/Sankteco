@@ -1,11 +1,10 @@
 """
 孙页面：基本（ 首选项 的子页面），
 此页面包含了本项目基本的可调整设置选项，包含三个部分：名单、普通抽选、快速抽选，
-引用时可作 SettBasicUI / subsubpage_settings_basic
+引用时可作 SettBasicUI / subsubpage_setting_basic
 """
 
 from PySide2.QtWidgets import QFrame, QVBoxLayout, QHBoxLayout, QWidget, QStackedWidget
-from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import *
@@ -14,7 +13,7 @@ from app_config import *
 
 # 加载配置文件
 sett_basic_ui_cfg = AppCommonConfig()
-qfw.qconfig.load(r"../../../config/app_config.json", AppCommonConfig)
+qfw.qconfig.load(AssetsPath.APP_CONFIG, AppCommonConfig)
 
 
 class NowNamelistSettingCard(qfw.ExpandGroupSettingCard):
@@ -118,9 +117,14 @@ class BasicChooseSettingGroup(QWidget):
         self.carton_beauty_level_card = qfw.ComboBoxSettingCard(
             sett_basic_ui_cfg.carton_beauty_level,
             FI.CLOUD,
-            "动画精美度",
-            "调节抽选时的动画精美程度",
-            ["华丽", "精美", "一般", "快速"],
+            SettBasicUIString.CARTON_BEAUTY_LEVEL_CARD_TITLE,
+            SettBasicUIString.CARTON_BEAUTY_LEVEL_CARD_CONTEXT,
+            [
+                SettBasicUIString.CARTON_BEAUTY_LEVEL_CARD_TEXTS_AMAZED,
+                SettBasicUIString.CARTON_BEAUTY_LEVEL_CARD_TEXTS_BEAUTY,
+                SettBasicUIString.CARTON_BEAUTY_LEVEL_CARD_TEXTS_BASIC,
+                SettBasicUIString.CARTON_BEAUTY_LEVEL_CARD_TEXTS_FAST,
+            ],
         )
 
         # 设置布局
@@ -142,9 +146,13 @@ class FastChooseSettingGroup(QWidget):
         self.show_result_way = qfw.OptionsSettingCard(
             sett_basic_ui_cfg.show_result_way,
             FI.INFO,
-            "结果推送方式",
-            "选择快速抽选的结果应怎样显示",
-            ["显示在ClassIsland", "显示在ClassWidget", "显示在临时弹窗"],
+            SettBasicUIString.SHOW_RESULT_WAY_CARD_TITLE,
+            SettBasicUIString.SHOW_RESULT_WAY_CARD_CONTEXT,
+            [
+                SettBasicUIString.SHOW_RESULT_WAY_CARD_TEXTS_CI,
+                SettBasicUIString.SHOW_RESULT_WAY_CARD_TEXTS_CW,
+                SettBasicUIString.SHOW_RESULT_WAY_CARD_TEXTS_DIALOG,
+            ],
         )
 
         # 设置布局
@@ -160,6 +168,9 @@ class SettingBasicUI(QFrame):
     def __init__(self, parent=None):
         super().__init__(parent)
 
+        from PySide2.QtCore import Qt
+        from PySide2.QtWidgets import QStackedWidget
+
         # 初始化顶部导航栏与多页面，初始化布局
         self.pivot = qfw.Pivot(self)
         self.stackedWidget = QStackedWidget(self)
@@ -171,12 +182,20 @@ class SettingBasicUI(QFrame):
         self.fast_choose_interface = FastChooseSettingGroup()
 
         # 添加标签页
-        self.add_sub_interface(self.namelist_interface, "namelist_sett_gr", "名单")
         self.add_sub_interface(
-            self.basic_choose_interface, "b_choose_sett_gr", "普通抽选"
+            self.namelist_interface,
+            SettBasicUIString.NAMELIST_SETT_GR_OBJNAME,
+            SettBasicUIString.NAMELIST_SETT_GR_NAVNAME,
         )
         self.add_sub_interface(
-            self.fast_choose_interface, "f_choose_sett_gr", "快速抽选"
+            self.basic_choose_interface,
+            SettBasicUIString.B_CHOOSE_SETT_GR_OBJNAME,
+            SettBasicUIString.B_CHOOSE_SETT_GR_NAVNAME,
+        )
+        self.add_sub_interface(
+            self.fast_choose_interface,
+            SettBasicUIString.F_CHOOSE_SETT_GR_OBJNAME,
+            SettBasicUIString.F_CHOOSE_SETT_GR_NAVNAME,
         )
 
         # 连接信号并初始化当前标签页
@@ -191,6 +210,8 @@ class SettingBasicUI(QFrame):
         self.vboxlayout.addWidget(self.stackedWidget)
 
     def add_sub_interface(self, widget: QWidget, objectName: str, text: str):
+        """添加子页面"""
+
         widget.setObjectName(objectName)
         self.stackedWidget.addWidget(widget)
 
@@ -202,5 +223,7 @@ class SettingBasicUI(QFrame):
         )
 
     def on_current_index_changed(self, index):
+        """将多页面的切换信号连接到顶部导航栏显示"""
+
         widget = self.stackedWidget.widget(index)
         self.pivot.setCurrentItem(widget.objectName())

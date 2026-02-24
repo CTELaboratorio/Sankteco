@@ -84,3 +84,21 @@ class AppCommonConfig(qfw.QConfig):
         ),
         restart=True,
     )
+
+    # 音乐开关
+    music_switch = qfw.ConfigItem("Av", "music_switch", False, qfw.BoolValidator())
+
+    # 音乐音量调节
+    music_volume = qfw.RangeConfigItem(
+        "Av", "music_volume", 80, qfw.RangeValidator(0, 100)
+    )
+
+    # 音乐渐入效果
+    music_play_smoothly = qfw.RangeConfigItem(
+        "Av", "music_play_smoothly", 0, qfw.RangeValidator(0, 5)
+    )
+
+    # 音乐渐出效果
+    music_pause_smoothly = qfw.RangeConfigItem(
+        "Av", "music_pause_smoothly", 0, qfw.RangeValidator(0, 5)
+    )

@@ -17,6 +17,8 @@ class InformationBoardCardGroup(qfw.ElevatedCardWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
+        from PySide2.QtCore import Qt
+
         # 项目详细图
         self.app_detailed_image = qfw.ImageLabel(AssetsPath.APP_DETAILEDIMAGE_PATH)
 
@@ -27,6 +29,7 @@ class InformationBoardCardGroup(qfw.ElevatedCardWidget):
         # 组件布局
         self.vboxlayout = QVBoxLayout(self)
         self.vboxlayout.addWidget(self.app_detailed_image)
+        self.vboxlayout.setAlignment(self.app_detailed_image, Qt.AlignCenter)
         self.vboxlayout.addWidget(self.infotext_bodylabel)
         self.vboxlayout.addWidget(self.infotext_captionlabel)
 
