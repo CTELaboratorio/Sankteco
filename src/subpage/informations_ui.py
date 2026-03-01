@@ -116,7 +116,7 @@ class InformationUI(QFrame):
         """初始化子页面"""
         super().__init__(parent)
 
-        # 依次显示卡片组件
+        # 初始化卡片组件
         self.information_board_card = InformationBoardCardGroup(self)
         self.support_card = SupportCardGroup(self)
         self.update_card = UpdateCardGroup(self)

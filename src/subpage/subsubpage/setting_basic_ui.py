@@ -29,6 +29,20 @@ class NowNamelistSettingCard(qfw.ExpandGroupSettingCard):
             parent,
         )
 
+        # 初始化控件
+        self.init_widgets()
+
+        # 添加控件至组布局
+        self.add_widget_to_group(
+            self.choose_namelist_label, self.choose_namelist_combobox
+        )
+        self.add_widget_to_group(
+            self.now_namelist_detail_label, self.now_namelist_detail_button
+        )
+        self.add_widget_to_group(self.sign_namelist_label, self.sign_namelist_button)
+
+    def init_widgets(self):
+        """初始化控件"""
         # 选择名单
         self.choose_namelist_combobox = qfw.ComboBox()
         self.choose_namelist_label = qfw.BodyLabel(
@@ -52,15 +66,6 @@ class NowNamelistSettingCard(qfw.ExpandGroupSettingCard):
             SettBasicUIString.NOW_NAMELIST_CARD_SIGN_LABEL
         )
         self.sign_namelist_button.setFixedWidth(100)
-
-        # 添加控件至组布局
-        self.add_widget_to_group(
-            self.choose_namelist_label, self.choose_namelist_combobox
-        )
-        self.add_widget_to_group(
-            self.now_namelist_detail_label, self.now_namelist_detail_button
-        )
-        self.add_widget_to_group(self.sign_namelist_label, self.sign_namelist_button)
 
     def add_widget_to_group(self, added_label, added_widget):
         """添加控件至水平布局并加入设置卡组"""

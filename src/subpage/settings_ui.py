@@ -4,7 +4,7 @@
 引用时可作 SettUI / subpage_settings
 """
 
-from PySide2.QtWidgets import QFrame, QVBoxLayout
+from PySide2.QtWidgets import QFrame, QVBoxLayout, QLayout
 from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
@@ -19,6 +19,32 @@ class SettingsUI(QFrame):
     def __init__(self, parent=None):
         super().__init__(parent)
 
+        # 页面布局
+        self.vboxlayout = QVBoxLayout(self)
+
+        # 初始化控件
+        self.init_widgets()
+
+        # 控件列表
+        self.label_list = [self.tip_titlelabel, self.tip_strongbodylabel]
+        self.widget_list = [
+            self.to_basic_card,
+            self.to_audiovisual_card,
+            self.to_linkage_card,
+            self.to_language_card,
+            self.to_update_card,
+            self.to_debug_card,
+        ]
+
+        # 批量导入组件
+        for label in self.label_list:
+            self.vboxlayout.addWidget(label)
+            self.vboxlayout.setAlignment(label, Qt.AlignCenter)
+        for widget in self.widget_list:
+            self.vboxlayout.addWidget(widget)
+
+    def init_widgets(self):
+        """初始化控件"""
         # 提示文本
         self.tip_titlelabel = qfw.TitleLabel(SettUIString.TIP_TITLE)
         self.tip_strongbodylabel = qfw.StrongBodyLabel(SettUIString.TIP_CONTEXT)
@@ -60,22 +86,3 @@ class SettingsUI(QFrame):
             SettUIString.TO_DEBUG_CARD_TITLE,
             SettUIString.TO_DEBUG_CARD_CONTEXT,
         )
-
-        # 页面布局
-        self.vboxlayout = QVBoxLayout(self)
-        self.label_list = [self.tip_titlelabel, self.tip_strongbodylabel]
-        self.widget_list = [
-            self.to_basic_card,
-            self.to_audiovisual_card,
-            self.to_linkage_card,
-            self.to_language_card,
-            self.to_update_card,
-            self.to_debug_card,
-        ]
-
-        # 批量导入组件
-        for label in self.label_list:
-            self.vboxlayout.addWidget(label)
-            self.vboxlayout.setAlignment(label, Qt.AlignCenter)
-        for widget in self.widget_list:
-            self.vboxlayout.addWidget(widget)

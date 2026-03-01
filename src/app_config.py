@@ -42,6 +42,30 @@ class FChooseShowResultWayEnum(Enum):
         return [q.value for q in FChooseShowResultWayEnum]
 
 
+class SoundPlayTimeEnum(Enum):
+    """音效在何时播放枚举"""
+
+    BCHOOSE = "OnlyBChoose"
+    FCHOOSE = "OnlyFChoose"
+    ALL = "BChoose&FChoose"
+
+    @staticmethod
+    def values():
+        return [q.value for q in SoundPlayTimeEnum]
+
+
+class ReadTimeEnum(Enum):
+    """在何时朗读枚举"""
+
+    BCHOOSE = "OnlyBChoose"
+    FCHOOSE = "OnlyFChoose"
+    ALL = "BChoose&FChoose"
+
+    @staticmethod
+    def values():
+        return [q.value for q in SoundPlayTimeEnum]
+
+
 class AppCommonConfig(qfw.QConfig):
     """应用配置类"""
 
@@ -88,6 +112,9 @@ class AppCommonConfig(qfw.QConfig):
     # 音乐开关
     music_switch = qfw.ConfigItem("Av", "music_switch", False, qfw.BoolValidator())
 
+    # 音乐路径
+    music_path = qfw.ConfigItem("Av", "music_path", "", str)
+
     # 音乐音量调节
     music_volume = qfw.RangeConfigItem(
         "Av", "music_volume", 80, qfw.RangeValidator(0, 100)
@@ -101,4 +128,39 @@ class AppCommonConfig(qfw.QConfig):
     # 音乐渐出效果
     music_pause_smoothly = qfw.RangeConfigItem(
         "Av", "music_pause_smoothly", 0, qfw.RangeValidator(0, 5)
+    )
+
+    # 音效开关
+    sound_switch = qfw.ConfigItem("Av", "sound_switch", True, qfw.BoolValidator())
+
+    # 音效路径
+    sound_path = qfw.ConfigItem("Av", "sound_path", "assets/sounds/notice.wav", str)
+
+    # 音效在何时播放
+    sound_play_time = qfw.OptionsConfigItem(
+        "Av",
+        "sound_play_time",
+        qfw.OptionsValidator(
+            [
+                SoundPlayTimeEnum.BCHOOSE,
+                SoundPlayTimeEnum.FCHOOSE,
+                SoundPlayTimeEnum.ALL,
+            ]
+        ),
+    )
+
+    # 朗读开关
+    read_switch = qfw.ConfigItem("Av", "read_switch", True, qfw.BoolValidator())
+
+    # 在何时朗读
+    read_time = qfw.OptionsConfigItem(
+        "Av",
+        "read_time",
+        qfw.OptionsValidator(
+            [
+                ReadTimeEnum.BCHOOSE,
+                ReadTimeEnum.FCHOOSE,
+                ReadTimeEnum.ALL,
+            ]
+        ),
     )
