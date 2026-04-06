@@ -1,5 +1,5 @@
 .vscode/settings.json
 *.spec
 *.exe
-.config/*.json
 *.code-workspace
+config/app_config.json
