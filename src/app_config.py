@@ -65,7 +65,19 @@ class ReadTimeEnum(Enum):
 
     @staticmethod
     def values():
-        return [q.value for q in SoundPlayTimeEnum]
+        return [q.value for q in ReadTimeEnum]
+
+
+class DarkLightEnum(Enum):
+    """深浅模式枚举"""
+
+    DARK = "Dark"
+    LIGHT = "Light"
+    AUTO = "Auto"
+
+    @staticmethod
+    def values():
+        return [q.value for q in DarkLightEnum]
 
 
 class AppCommonConfig(qfw.QConfig):
@@ -77,6 +89,7 @@ class AppCommonConfig(qfw.QConfig):
         AppConfigString.LANGUAGE_NAME,
         LanguageEnum.ZH_CN,
         qfw.OptionsValidator([LanguageEnum.ZH_CN, LanguageEnum.EO]),
+        qfw.EnumSerializer(LanguageEnum),
         restart=True,
     )
 
@@ -93,6 +106,7 @@ class AppCommonConfig(qfw.QConfig):
                 BChoooseCartonBeautyEnum.FAST,
             ]
         ),
+        qfw.EnumSerializer(BChoooseCartonBeautyEnum),
         restart=True,
     )
 
@@ -108,13 +122,14 @@ class AppCommonConfig(qfw.QConfig):
                 FChooseShowResultWayEnum.MESSAGEBOX,
             ]
         ),
+        qfw.EnumSerializer(FChooseShowResultWayEnum),
         restart=True,
     )
 
     # 音乐开关
     music_switch = qfw.ConfigItem(
         AppConfigString.AV_GROUP,
-        AppConfigString.AV_MUSIC_PATH_NAME,
+        AppConfigString.AV_MUSIC_SWITCH_NAME,
         False,
         qfw.BoolValidator(),
     )
@@ -123,7 +138,7 @@ class AppCommonConfig(qfw.QConfig):
     music_path = qfw.ConfigItem(
         AppConfigString.AV_GROUP,
         AppConfigString.AV_MUSIC_PATH_NAME,
-        AssetsPath.APP_DEFAULT_MUSIC_PATH,
+        AssetsPathTXT.APP_DEFAULT_MUSIC_PATH,
         qfw.FolderValidator(),
     )
 
@@ -171,6 +186,7 @@ class AppCommonConfig(qfw.QConfig):
     sound_play_time = qfw.OptionsConfigItem(
         AppConfigString.AV_GROUP,
         AppConfigString.AV_SOUND_PLAY_TIME_NAME,
+        SoundPlayTimeEnum.ALL,
         qfw.OptionsValidator(
             [
                 SoundPlayTimeEnum.BCHOOSE,
@@ -178,6 +194,7 @@ class AppCommonConfig(qfw.QConfig):
                 SoundPlayTimeEnum.ALL,
             ]
         ),
+        qfw.EnumSerializer(SoundPlayTimeEnum),
     )
 
     # 朗读开关
@@ -192,6 +209,7 @@ class AppCommonConfig(qfw.QConfig):
     read_time = qfw.OptionsConfigItem(
         AppConfigString.AV_GROUP,
         AppConfigString.AV_READ_TIME_NAME,
+        ReadTimeEnum.ALL,
         qfw.OptionsValidator(
             [
                 ReadTimeEnum.BCHOOSE,
@@ -199,4 +217,17 @@ class AppCommonConfig(qfw.QConfig):
                 ReadTimeEnum.ALL,
             ]
         ),
+        qfw.EnumSerializer(ReadTimeEnum),
+    )
+
+    # 深浅模式
+    dark_light = qfw.OptionsConfigItem(
+        AppConfigString.AV_GROUP,
+        AppConfigString.AV_DARK_LIGHT_NAME,
+        DarkLightEnum.AUTO,
+        qfw.OptionsValidator(
+            [DarkLightEnum.DARK, DarkLightEnum.LIGHT, DarkLightEnum.AUTO]
+        ),
+        qfw.EnumSerializer(DarkLightEnum),
+        restart=True,
     )

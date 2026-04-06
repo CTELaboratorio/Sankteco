@@ -4,7 +4,7 @@
 引用时可作 SettUI / subpage_settings
 """
 
-from PySide2.QtWidgets import QFrame, QVBoxLayout, QLayout
+from PySide2.QtWidgets import QFrame, QVBoxLayout
 from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
@@ -45,6 +45,7 @@ class SettingsUI(QFrame):
 
     def init_widgets(self):
         """初始化控件"""
+        
         # 提示文本
         self.tip_titlelabel = qfw.TitleLabel(SettUIString.TIP_TITLE)
         self.tip_strongbodylabel = qfw.StrongBodyLabel(SettUIString.TIP_CONTEXT)

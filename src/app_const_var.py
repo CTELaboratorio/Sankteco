@@ -49,6 +49,7 @@ class AppConfigString:
     AV_SOUND_PLAY_TIME_NAME = "sound_play_time"
     AV_READ_SWITCH_NAME = "read_switch"
     AV_READ_TIME_NAME = "read_time"
+    AV_DARK_LIGHT_NAME = "dark_light"
 
 
 class InfoUIString:
@@ -172,7 +173,72 @@ class SettAvUIString:
 
     # 音乐 部分
     # 音乐开关
-    
+    MUSIC_SWITCH_CARD_TITLE = _("音乐开关")
+    MUSIC_SWITCH_CARD_CONTEXT = _("控制是否在普通抽选时播放背景音乐")
+
+    # 音乐文件
+    MUSIC_PATH_CARD_TITLE = _("音乐文件")
+    MUSIC_PATH_CARD_CONTEXT = _("选择要启用的音乐文件")
+    MUSIC_PATH_CARD_BUTTON = _("选择")
+
+    # 音量调节
+    MUSIC_VOLUME_CARD_TITLE = _("音乐音量")
+    MUSIC_VOLUME_CARD_CONTEXT = _("调节音乐在播放时的音量")
+
+    # 渐入效果
+    MUSIC_PLAY_SMOOTHLY_CARD_TITLE = _("音乐渐入效果")
+    MUSIC_PLAY_SMOOTHLY_CARD_CONTEXT = _("调整音乐播放时渐入效果持续的秒数(s)")
+
+    # 渐出效果
+    MUSIC_PAUSE_SMOOTHLY_CARD_TITLE = _("音乐渐出效果")
+    MUSIC_PAUSE_SMOOTHLY_CARD_CONTEXT = _("调整音乐播放时渐出效果持续的秒数(s)")
+
+    # 音效 部分
+    # 音效开关
+    SOUND_SWITCH_CARD_TITLE = _("音效开关")
+    SOUND_SWITCH_CARD_CONTEXT = _("控制是否在点名结束后播放抽选音效")
+
+    # 音效路径
+    SOUND_PATH_CRAD_TITLE = _("音效路径")
+    SOUND_PATH_CRAD_CONTEXT = _("选择要启用的音效文件")
+    SOUND_PATH_CARD_BUTTON = _("选择")
+
+    # 音效在何时播放
+    SOUND_PLAY_TIME_CARD_TITLE = _("音效在何时播放")
+    SOUND_PLAY_TIME_CARD_TEXT_B_CHOOSE = _("仅普通抽选后")
+    SOUND_PLAY_TIME_CARD_TEXT_F_CHOOSE = _("仅快速抽选后")
+    SOUND_PLAY_TIME_CARD_TEXT_BOTH = _("两者后")
+
+    # 朗读 部分
+    # 朗读开关
+    READ_SWITCH_CARD_TITLE = _("朗读开关")
+    READ_SWITCH_CARD_CONTEXT = _("控制是否在点名结束后朗读被抽中的名字")
+
+    # 在何时朗读
+    READ_TIME_CARD_TITLE = _("在何时朗读")
+    READ_TIME_CARD_TEXT_B_CHOOSE = _("仅普通抽选后")
+    READ_TIME_CARD_TEXT_F_CHOOSE = _("仅快速抽选后")
+    READ_TIME_CARD_TEXT_BOTH = _("两者后")
+
+    # 主题
+    # 深浅模式
+    THEME_DARK_LIGHT_CARD_TITLE = _("深浅模式")
+    THEME_DARK_LIGHT_CARD_CONTEXT = _("选择程序显示时的深浅色模式")
+    THEME_DARK_LIGHT_CARD_TEXT_DARK = _("深色")
+    THEME_DARK_LIGHT_CARD_TEXT_LIGHT = _("浅色")
+    THEME_DARK_LIGHT_CARD_TEXT_AUTO = _("跟随系统")
+
+    # 各部分对象名称
+    MUSIC_SETT_GR_OBJNAME = "music_sett_gr"
+    SOUND_SETT_GR_OBJNAME = "sound_sett_gr"
+    READ_SETT_GR_OBJNAME = "read_sett_gr"
+    THEME_SETT_GR_OBJNAME = "theme_sett_gr"
+
+    # 各部分显示字段
+    MUSIC_SETT_GR_NAVNAME = _("音乐")
+    SOUND_SETT_GR_NAVNAME = _("音效")
+    READ_SETT_GR_NAVNAME = _("朗读")
+    THEME_SETT_GR_NAVNAME = _("主题")
 
 
 class MainUIString:
@@ -182,11 +248,13 @@ class MainUIString:
     SUBPAGE_INFORMATION_OBJNAME = "subpage_information"
     SUBPAGE_SETTINGS_OBJNAME = "subpage_settings"
     SUBSUBPAGE_SETTIING_BASIC_OBJNAME = "subsubpage_setting_basic"
+    SUBSUBPAGE_SETTIING_AUDIOVISUAL_OBJNAME = "subsubpage_setting_audiovisual"
 
     # 子页面导航窗口显示字段
     SUBPAGE_INFORMATION_NAVNAME = _("信息")
     SUBPAGE_SETTINGS_NAVNAME = _("首选项")
     SUBSUBPAGE_SETTIING_BASIC_NAVNAME = _("基本")
+    SUBSUBPAGE_SETTIING_AUDIOVISUAL_NAVNAME = _("视听")
 
 
 """相对路径常量"""

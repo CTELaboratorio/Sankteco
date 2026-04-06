@@ -28,6 +28,7 @@ class MainWindow(FluentWindow):
 
         # 连接设置子页面信号
         self.subpage_settings.to_basic_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_basic))  # type: ignore
+        self.subpage_settings.to_audiovisual_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_audiovisual))  # type: ignore
 
     async def import_subpage_information(self):
         """导入并重命名 信息 子页面的协程"""
@@ -37,20 +38,37 @@ class MainWindow(FluentWindow):
         self.subpage_information.setObjectName(MainUIString.SUBPAGE_INFORMATION_OBJNAME)
 
     async def import_subpage_settings(self):
-        """导入并重命名 设置 子页面的协程"""
+        """导入并重命名 设置 子页面其及所有孙页面的协程"""
         from subpage.settings_ui import SettingsUI
+        from subpage.subsubpage.setting_basic_ui import SettingBasicUI
+        from subpage.subsubpage.setting_audiovisual_ui import SettingAudiovisualUI
 
+        # 设置 子页面
         self.subpage_settings = SettingsUI(self)
         self.subpage_settings.setObjectName(MainUIString.SUBPAGE_SETTINGS_OBJNAME)
 
+        # 基础 孙页面
+        self.subsubpage_setting_basic = SettingBasicUI(self)
+        self.subsubpage_setting_basic.setObjectName(
+            MainUIString.SUBSUBPAGE_SETTIING_BASIC_OBJNAME
+        )
+
+        # 视听 孙页面
+        self.subsubpage_setting_audiovisual = SettingAudiovisualUI(self)
+        self.subsubpage_setting_audiovisual.setObjectName(
+            MainUIString.SUBSUBPAGE_SETTIING_AUDIOVISUAL_OBJNAME
+        )
+
+    """
     async def import_subsubpage_setting_basic(self):
-        """导入并重命名 基础 孙页面的协程"""
+        ""导入并重命名 基础 孙页面的协程""
         from subpage.subsubpage.setting_basic_ui import SettingBasicUI
 
         self.subsubpage_setting_basic = SettingBasicUI(self)
         self.subsubpage_setting_basic.setObjectName(
             MainUIString.SUBSUBPAGE_SETTIING_BASIC_OBJNAME
         )
+    """
 
     async def import_subpage_main(self):
         """导入子页面的基础函数"""
@@ -59,7 +77,6 @@ class MainWindow(FluentWindow):
         await asyncio.gather(
             self.import_subpage_information(),
             self.import_subpage_settings(),
-            self.import_subsubpage_setting_basic(),
         )
 
     def init_navigation(self):
@@ -77,6 +94,12 @@ class MainWindow(FluentWindow):
             self.subsubpage_setting_basic,
             FI.BRIGHTNESS,
             MainUIString.SUBSUBPAGE_SETTIING_BASIC_NAVNAME,
+            parent=self.subpage_settings,
+        )
+        self.addSubInterface(
+            self.subsubpage_setting_audiovisual,
+            FI.MEDIA,
+            MainUIString.SUBSUBPAGE_SETTIING_AUDIOVISUAL_NAVNAME,
             parent=self.subpage_settings,
         )
         self.addSubInterface(

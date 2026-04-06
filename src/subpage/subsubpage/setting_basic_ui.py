@@ -4,16 +4,16 @@
 引用时可作 SettBasicUI / subsubpage_setting_basic
 """
 
-from PySide2.QtWidgets import QFrame, QVBoxLayout, QHBoxLayout, QWidget, QStackedWidget
+from PySide2.QtWidgets import QFrame, QVBoxLayout, QHBoxLayout, QWidget
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import *
-from app_config import *
+from app_config import AppCommonConfig
 
 
 # 加载配置文件
 sett_basic_ui_cfg = AppCommonConfig()
-qfw.qconfig.load(AssetsPathTXT.APP_CONFIG, AppCommonConfig)
+qfw.qconfig.load(AssetsPathTXT.APP_CONFIG, sett_basic_ui_cfg)
 
 
 class NowNamelistSettingCard(qfw.ExpandGroupSettingCard):
