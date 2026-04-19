@@ -1,7 +1,7 @@
 {
     "Basic": {
         "carton_beauty_level": "25",
-        "show_result_way": "ClassWidget"
+        "show_result_way": "ClassIsland"
     },
     "Av": {
         "dark_light": "Auto",
@@ -9,7 +9,7 @@
         "music_pause_smoothly": 2,
         "music_play_smoothly": 1,
         "music_switch": true,
-        "music_volume": 50,
+        "music_volume": 60,
         "read_switch": true,
         "read_time": "OnlyBChoose",
         "sound_path": "O:/ĈTEL/祈福Sankteco/assets/sounds/notice.wav",

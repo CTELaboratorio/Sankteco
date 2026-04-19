@@ -6,388 +6,408 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-18 21:22+0800\n"
-"PO-Revision-Date: 2026-02-17 01:46+0800\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-04-19 15:52+0800\n"
+"PO-Revision-Date: 2026-04-19 18:00+0800\n"
 "Last-Translator: \n"
-"Language: eo\n"
 "Language-Team: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
+"X-Generator: Poedit 3.4.4\n"
 
-#: src/app_const_var.py:59
+#: src/app_const_var.py:67
 msgid "错误！"
-msgstr ""
-
-#: src/app_const_var.py:60
-msgid "无法找到离线文档！"
-msgstr ""
-
-#: src/app_const_var.py:61
-msgid "警告！"
-msgstr ""
-
-#: src/app_const_var.py:62
-msgid "无法连接到服务器！"
-msgstr ""
-
-#: src/app_const_var.py:65
-msgid "信息板"
-msgstr "Informtabulo"
+msgstr "Eraro!"
 
 #: src/app_const_var.py:68
+msgid "无法找到离线文档！"
+msgstr "Ne eblas trovi la senretan dokumentaron!"
+
+#: src/app_const_var.py:69
+msgid "警告！"
+msgstr "Averto!"
+
+#: src/app_const_var.py:70
+msgid "无法连接到服务器！"
+msgstr "Ne eblas konekti al la servilo!"
+
+#: src/app_const_var.py:73
 msgid "支持"
 msgstr "Subtenon"
 
-#: src/app_const_var.py:69 src/app_const_var.py:70
+#: src/app_const_var.py:74 src/app_const_var.py:75
 msgid "查看"
-msgstr "Kontrolu"
+msgstr "Vidi"
 
-#: src/app_const_var.py:71
+#: src/app_const_var.py:76
 msgid "离线帮助文档"
 msgstr "Senreta helpdokumentaro"
 
-#: src/app_const_var.py:72
+#: src/app_const_var.py:77
 msgid "查看保存于本地的帮助文档，如果有的话"
 msgstr "Kontrolu la helpdokumentaron konservitan loke, se ĝi ekzistas"
 
-#: src/app_const_var.py:73
+#: src/app_const_var.py:78
 msgid "在线帮助文档"
 msgstr "Reta helpdokumentaro"
 
-#: src/app_const_var.py:74
+#: src/app_const_var.py:79
 msgid "访问项目官网获取在线帮助文档"
 msgstr ""
 "Vizitu la oficialan retejon de la projekto por aliri la retan "
 "helpodokumentaron"
 
-#: src/app_const_var.py:77 src/app_const_var.py:115
+#: src/app_const_var.py:82 src/app_const_var.py:120
 msgid "更新"
 msgstr "Ĝisdatigi"
 
-#: src/app_const_var.py:78
+#: src/app_const_var.py:83
 msgid "正式版"
-msgstr "Oficiala eldonaĵo"
+msgstr "Oficiala versio"
 
-#: src/app_const_var.py:79
+#: src/app_const_var.py:84
 msgid "测试版"
 msgstr "Provetversio"
 
-#: src/app_const_var.py:80
+#: src/app_const_var.py:85
 msgid "检查更新"
-msgstr "Kontroli ĝisdatigojn"
+msgstr "Testa versio"
 
-#: src/app_const_var.py:81
+#: src/app_const_var.py:86
 msgid "更新通道"
 msgstr "Ĝisdatiga kanalo"
 
-#: src/app_const_var.py:82
+#: src/app_const_var.py:87
 msgid "选择项目从何通道进行更新"
-msgstr "Elektu el kiu kanalo ĝisdatigi la projekton"
+msgstr "Elekti de kiu kanalo la projekto ricevos ĝisdatigojn"
 
-#: src/app_const_var.py:83
+#: src/app_const_var.py:88
 msgid "当前版本已是最新版本"
 msgstr "La nuna versio jam estas la plej nova"
 
-#: src/app_const_var.py:90
+#: src/app_const_var.py:95
 msgid "在此处调整程序设置"
-msgstr ""
-
-#: src/app_const_var.py:91
-msgid "从下面的孙页面中选择其一以更改相关选项"
-msgstr ""
-
-#: src/app_const_var.py:94 src/app_const_var.py:99 src/app_const_var.py:104
-#: src/app_const_var.py:109 src/app_const_var.py:114 src/app_const_var.py:119
-msgid "跳转"
-msgstr ""
-
-#: src/app_const_var.py:95 src/app_const_var.py:261
-msgid "基本"
-msgstr ""
+msgstr "Agordu programajn agordojn ĉi tie"
 
 #: src/app_const_var.py:96
-msgid "更改基本设置"
-msgstr ""
+msgid "从下面的孙页面中选择其一以更改相关选项"
+msgstr "Elektu unu el la subaj subpaĝoj por ŝanĝi la rilatajn opciojn"
 
-#: src/app_const_var.py:100 src/app_const_var.py:262
-msgid "视听"
-msgstr ""
+#: src/app_const_var.py:99 src/app_const_var.py:104 src/app_const_var.py:109
+#: src/app_const_var.py:114 src/app_const_var.py:119 src/app_const_var.py:124
+#: src/app_const_var.py:266
+msgid "跳转"
+msgstr "Saltu"
+
+#: src/app_const_var.py:100 src/app_const_var.py:286
+msgid "基本"
+msgstr "Baza"
 
 #: src/app_const_var.py:101
-msgid "更改背景音乐、音效、朗读等设置"
-msgstr ""
+msgid "更改基本设置"
+msgstr "Ŝanĝi bazajn agordojn"
 
-#: src/app_const_var.py:105
-msgid "联动"
-msgstr ""
+#: src/app_const_var.py:105 src/app_const_var.py:287
+msgid "视听"
+msgstr "Aŭdikvido"
 
 #: src/app_const_var.py:106
-msgid "更改与课表软件的联动设置"
-msgstr ""
+msgid "更改背景音乐、音效、朗读等设置"
+msgstr "Ŝanĝi fonaĵan muzikon, sonefektojn, legado ktp"
 
 #: src/app_const_var.py:110
+msgid "联动"
+msgstr "Kunligo"
+
+#: src/app_const_var.py:111
+msgid "更改与课表软件的联动设置"
+msgstr "Ŝanĝi la kunligajn agordojn kun horarprogramo"
+
+#: src/app_const_var.py:115 src/app_const_var.py:288
 msgid "语言"
 msgstr "Lingvo"
 
-#: src/app_const_var.py:111
-#, fuzzy
-msgid "更改界面显示语言"
-msgstr "Ŝanĝu la interfacan lingvon de ĉi tie"
-
 #: src/app_const_var.py:116
-#, fuzzy
-msgid "更新程序"
-msgstr "Ĝisdatigi"
-
-#: src/app_const_var.py:120
-msgid "调试"
-msgstr ""
+msgid "更改界面显示语言"
+msgstr "Ŝanĝi la interfacan montran lingvon"
 
 #: src/app_const_var.py:121
+msgid "更新程序"
+msgstr "Ĝisdatigi programon"
+
+#: src/app_const_var.py:125
+msgid "调试"
+msgstr "Rapidi"
+
+#: src/app_const_var.py:126
 msgid "高级调试选项"
-msgstr ""
+msgstr "Altnivelaj rapidigaj opcioj"
 
-#: src/app_const_var.py:129 src/app_const_var.py:137
+#: src/app_const_var.py:134 src/app_const_var.py:142
 msgid "管理"
-msgstr ""
-
-#: src/app_const_var.py:130
-msgid "多名单"
-msgstr ""
-
-#: src/app_const_var.py:131
-msgid "创建或管理不同名单以供便携使用"
-msgstr ""
-
-#: src/app_const_var.py:134
-msgid "设置当前名单"
-msgstr ""
+msgstr "Administri"
 
 #: src/app_const_var.py:135
-msgid "选择要管理的名单并配置"
-msgstr ""
+msgid "多名单"
+msgstr "Multaj listoj"
 
 #: src/app_const_var.py:136
-msgid "选择要管理的名单"
-msgstr ""
-
-#: src/app_const_var.py:138
-msgid "管理当前选择的名单之内容"
-msgstr ""
+msgid "创建或管理不同名单以供便携使用"
+msgstr "Krei aŭ administri malsamajn listojn por portebla uzo"
 
 #: src/app_const_var.py:139
-msgid "添加"
-msgstr ""
+msgid "设置当前名单"
+msgstr "Agordi la aktualan liston"
 
 #: src/app_const_var.py:140
-msgid "为所选的名单添加标记"
-msgstr ""
+msgid "选择要管理的名单并配置"
+msgstr "Elekti la liston por administri kaj agordi"
+
+#: src/app_const_var.py:141
+msgid "选择要管理的名单"
+msgstr "Elekti la liston por administri"
+
+#: src/app_const_var.py:143
+msgid "管理当前选择的名单之内容"
+msgstr "Administri la enhavon de la aktuala elektita listo"
 
 #: src/app_const_var.py:144
-msgid "动画精美度"
-msgstr ""
+msgid "添加"
+msgstr "Aldoni"
 
 #: src/app_const_var.py:145
-msgid "调节抽选时的动画精美程度"
-msgstr ""
-
-#: src/app_const_var.py:146
-msgid "华丽"
-msgstr ""
-
-#: src/app_const_var.py:147
-msgid "精美"
-msgstr ""
-
-#: src/app_const_var.py:148
-msgid "一般"
-msgstr ""
+msgid "为所选的名单添加标记"
+msgstr "Aldoni etikedon al la elektita listo"
 
 #: src/app_const_var.py:149
-msgid "快速"
-msgstr ""
+msgid "动画精美度"
+msgstr "Animacia kvalito"
+
+#: src/app_const_var.py:150
+msgid "调节抽选时的动画精美程度"
+msgstr "Agordi la kvaliton de la animacio dum hazarda elektiĝo"
+
+#: src/app_const_var.py:151
+msgid "华丽"
+msgstr "Brila"
+
+#: src/app_const_var.py:152
+msgid "精美"
+msgstr "Eleganta"
 
 #: src/app_const_var.py:153
-msgid "结果推送方式"
-msgstr ""
+msgid "一般"
+msgstr "Normala"
 
 #: src/app_const_var.py:154
+msgid "快速"
+msgstr "Rapida"
+
+#: src/app_const_var.py:158
+msgid "结果推送方式"
+msgstr "Modo de rezulteldono"
+
+#: src/app_const_var.py:159
 msgid "选择快速抽选的结果应怎样显示"
-msgstr ""
+msgstr "Elekti kiel montri la rezulton de rapida hazarda elektiĝo"
 
-#: src/app_const_var.py:155
+#: src/app_const_var.py:160
 msgid "显示在ClassIsland"
-msgstr ""
+msgstr "Montri ĉe ClassIsland"
 
-#: src/app_const_var.py:156
+#: src/app_const_var.py:161
 msgid "显示在ClassWidget"
-msgstr ""
+msgstr "Montri ĉe ClassWidget"
 
-#: src/app_const_var.py:157
+#: src/app_const_var.py:162
 msgid "显示在临时弹窗"
-msgstr ""
+msgstr "Montri en provizora fenestro"
 
-#: src/app_const_var.py:165
+#: src/app_const_var.py:170
 msgid "名单"
-msgstr ""
+msgstr "Listo"
 
-#: src/app_const_var.py:166
+#: src/app_const_var.py:171
 msgid "普通抽选"
-msgstr ""
+msgstr "Generala selektado"
 
-#: src/app_const_var.py:167
+#: src/app_const_var.py:172
 msgid "快速抽选"
-msgstr ""
-
-#: src/app_const_var.py:175
-msgid "音乐开关"
-msgstr ""
-
-#: src/app_const_var.py:176
-msgid "控制是否在普通抽选时播放背景音乐"
-msgstr ""
-
-#: src/app_const_var.py:179
-msgid "音乐文件"
-msgstr ""
+msgstr "Rapida selektado"
 
 #: src/app_const_var.py:180
-msgid "选择要启用的音乐文件"
-msgstr ""
+msgid "音乐开关"
+msgstr "Muzika ŝaltilo"
 
-#: src/app_const_var.py:181 src/app_const_var.py:203
-msgid "选择"
-msgstr ""
+#: src/app_const_var.py:181
+msgid "控制是否在普通抽选时播放背景音乐"
+msgstr "Kontroli ĉu ludi fonmuzikon dum ĝenerala selektado"
 
 #: src/app_const_var.py:184
-msgid "音乐音量"
-msgstr ""
+msgid "音乐文件"
+msgstr "Muzikdosiero"
 
 #: src/app_const_var.py:185
-msgid "调节音乐在播放时的音量"
-msgstr ""
+msgid "选择要启用的音乐文件"
+msgstr "Elekti la muzikdosieron por ebligi"
 
-#: src/app_const_var.py:188
-msgid "音乐渐入效果"
-msgstr ""
+#: src/app_const_var.py:186 src/app_const_var.py:208
+msgid "选择"
+msgstr "Elekti"
 
 #: src/app_const_var.py:189
-msgid "调整音乐播放时渐入效果持续的秒数(s)"
-msgstr ""
+msgid "音乐音量"
+msgstr "Muzika volumo"
 
-#: src/app_const_var.py:192
-msgid "音乐渐出效果"
-msgstr ""
+#: src/app_const_var.py:190
+msgid "调节音乐在播放时的音量"
+msgstr "Aðusti la volumenon de la muziko dum ludo"
 
 #: src/app_const_var.py:193
-msgid "调整音乐播放时渐出效果持续的秒数(s)"
-msgstr ""
+msgid "音乐渐入效果"
+msgstr "Muzika eniro-efekto"
+
+#: src/app_const_var.py:194
+msgid "调整音乐播放时渐入效果持续的秒数(s)"
+msgstr "Aðusti la daŭron (sekundoj) de la enira efekto de la muziko"
 
 #: src/app_const_var.py:197
-msgid "音效开关"
-msgstr ""
+msgid "音乐渐出效果"
+msgstr "Muzika eliro-efekto"
 
 #: src/app_const_var.py:198
-msgid "控制是否在点名结束后播放抽选音效"
-msgstr ""
-
-#: src/app_const_var.py:201
-msgid "音效路径"
-msgstr ""
+msgid "调整音乐播放时渐出效果持续的秒数(s)"
+msgstr "Aðusti la daŭron (sekundoj) de la elira efekto de la muziko"
 
 #: src/app_const_var.py:202
-msgid "选择要启用的音效文件"
-msgstr ""
+msgid "音效开关"
+msgstr "Sonefekto ŝaltilo"
+
+#: src/app_const_var.py:203
+msgid "控制是否在点名结束后播放抽选音效"
+msgstr "Kontroli ĉu ludi selektosonon post la vokado finiĝos"
 
 #: src/app_const_var.py:206
+msgid "音效路径"
+msgstr "Sonefekto vojo"
+
+#: src/app_const_var.py:207
+msgid "选择要启用的音效文件"
+msgstr "Elektu la sonefektdosierojn por aktivigi"
+
+#: src/app_const_var.py:211
 msgid "音效在何时播放"
-msgstr ""
+msgstr "Kiam ludi sonefektojn"
 
-#: src/app_const_var.py:207 src/app_const_var.py:218
+#: src/app_const_var.py:212 src/app_const_var.py:223
 msgid "仅普通抽选后"
-msgstr ""
+msgstr "Nur post normala tirado"
 
-#: src/app_const_var.py:208 src/app_const_var.py:219
+#: src/app_const_var.py:213 src/app_const_var.py:224
 msgid "仅快速抽选后"
-msgstr ""
+msgstr "Nur post rapida tirado"
 
-#: src/app_const_var.py:209 src/app_const_var.py:220
+#: src/app_const_var.py:214 src/app_const_var.py:225
 msgid "两者后"
-msgstr ""
+msgstr "Post ambaŭ"
 
-#: src/app_const_var.py:213
+#: src/app_const_var.py:218
 msgid "朗读开关"
-msgstr ""
+msgstr "Legado-sistemo"
 
-#: src/app_const_var.py:214
+#: src/app_const_var.py:219
 msgid "控制是否在点名结束后朗读被抽中的名字"
-msgstr ""
+msgstr "Kontrolu ĉu legi la elektitan nomon post nomkalkulo"
 
-#: src/app_const_var.py:217
+#: src/app_const_var.py:222
 msgid "在何时朗读"
-msgstr ""
+msgstr "Kiam legi"
 
-#: src/app_const_var.py:224
+#: src/app_const_var.py:229
 msgid "深浅模式"
-msgstr ""
+msgstr "Malheluma/luma reĝimo"
 
-#: src/app_const_var.py:225
+#: src/app_const_var.py:230
 msgid "选择程序显示时的深浅色模式"
-msgstr ""
-
-#: src/app_const_var.py:226
-msgid "深色"
-msgstr ""
-
-#: src/app_const_var.py:227
-msgid "浅色"
-msgstr ""
-
-#: src/app_const_var.py:228 src/app_const_var.py:234
-msgid "跟随系统"
-msgstr ""
+msgstr "Elektu la malhelan aŭ luman reĝimon dum la programo estas montrata"
 
 #: src/app_const_var.py:231
-msgid "窗口效果"
-msgstr ""
+msgid "深色"
+msgstr "Malhela"
 
 #: src/app_const_var.py:232
+msgid "浅色"
+msgstr "Luma"
+
+#: src/app_const_var.py:233 src/app_const_var.py:239
+msgid "跟随系统"
+msgstr "Sekvi la sistemon"
+
+#: src/app_const_var.py:236
+msgid "窗口效果"
+msgstr "Fenestrefektoj"
+
+#: src/app_const_var.py:237
 msgid "调整程序窗口的显示效果"
-msgstr ""
+msgstr "Agordu la montran efikon de la programfenestro"
 
-#: src/app_const_var.py:233
+#: src/app_const_var.py:238
 msgid "Mica"
-msgstr ""
+msgstr "Mica"
 
-#: src/app_const_var.py:243
+#: src/app_const_var.py:248
 msgid "音乐"
-msgstr ""
+msgstr "Muziko"
 
-#: src/app_const_var.py:244
+#: src/app_const_var.py:249
 msgid "音效"
-msgstr ""
+msgstr "Sonefektoj"
 
-#: src/app_const_var.py:245
+#: src/app_const_var.py:250
 msgid "朗读"
-msgstr ""
+msgstr "Legado"
 
-#: src/app_const_var.py:246
+#: src/app_const_var.py:251
 msgid "主题"
-msgstr ""
+msgstr "Temo"
+
+#: src/app_const_var.py:258
+msgid "显示语言"
+msgstr "Montrado de lingvo"
 
 #: src/app_const_var.py:259
-#, fuzzy
-msgid "信息"
-msgstr "Informtabulo"
+msgid "选择将在屏幕上显示的语言"
+msgstr "Elektu la lingvon montratan sur la ekrano"
 
 #: src/app_const_var.py:260
-msgid "首选项"
+msgid "简体中文"
+msgstr "Simpligita Ĉino"
+
+#: src/app_const_var.py:261
+msgid "世界语"
+msgstr "Esperanto"
+
+#: src/app_const_var.py:264
+msgid "加入翻译计划"
+msgstr "Aliĝi al la tradukprojekto"
+
+#: src/app_const_var.py:265
+msgid "加入项目的在线翻译工程，为本地化做出贡献"
 msgstr ""
+"Aliĝu al la reta tradukprojeto de la projekto por kontribui al lokigo"
+
+#: src/app_const_var.py:282
+msgid "信息"
+msgstr "Informoj"
+
+#: src/app_const_var.py:283
+msgid "首选项"
+msgstr "Preferoj"
 
 #~ msgid "当前版本"
 #~ msgstr "Aktuala versio"
@@ -395,3 +415,5 @@ msgstr ""
 #~ msgid "语言选项"
 #~ msgstr "Lingvoopcioj"
 
+#~ msgid "信息板"
+#~ msgstr "Informtabulo"

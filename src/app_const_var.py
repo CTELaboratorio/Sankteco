@@ -11,9 +11,10 @@ with open("config/app_config.json", "r", encoding="utf-8") as f:
     language_config = json_data["Language"]["language"]
 
 # 初始化gettext翻译
-gettext.translation("messages", "locale", [language_config], fallback=True)
+gt = gettext.translation("messages", "locales", [language_config], fallback=True)
+gt.install()
 
-_ = gettext.gettext
+_ = gt.gettext
 
 
 """字符串常量"""
