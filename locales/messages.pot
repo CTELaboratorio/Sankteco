@@ -1,0 +1,380 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-04-18 22:59+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: src/app_const_var.py:59
+msgid "错误！"
+msgstr ""
+
+#: src/app_const_var.py:60
+msgid "无法找到离线文档！"
+msgstr ""
+
+#: src/app_const_var.py:61
+msgid "警告！"
+msgstr ""
+
+#: src/app_const_var.py:62
+msgid "无法连接到服务器！"
+msgstr ""
+
+#: src/app_const_var.py:65
+msgid "支持"
+msgstr ""
+
+#: src/app_const_var.py:66 src/app_const_var.py:67
+msgid "查看"
+msgstr ""
+
+#: src/app_const_var.py:68
+msgid "离线帮助文档"
+msgstr ""
+
+#: src/app_const_var.py:69
+msgid "查看保存于本地的帮助文档，如果有的话"
+msgstr ""
+
+#: src/app_const_var.py:70
+msgid "在线帮助文档"
+msgstr ""
+
+#: src/app_const_var.py:71
+msgid "访问项目官网获取在线帮助文档"
+msgstr ""
+
+#: src/app_const_var.py:74 src/app_const_var.py:112
+msgid "更新"
+msgstr ""
+
+#: src/app_const_var.py:75
+msgid "正式版"
+msgstr ""
+
+#: src/app_const_var.py:76
+msgid "测试版"
+msgstr ""
+
+#: src/app_const_var.py:77
+msgid "检查更新"
+msgstr ""
+
+#: src/app_const_var.py:78
+msgid "更新通道"
+msgstr ""
+
+#: src/app_const_var.py:79
+msgid "选择项目从何通道进行更新"
+msgstr ""
+
+#: src/app_const_var.py:80
+msgid "当前版本已是最新版本"
+msgstr ""
+
+#: src/app_const_var.py:87
+msgid "在此处调整程序设置"
+msgstr ""
+
+#: src/app_const_var.py:88
+msgid "从下面的孙页面中选择其一以更改相关选项"
+msgstr ""
+
+#: src/app_const_var.py:91 src/app_const_var.py:96 src/app_const_var.py:101
+#: src/app_const_var.py:106 src/app_const_var.py:111 src/app_const_var.py:116
+msgid "跳转"
+msgstr ""
+
+#: src/app_const_var.py:92 src/app_const_var.py:258
+msgid "基本"
+msgstr ""
+
+#: src/app_const_var.py:93
+msgid "更改基本设置"
+msgstr ""
+
+#: src/app_const_var.py:97 src/app_const_var.py:259
+msgid "视听"
+msgstr ""
+
+#: src/app_const_var.py:98
+msgid "更改背景音乐、音效、朗读等设置"
+msgstr ""
+
+#: src/app_const_var.py:102
+msgid "联动"
+msgstr ""
+
+#: src/app_const_var.py:103
+msgid "更改与课表软件的联动设置"
+msgstr ""
+
+#: src/app_const_var.py:107
+msgid "语言"
+msgstr ""
+
+#: src/app_const_var.py:108
+msgid "更改界面显示语言"
+msgstr ""
+
+#: src/app_const_var.py:113
+msgid "更新程序"
+msgstr ""
+
+#: src/app_const_var.py:117
+msgid "调试"
+msgstr ""
+
+#: src/app_const_var.py:118
+msgid "高级调试选项"
+msgstr ""
+
+#: src/app_const_var.py:126 src/app_const_var.py:134
+msgid "管理"
+msgstr ""
+
+#: src/app_const_var.py:127
+msgid "多名单"
+msgstr ""
+
+#: src/app_const_var.py:128
+msgid "创建或管理不同名单以供便携使用"
+msgstr ""
+
+#: src/app_const_var.py:131
+msgid "设置当前名单"
+msgstr ""
+
+#: src/app_const_var.py:132
+msgid "选择要管理的名单并配置"
+msgstr ""
+
+#: src/app_const_var.py:133
+msgid "选择要管理的名单"
+msgstr ""
+
+#: src/app_const_var.py:135
+msgid "管理当前选择的名单之内容"
+msgstr ""
+
+#: src/app_const_var.py:136
+msgid "添加"
+msgstr ""
+
+#: src/app_const_var.py:137
+msgid "为所选的名单添加标记"
+msgstr ""
+
+#: src/app_const_var.py:141
+msgid "动画精美度"
+msgstr ""
+
+#: src/app_const_var.py:142
+msgid "调节抽选时的动画精美程度"
+msgstr ""
+
+#: src/app_const_var.py:143
+msgid "华丽"
+msgstr ""
+
+#: src/app_const_var.py:144
+msgid "精美"
+msgstr ""
+
+#: src/app_const_var.py:145
+msgid "一般"
+msgstr ""
+
+#: src/app_const_var.py:146
+msgid "快速"
+msgstr ""
+
+#: src/app_const_var.py:150
+msgid "结果推送方式"
+msgstr ""
+
+#: src/app_const_var.py:151
+msgid "选择快速抽选的结果应怎样显示"
+msgstr ""
+
+#: src/app_const_var.py:152
+msgid "显示在ClassIsland"
+msgstr ""
+
+#: src/app_const_var.py:153
+msgid "显示在ClassWidget"
+msgstr ""
+
+#: src/app_const_var.py:154
+msgid "显示在临时弹窗"
+msgstr ""
+
+#: src/app_const_var.py:162
+msgid "名单"
+msgstr ""
+
+#: src/app_const_var.py:163
+msgid "普通抽选"
+msgstr ""
+
+#: src/app_const_var.py:164
+msgid "快速抽选"
+msgstr ""
+
+#: src/app_const_var.py:172
+msgid "音乐开关"
+msgstr ""
+
+#: src/app_const_var.py:173
+msgid "控制是否在普通抽选时播放背景音乐"
+msgstr ""
+
+#: src/app_const_var.py:176
+msgid "音乐文件"
+msgstr ""
+
+#: src/app_const_var.py:177
+msgid "选择要启用的音乐文件"
+msgstr ""
+
+#: src/app_const_var.py:178 src/app_const_var.py:200
+msgid "选择"
+msgstr ""
+
+#: src/app_const_var.py:181
+msgid "音乐音量"
+msgstr ""
+
+#: src/app_const_var.py:182
+msgid "调节音乐在播放时的音量"
+msgstr ""
+
+#: src/app_const_var.py:185
+msgid "音乐渐入效果"
+msgstr ""
+
+#: src/app_const_var.py:186
+msgid "调整音乐播放时渐入效果持续的秒数(s)"
+msgstr ""
+
+#: src/app_const_var.py:189
+msgid "音乐渐出效果"
+msgstr ""
+
+#: src/app_const_var.py:190
+msgid "调整音乐播放时渐出效果持续的秒数(s)"
+msgstr ""
+
+#: src/app_const_var.py:194
+msgid "音效开关"
+msgstr ""
+
+#: src/app_const_var.py:195
+msgid "控制是否在点名结束后播放抽选音效"
+msgstr ""
+
+#: src/app_const_var.py:198
+msgid "音效路径"
+msgstr ""
+
+#: src/app_const_var.py:199
+msgid "选择要启用的音效文件"
+msgstr ""
+
+#: src/app_const_var.py:203
+msgid "音效在何时播放"
+msgstr ""
+
+#: src/app_const_var.py:204 src/app_const_var.py:215
+msgid "仅普通抽选后"
+msgstr ""
+
+#: src/app_const_var.py:205 src/app_const_var.py:216
+msgid "仅快速抽选后"
+msgstr ""
+
+#: src/app_const_var.py:206 src/app_const_var.py:217
+msgid "两者后"
+msgstr ""
+
+#: src/app_const_var.py:210
+msgid "朗读开关"
+msgstr ""
+
+#: src/app_const_var.py:211
+msgid "控制是否在点名结束后朗读被抽中的名字"
+msgstr ""
+
+#: src/app_const_var.py:214
+msgid "在何时朗读"
+msgstr ""
+
+#: src/app_const_var.py:221
+msgid "深浅模式"
+msgstr ""
+
+#: src/app_const_var.py:222
+msgid "选择程序显示时的深浅色模式"
+msgstr ""
+
+#: src/app_const_var.py:223
+msgid "深色"
+msgstr ""
+
+#: src/app_const_var.py:224
+msgid "浅色"
+msgstr ""
+
+#: src/app_const_var.py:225 src/app_const_var.py:231
+msgid "跟随系统"
+msgstr ""
+
+#: src/app_const_var.py:228
+msgid "窗口效果"
+msgstr ""
+
+#: src/app_const_var.py:229
+msgid "调整程序窗口的显示效果"
+msgstr ""
+
+#: src/app_const_var.py:230
+msgid "Mica"
+msgstr ""
+
+#: src/app_const_var.py:240
+msgid "音乐"
+msgstr ""
+
+#: src/app_const_var.py:241
+msgid "音效"
+msgstr ""
+
+#: src/app_const_var.py:242
+msgid "朗读"
+msgstr ""
+
+#: src/app_const_var.py:243
+msgid "主题"
+msgstr ""
+
+#: src/app_const_var.py:256
+msgid "信息"
+msgstr ""
+
+#: src/app_const_var.py:257
+msgid "首选项"
+msgstr ""
+

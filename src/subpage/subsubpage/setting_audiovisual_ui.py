@@ -7,10 +7,10 @@
 from PySide2.QtWidgets import (
     QFrame,
     QVBoxLayout,
-    QHBoxLayout,
     QWidget,
     QLayout,
 )
+from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import *
@@ -52,7 +52,6 @@ class MusicSettingGroup(QWidget):
 
         # 设置布局
         set_widget_to_layout(self.widget_list, self.vboxlayout)
-        self.setLayout(self.vboxlayout)
 
     def init_widgets(self):
         """初始化控件"""
@@ -215,9 +214,7 @@ class ThemeSettingGroup(QWidget):
         self.init_widgets()
 
         # 控件列表
-        self.widget_list = [
-            self.dark_light_card,
-        ]
+        self.widget_list = [self.dark_light_card, self.window_effort_card]
 
         # 设置布局
         set_widget_to_layout(self.widget_list, self.vboxlayout)
@@ -239,6 +236,18 @@ class ThemeSettingGroup(QWidget):
             ],
         )
 
+        # 窗口效果
+        self.window_effort_card = qfw.ComboBoxSettingCard(
+            sett_av_ui_cfg.window_effort,
+            FI.RINGER,
+            SettAvUIString.THEME_WINDOW_EFFORT_CARD_TITLE,
+            SettAvUIString.THEME_WINDOW_EFFORT_CARD_CONTEXT,
+            [
+                SettAvUIString.THEME_WINDOW_EFFORT_CARD_TEXT_MICA,
+                SettAvUIString.THEME_WINDOW_EFFORT_CARD_TEXT_AUTO,
+            ],
+        )
+
 
 class SettingAudiovisualUI(QFrame):
     """孙页面：视听（ 首选项 的子页面）的基础UI类，
@@ -248,7 +257,7 @@ class SettingAudiovisualUI(QFrame):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        from PySide2.QtCore import Qt
+        from PySide2.QtCore import Qt, QMargins
         from PySide2.QtWidgets import QStackedWidget
 
         # 初始化顶部导航栏与多页面，初始化布局
@@ -290,7 +299,7 @@ class SettingAudiovisualUI(QFrame):
         self.pivot.setCurrentItem(self.music_interface.objectName())
 
         # 调整布局
-        # self.vboxlayout.setContentsMargins(30, 0, 30, 30)
+        self.vboxlayout.setContentsMargins(QMargins(30, 0, 30, 0))
         self.vboxlayout.addWidget(self.pivot)
         self.vboxlayout.setAlignment(self.pivot, Qt.AlignCenter)
         self.vboxlayout.addWidget(self.stackedWidget)

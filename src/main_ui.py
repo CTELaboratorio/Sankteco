@@ -59,17 +59,6 @@ class MainWindow(FluentWindow):
             MainUIString.SUBSUBPAGE_SETTIING_AUDIOVISUAL_OBJNAME
         )
 
-    """
-    async def import_subsubpage_setting_basic(self):
-        ""导入并重命名 基础 孙页面的协程""
-        from subpage.subsubpage.setting_basic_ui import SettingBasicUI
-
-        self.subsubpage_setting_basic = SettingBasicUI(self)
-        self.subsubpage_setting_basic.setObjectName(
-            MainUIString.SUBSUBPAGE_SETTIING_BASIC_OBJNAME
-        )
-    """
-
     async def import_subpage_main(self):
         """导入子页面的基础函数"""
 

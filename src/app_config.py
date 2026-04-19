@@ -11,7 +11,7 @@ import qfluentwidgets as qfw
 class LanguageEnum(Enum):
     """语言枚举类"""
 
-    ZH_CN = "zh_cn"
+    ZH_CN = "zh_CN"
     EO = "eo"
 
     @staticmethod
@@ -78,6 +78,17 @@ class DarkLightEnum(Enum):
     @staticmethod
     def values():
         return [q.value for q in DarkLightEnum]
+
+
+class WindowEffortEnum(Enum):
+    """窗口效果枚举"""
+
+    MICA = "Mica"
+    AUTO = "Auto"
+
+    @staticmethod
+    def values():
+        return [q.value for q in WindowEffortEnum]
 
 
 class AppCommonConfig(qfw.QConfig):
@@ -229,5 +240,13 @@ class AppCommonConfig(qfw.QConfig):
             [DarkLightEnum.DARK, DarkLightEnum.LIGHT, DarkLightEnum.AUTO]
         ),
         qfw.EnumSerializer(DarkLightEnum),
-        restart=True,
+    )
+
+    # 窗口效果
+    window_effort = qfw.OptionsConfigItem(
+        AppConfigString.AV_GROUP,
+        AppConfigString.AV_WINDOW_EFFORT_NAME,
+        WindowEffortEnum.AUTO,
+        qfw.OptionsValidator([WindowEffortEnum.MICA, WindowEffortEnum.AUTO]),
+        qfw.EnumSerializer(WindowEffortEnum),
     )

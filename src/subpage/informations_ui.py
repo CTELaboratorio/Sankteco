@@ -53,6 +53,36 @@ class ImageViewer(QGraphicsView):
         self.fitInView(self.imageItem, Qt.KeepAspectRatio)  # type: ignore
 
 
+class ShowInfobar:
+    """初始化并显示消息条的类"""
+
+    def offline_button_infobar(self, parent=None):
+        """离线帮助文档被点击消息条"""
+
+        self.infobar_offline = qfw.InfoBar.error(
+            InfoUIString.SHOWINFOBAR_OFFLINE_TITLE,
+            InfoUIString.SHOWINFOBAR_OFFLINE_CONTENT,
+            Qt.Horizontal,
+            True,
+            -1,
+            qfw.InfoBarPosition.TOP,
+            parent,
+        )
+
+    def online_button_infobar(self, parent=None):
+        """在线帮助文档被点击消息条"""
+
+        self.infobar_online = qfw.InfoBar.warning(
+            InfoUIString.SHOWINFOBAR_ONLINE_TITLE,
+            InfoUIString.SHOWINFOBAR_ONLINE_CONTENT,
+            Qt.Horizontal,
+            True,
+            -1,
+            qfw.InfoBarPosition.TOP,
+            parent,
+        )
+
+
 class InformationBoardCardGroup(qfw.ElevatedCardWidget):
     """信息板 部分，继承自 卡片组件 ElevatedCardWidget
     引用时可作 InfoBodCard"""
@@ -168,3 +198,11 @@ class InformationUI(QFrame):
         self.main_layout.addWidget(self.information_board_card)
         self.main_layout.addWidget(self.support_card)
         self.main_layout.addWidget(self.update_card)
+
+        # 连接 支持 部分帮助文档按钮点击信号
+        self.support_card.offline_document_button.clicked.connect(
+            lambda: ShowInfobar.offline_button_infobar(self, self)
+        )
+        self.support_card.online_document_button.clicked.connect(
+            lambda: ShowInfobar.online_button_infobar(self, self)
+        )

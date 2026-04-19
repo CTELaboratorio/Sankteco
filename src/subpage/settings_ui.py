@@ -4,8 +4,7 @@
 引用时可作 SettUI / subpage_settings
 """
 
-from PySide2.QtWidgets import QFrame, QVBoxLayout
-from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QFrame
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import *
@@ -18,6 +17,8 @@ class SettingsUI(QFrame):
 
     def __init__(self, parent=None):
         super().__init__(parent)
+        from PySide2.QtCore import Qt, QMargins
+        from PySide2.QtWidgets import QVBoxLayout
 
         # 页面布局
         self.vboxlayout = QVBoxLayout(self)
@@ -42,6 +43,9 @@ class SettingsUI(QFrame):
             self.vboxlayout.setAlignment(label, Qt.AlignCenter)
         for widget in self.widget_list:
             self.vboxlayout.addWidget(widget)
+
+        # 调整布局
+        self.vboxlayout.setContentsMargins(QMargins(30, 0, 30, 0))
 
     def init_widgets(self):
         """初始化控件"""

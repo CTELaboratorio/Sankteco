@@ -3,8 +3,15 @@
 """
 
 import gettext
-from pathlib import Path
+import json
 
+# 读取配置文件以获取语言配置
+with open("config/app_config.json", "r", encoding="utf-8") as f:
+    json_data = json.load(f)
+    language_config = json_data["Language"]["language"]
+
+# 初始化gettext翻译
+gettext.translation("messages", "locale", [language_config], fallback=True)
 
 _ = gettext.gettext
 
@@ -50,13 +57,17 @@ class AppConfigString:
     AV_READ_SWITCH_NAME = "read_switch"
     AV_READ_TIME_NAME = "read_time"
     AV_DARK_LIGHT_NAME = "dark_light"
+    AV_WINDOW_EFFORT_NAME = "window_effort"
 
 
 class InfoUIString:
     """信息 界面字符串，仅包含 imformations_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
 
-    # 信息板 部分
-    INFOBODCARD_TITLE = _("信息板")
+    # ShowInfobar 类
+    SHOWINFOBAR_OFFLINE_TITLE = _("错误！")
+    SHOWINFOBAR_OFFLINE_CONTENT = _("无法找到离线文档！")
+    SHOWINFOBAR_ONLINE_TITLE = _("警告！")
+    SHOWINFOBAR_ONLINE_CONTENT = _("无法连接到服务器！")
 
     # 支持 部分
     SUPPTCARD_TITLE = _("支持")
@@ -66,13 +77,6 @@ class InfoUIString:
     SUPPTCARD_OFFLINEDOCGROUPCONTEXT = _("查看保存于本地的帮助文档，如果有的话")
     SUPPTCARD_ONLINEDOCGROUPTITLE = _("在线帮助文档")
     SUPPTCARD_ONLINEDOCGROUPCONTEXT = _("访问项目官网获取在线帮助文档")
-
-    # 语言 部分
-    LANGCARD_TITLE = _("语言")
-    LANGCARD_LANGCARD_TITLE = _("语言选项")
-    LANGCARD_LANGCARD_DETAIL = _("从此处更改界面语言")
-    LANGCARD_LANGCARD_COMBO_ZHCN = "简体中文"
-    LANGCARD_LANGCARD_COMBO_EO = "Esperanto"
 
     # 更新 部分
     UPDATECARD_TITLE = _("更新")
@@ -228,6 +232,12 @@ class SettAvUIString:
     THEME_DARK_LIGHT_CARD_TEXT_LIGHT = _("浅色")
     THEME_DARK_LIGHT_CARD_TEXT_AUTO = _("跟随系统")
 
+    # 窗口效果
+    THEME_WINDOW_EFFORT_CARD_TITLE = _("窗口效果")
+    THEME_WINDOW_EFFORT_CARD_CONTEXT = _("调整程序窗口的显示效果")
+    THEME_WINDOW_EFFORT_CARD_TEXT_MICA = _("Mica")
+    THEME_WINDOW_EFFORT_CARD_TEXT_AUTO = _("跟随系统")
+
     # 各部分对象名称
     MUSIC_SETT_GR_OBJNAME = "music_sett_gr"
     SOUND_SETT_GR_OBJNAME = "sound_sett_gr"
@@ -283,6 +293,8 @@ class AssetsPathTXT:
 
 class AssetsPath:
     """资源相对路径类"""
+
+    from pathlib import Path
 
     # 音频
     # 默认音乐

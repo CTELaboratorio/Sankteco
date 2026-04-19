@@ -173,7 +173,7 @@ class SettingBasicUI(QFrame):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        from PySide2.QtCore import Qt
+        from PySide2.QtCore import Qt, QMargins
         from PySide2.QtWidgets import QStackedWidget
 
         # 初始化顶部导航栏与多页面，初始化布局
@@ -209,7 +209,7 @@ class SettingBasicUI(QFrame):
         self.pivot.setCurrentItem(self.namelist_interface.objectName())
 
         # 调整布局
-        # self.vboxlayout.setContentsMargins(30, 0, 30, 30)
+        self.vboxlayout.setContentsMargins(QMargins(30, 0, 30, 0))
         self.vboxlayout.addWidget(self.pivot)
         self.vboxlayout.setAlignment(self.pivot, Qt.AlignCenter)
         self.vboxlayout.addWidget(self.stackedWidget)
