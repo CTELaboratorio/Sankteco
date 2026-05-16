@@ -7,7 +7,7 @@
 import asyncio
 from qfluentwidgets import FluentWindow
 from qfluentwidgets import FluentIcon as FI
-from app_const_var import *
+from app_const_var import MainUIString, BasicString, AssetsPathTXT
 
 
 class MainWindow(FluentWindow):

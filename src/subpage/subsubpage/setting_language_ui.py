@@ -10,7 +10,7 @@ from PySide2.QtWidgets import (
 )
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
-from app_const_var import *
+from app_const_var import SettLangUIString, AssetsPathTXT
 from app_config import AppCommonConfig
 
 # 加载配置文件
