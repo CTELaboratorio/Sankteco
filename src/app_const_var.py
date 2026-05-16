@@ -4,6 +4,7 @@
 
 import gettext
 import json
+import emoji
 
 # 读取配置文件以获取语言配置
 with open("config/app_config.json", "r", encoding="utf-8") as f:
@@ -12,12 +13,92 @@ with open("config/app_config.json", "r", encoding="utf-8") as f:
 
 # 初始化gettext翻译
 gt = gettext.translation("messages", "locales", [language_config], fallback=True)
-gt.install()
 
-_ = gt.gettext
+# 获取基础翻译
+_base = gt.gettext
 
 
-"""字符串常量"""
+def translate(text: str) -> str:
+    """翻译字符串并正确处理emoji"""
+
+    # 先获取翻译
+    translated = _base(text)
+
+    # 检测语言配置是否为emoji，如果是则使用emoji短代码进行处理
+    if language_config == "emoji":
+        return emoji.emojize(translated, language="alias")
+    return translated
+
+
+# 重定向_变量为translate函数
+_ = translate
+
+
+"""
+====================
+相对路径常量
+====================
+"""
+
+
+class AssetsPathTXT:
+    """资源相对路径纯文本类"""
+
+    # 图片
+    # 图标
+    APP_ICON_PATH = "assets/icon/app_icon.png"
+
+    # 项目详细图
+    APP_DETAILEDIMAGE_PATH = "assets/images/app_detailed_image.png"
+
+    # 配置文件
+    APP_CONFIG = "config/app_config.json"
+
+    # 音频
+    # 默认音乐
+    APP_DEFAULT_MUSIC_PATH = ""
+
+    # 默认音效
+    APP_DEFAULT_SOUND_PATH = "assets/sounds/notice.wav"
+
+    # 链接
+    # 加入翻译计划（ 语言 孙页面）
+    JOIN_TRANSLATION_LINK = ""
+
+
+class AssetsPath:
+    """资源相对路径类"""
+
+    from pathlib import Path
+
+    # 音频
+    # 默认音乐
+    APP_DEFAULT_MUSIC_PATH = Path(AssetsPathTXT.APP_DEFAULT_MUSIC_PATH)
+
+    # 默认音效
+    APP_DEFAULT_SOUND_PATH = Path(AssetsPathTXT.APP_DEFAULT_SOUND_PATH)
+
+
+"""
+====================
+Web地址常量
+====================
+"""
+
+
+class WebUrl:
+    """网址类"""
+
+    # 一言API接口
+    HITOKOTO_API_URL = "https://v1.hitokoto.cn/"
+    HITOKOTO_API_URL_WITH_FORMAT = "https://v1.hitokoto.cn/?c=i&encode=text"
+
+
+"""
+====================
+字符串常量
+====================
+"""
 
 
 class BasicString:
@@ -59,6 +140,8 @@ class AppConfigString:
     AV_READ_TIME_NAME = "read_time"
     AV_DARK_LIGHT_NAME = "dark_light"
     AV_WINDOW_EFFORT_NAME = "window_effort"
+    AV_HITOKOTO_API_NAME = "hitokoto_api"
+    AV_HITOKOTO_RENEW_NAME = "hitokoto_renew_time"
 
 
 class InfoUIString:
@@ -239,17 +322,29 @@ class SettAvUIString:
     THEME_WINDOW_EFFORT_CARD_TEXT_MICA = _("Mica")
     THEME_WINDOW_EFFORT_CARD_TEXT_AUTO = _("跟随系统")
 
+    # 一言
+    # API接口
+    HITOKOTO_API_CARD_TITLE = _("一言API")
+    HITOKOTO_API_CARD_CONTEXT = _("调整一言所使用的API接口地址")
+    HITOKOTO_API_CARD_TEXT_HITOKOTO = f"一言({WebUrl.HITOKOTO_API_URL})"
+
+    # 刷新时间
+    HITOKOTO_RENEW_TIME_CARD_TITLE = _("刷新时间")
+    HITOKOTO_RENEW_TIME_CARD_CONTEXT = _("调整一言的刷新时间(s)")
+
     # 各部分对象名称
     MUSIC_SETT_GR_OBJNAME = "music_sett_gr"
     SOUND_SETT_GR_OBJNAME = "sound_sett_gr"
     READ_SETT_GR_OBJNAME = "read_sett_gr"
     THEME_SETT_GR_OBJNAME = "theme_sett_gr"
+    HITOKOTO_SETT_GR_OBJNAME = "hitokoto_sett_gr"
 
     # 各部分显示字段
     MUSIC_SETT_GR_NAVNAME = _("音乐")
     SOUND_SETT_GR_NAVNAME = _("音效")
     READ_SETT_GR_NAVNAME = _("朗读")
     THEME_SETT_GR_NAVNAME = _("主题")
+    HITOKOTO_SETT_GR_NAVNAME = _("一言")
 
 
 class SettLangUIString:
@@ -258,8 +353,9 @@ class SettLangUIString:
     # 语言选择
     SCREEN_LANGUAGE_TITLE = _("显示语言")
     SCREEN_LANGUAGE_CONTEXT = _("选择将在屏幕上显示的语言")
-    SCREEN_LANGUAGE_TEXT_ZH_CN = _("简体中文")
-    SCREEN_LANGUAGE_TEXT_EO = _("世界语")
+    SCREEN_LANGUAGE_TEXT_ZH_CN = "简体中文"
+    SCREEN_LANGUAGE_TEXT_EO = "Esperanto"
+    SCREEN_LANGUAGE_TEXT_EMOJI = "Emoji"
 
     # 加入翻译计划
     JOIN_TRANSLATION_TITLE = _("加入翻译计划")
@@ -287,44 +383,3 @@ class MainUIString:
     SUBSUBPAGE_SETTIING_BASIC_NAVNAME = _("基本")
     SUBSUBPAGE_SETTIING_AUDIOVISUAL_NAVNAME = _("视听")
     SUBSUBPAGE_SETTIING_LANGUAGE_NAVNAME = _("语言")
-
-
-"""相对路径常量"""
-
-
-class AssetsPathTXT:
-    """资源相对路径纯文本类"""
-
-    # 图片
-    # 图标
-    APP_ICON_PATH = "assets/icon/app_icon.png"
-
-    # 项目详细图
-    APP_DETAILEDIMAGE_PATH = "assets/images/app_detailed_image.png"
-
-    # 配置文件
-    APP_CONFIG = "config/app_config.json"
-
-    # 音频
-    # 默认音乐
-    APP_DEFAULT_MUSIC_PATH = ""
-
-    # 默认音效
-    APP_DEFAULT_SOUND_PATH = "assets/sounds/notice.wav"
-
-    # 链接
-    # 加入翻译计划（ 语言 孙页面）
-    JOIN_TRANSLATION_LINK = ""
-
-
-class AssetsPath:
-    """资源相对路径类"""
-
-    from pathlib import Path
-
-    # 音频
-    # 默认音乐
-    APP_DEFAULT_MUSIC_PATH = Path(AssetsPathTXT.APP_DEFAULT_MUSIC_PATH)
-
-    # 默认音效
-    APP_DEFAULT_SOUND_PATH = Path(AssetsPathTXT.APP_DEFAULT_SOUND_PATH)

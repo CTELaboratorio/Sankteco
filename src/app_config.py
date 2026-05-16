@@ -4,91 +4,74 @@
 """
 
 from enum import Enum
+from typing import Type
 from app_const_var import *
 import qfluentwidgets as qfw
 
 
-class LanguageEnum(Enum):
-    """语言枚举类"""
+class ValuesMixin:
+    """返回Enum类成员value的基类"""
 
-    ZH_CN = "zh_CN"
-    EO = "eo"
-
-    @staticmethod
-    def values():
-        return [q.value for q in LanguageEnum]
+    @classmethod
+    def values(cls: Type[Enum]) -> list:  # type: ignore[reportGeneralTypeIssues]
+        return [q.value for q in cls.__members__.values()]
 
 
-class BChoooseCartonBeautyEnum(Enum):
-    """动画精美度枚举"""
+class AppEnums:
+    """应用枚举类"""
 
-    FANCY = "100"
-    BEAUTY = "75"
-    MID = "50"
-    FAST = "25"
+    class LanguageEnum(ValuesMixin, Enum):
+        """语言枚举类"""
 
-    @staticmethod
-    def values():
-        return [q.value for q in BChoooseCartonBeautyEnum]
+        ZH_CN = "zh_CN"
+        EO = "eo"
 
+    class BChoooseCartonBeautyEnum(ValuesMixin, Enum):
+        """动画精美度枚举"""
 
-class FChooseShowResultWayEnum(Enum):
-    """结果推送方式枚举"""
+        FANCY = "100"
+        BEAUTY = "75"
+        MID = "50"
+        FAST = "25"
 
-    CLASSISLAND = "ClassIsland"
-    CLASSWIDGET = "ClassWidget"
-    MESSAGEBOX = "MessageBox"
+    class FChooseShowResultWayEnum(ValuesMixin, Enum):
+        """结果推送方式枚举"""
 
-    @staticmethod
-    def values():
-        return [q.value for q in FChooseShowResultWayEnum]
+        CLASSISLAND = "ClassIsland"
+        CLASSWIDGET = "ClassWidget"
+        MESSAGEBOX = "MessageBox"
 
+    class SoundPlayTimeEnum(ValuesMixin, Enum):
+        """音效在何时播放枚举"""
 
-class SoundPlayTimeEnum(Enum):
-    """音效在何时播放枚举"""
+        BCHOOSE = "OnlyBChoose"
+        FCHOOSE = "OnlyFChoose"
+        ALL = "BChoose&FChoose"
 
-    BCHOOSE = "OnlyBChoose"
-    FCHOOSE = "OnlyFChoose"
-    ALL = "BChoose&FChoose"
+    class ReadTimeEnum(ValuesMixin, Enum):
+        """在何时朗读枚举"""
 
-    @staticmethod
-    def values():
-        return [q.value for q in SoundPlayTimeEnum]
+        BCHOOSE = "OnlyBChoose"
+        FCHOOSE = "OnlyFChoose"
+        ALL = "BChoose&FChoose"
 
+    class DarkLightEnum(ValuesMixin, Enum):
+        """深浅模式枚举"""
 
-class ReadTimeEnum(Enum):
-    """在何时朗读枚举"""
+        DARK = "Dark"
+        LIGHT = "Light"
+        AUTO = "Auto"
 
-    BCHOOSE = "OnlyBChoose"
-    FCHOOSE = "OnlyFChoose"
-    ALL = "BChoose&FChoose"
+    class WindowEffortEnum(ValuesMixin, Enum):
+        """窗口效果枚举"""
 
-    @staticmethod
-    def values():
-        return [q.value for q in ReadTimeEnum]
+        MICA = "Mica"
+        AUTO = "Auto"
 
+    class HitokotoAPIEnum(ValuesMixin, Enum):
+        """一言API枚举"""
 
-class DarkLightEnum(Enum):
-    """深浅模式枚举"""
-
-    DARK = "Dark"
-    LIGHT = "Light"
-    AUTO = "Auto"
-
-    @staticmethod
-    def values():
-        return [q.value for q in DarkLightEnum]
-
-
-class WindowEffortEnum(Enum):
-    """窗口效果枚举"""
-
-    MICA = "Mica"
-    AUTO = "Auto"
-
-    @staticmethod
-    def values():
-        return [q.value for q in WindowEffortEnum]
+        HITOKOTO = "https://v1.hitokoto.cn/"
 
 
 class AppCommonConfig(qfw.QConfig):
@@ -98,9 +81,9 @@ class AppCommonConfig(qfw.QConfig):
     language = qfw.OptionsConfigItem(
         AppConfigString.LANGUAGE_GROUP,
         AppConfigString.LANGUAGE_NAME,
-        LanguageEnum.ZH_CN,
-        qfw.OptionsValidator([LanguageEnum.ZH_CN, LanguageEnum.EO]),
-        qfw.EnumSerializer(LanguageEnum),
+        AppEnums.LanguageEnum.ZH_CN,
+        qfw.OptionsValidator([AppEnums.LanguageEnum.ZH_CN, AppEnums.LanguageEnum.EO]),
+        qfw.EnumSerializer(AppEnums.LanguageEnum),
         restart=True,
     )
 
@@ -108,16 +91,16 @@ class AppCommonConfig(qfw.QConfig):
     carton_beauty_level = qfw.OptionsConfigItem(
         AppConfigString.BASIC_GROUP,
         AppConfigString.BASIC_CARTON_BEAUTY_LEVEL_NAME,
-        BChoooseCartonBeautyEnum.FANCY,
+        AppEnums.BChoooseCartonBeautyEnum.FANCY,
         qfw.OptionsValidator(
             [
-                BChoooseCartonBeautyEnum.FANCY,
-                BChoooseCartonBeautyEnum.BEAUTY,
-                BChoooseCartonBeautyEnum.MID,
-                BChoooseCartonBeautyEnum.FAST,
+                AppEnums.BChoooseCartonBeautyEnum.FANCY,
+                AppEnums.BChoooseCartonBeautyEnum.BEAUTY,
+                AppEnums.BChoooseCartonBeautyEnum.MID,
+                AppEnums.BChoooseCartonBeautyEnum.FAST,
             ]
         ),
-        qfw.EnumSerializer(BChoooseCartonBeautyEnum),
+        qfw.EnumSerializer(AppEnums.BChoooseCartonBeautyEnum),
         restart=True,
     )
 
@@ -125,15 +108,15 @@ class AppCommonConfig(qfw.QConfig):
     show_result_way = qfw.OptionsConfigItem(
         AppConfigString.BASIC_GROUP,
         AppConfigString.BASIC_SHOW_RESULT_WAY_NAME,
-        FChooseShowResultWayEnum.MESSAGEBOX,
+        AppEnums.FChooseShowResultWayEnum.MESSAGEBOX,
         qfw.OptionsValidator(
             [
-                FChooseShowResultWayEnum.CLASSISLAND,
-                FChooseShowResultWayEnum.CLASSWIDGET,
-                FChooseShowResultWayEnum.MESSAGEBOX,
+                AppEnums.FChooseShowResultWayEnum.CLASSISLAND,
+                AppEnums.FChooseShowResultWayEnum.CLASSWIDGET,
+                AppEnums.FChooseShowResultWayEnum.MESSAGEBOX,
             ]
         ),
-        qfw.EnumSerializer(FChooseShowResultWayEnum),
+        qfw.EnumSerializer(AppEnums.FChooseShowResultWayEnum),
         restart=True,
     )
 
@@ -197,15 +180,15 @@ class AppCommonConfig(qfw.QConfig):
     sound_play_time = qfw.OptionsConfigItem(
         AppConfigString.AV_GROUP,
         AppConfigString.AV_SOUND_PLAY_TIME_NAME,
-        SoundPlayTimeEnum.ALL,
+        AppEnums.SoundPlayTimeEnum.ALL,
         qfw.OptionsValidator(
             [
-                SoundPlayTimeEnum.BCHOOSE,
-                SoundPlayTimeEnum.FCHOOSE,
-                SoundPlayTimeEnum.ALL,
+                AppEnums.SoundPlayTimeEnum.BCHOOSE,
+                AppEnums.SoundPlayTimeEnum.FCHOOSE,
+                AppEnums.SoundPlayTimeEnum.ALL,
             ]
         ),
-        qfw.EnumSerializer(SoundPlayTimeEnum),
+        qfw.EnumSerializer(AppEnums.SoundPlayTimeEnum),
     )
 
     # 朗读开关
@@ -220,33 +203,56 @@ class AppCommonConfig(qfw.QConfig):
     read_time = qfw.OptionsConfigItem(
         AppConfigString.AV_GROUP,
         AppConfigString.AV_READ_TIME_NAME,
-        ReadTimeEnum.ALL,
+        AppEnums.ReadTimeEnum.ALL,
         qfw.OptionsValidator(
             [
-                ReadTimeEnum.BCHOOSE,
-                ReadTimeEnum.FCHOOSE,
-                ReadTimeEnum.ALL,
+                AppEnums.ReadTimeEnum.BCHOOSE,
+                AppEnums.ReadTimeEnum.FCHOOSE,
+                AppEnums.ReadTimeEnum.ALL,
             ]
         ),
-        qfw.EnumSerializer(ReadTimeEnum),
+        qfw.EnumSerializer(AppEnums.ReadTimeEnum),
     )
 
     # 深浅模式
     dark_light = qfw.OptionsConfigItem(
         AppConfigString.AV_GROUP,
         AppConfigString.AV_DARK_LIGHT_NAME,
-        DarkLightEnum.AUTO,
+        AppEnums.DarkLightEnum.AUTO,
         qfw.OptionsValidator(
-            [DarkLightEnum.DARK, DarkLightEnum.LIGHT, DarkLightEnum.AUTO]
+            [
+                AppEnums.DarkLightEnum.DARK,
+                AppEnums.DarkLightEnum.LIGHT,
+                AppEnums.DarkLightEnum.AUTO,
+            ]
         ),
-        qfw.EnumSerializer(DarkLightEnum),
+        qfw.EnumSerializer(AppEnums.DarkLightEnum),
     )
 
     # 窗口效果
     window_effort = qfw.OptionsConfigItem(
         AppConfigString.AV_GROUP,
         AppConfigString.AV_WINDOW_EFFORT_NAME,
-        WindowEffortEnum.AUTO,
-        qfw.OptionsValidator([WindowEffortEnum.MICA, WindowEffortEnum.AUTO]),
-        qfw.EnumSerializer(WindowEffortEnum),
+        AppEnums.WindowEffortEnum.AUTO,
+        qfw.OptionsValidator(
+            [AppEnums.WindowEffortEnum.MICA, AppEnums.WindowEffortEnum.AUTO]
+        ),
+        qfw.EnumSerializer(AppEnums.WindowEffortEnum),
+    )
+
+    #  API接口
+    hitokoto_api = qfw.OptionsConfigItem(
+        AppConfigString.AV_GROUP,
+        AppConfigString.AV_HITOKOTO_API_NAME,
+        AppEnums.HitokotoAPIEnum.HITOKOTO,
+        qfw.OptionsValidator([AppEnums.HitokotoAPIEnum.HITOKOTO]),
+        qfw.EnumSerializer(AppEnums.HitokotoAPIEnum),
+    )
+
+    # 刷新时间
+    hitokoto_renew_time = qfw.RangeConfigItem(
+        AppConfigString.AV_GROUP,
+        AppConfigString.AV_HITOKOTO_RENEW_NAME,
+        300,
+        qfw.RangeValidator(0, 900),
     )

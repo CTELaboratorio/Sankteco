@@ -1,6 +1,6 @@
 """
 孙页面：视听（ 首选项 的子页面），
-此页面包含了视觉效果与音频效果等可调整设置选项，包含六个部分：音乐、音效、朗读、主题、字体、一言，
+此页面包含了视觉效果与音频效果等可调整设置选项，包含五个部分：音乐、音效、朗读、主题、一言，
 引用时可作 SettAvUI / subsubpage_setting_audiovisual
 """
 
@@ -12,7 +12,7 @@ from PySide2.QtWidgets import (
 )
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
-from app_const_var import *
+from app_const_var import SettAvUIString, AssetsPathTXT
 from app_config import AppCommonConfig
 
 
@@ -248,9 +248,50 @@ class ThemeSettingGroup(QWidget):
         )
 
 
+class HitokotoSettingGroup(QWidget):
+    """一言 部分，继承自 QWidget，
+    引用时可作 HitokotoSettGr"""
+
+    def __init__(self):
+        super().__init__()
+
+        # 初始化垂直布局
+        self.vboxlayout = QVBoxLayout(self)
+
+        # 初始化控件
+        self.init_widgets()
+
+        # 控件列表
+        self.widget_list = [self.api_web_card, self.renew_time]
+
+        # 设置布局
+        set_widget_to_layout(self.widget_list, self.vboxlayout)
+        self.setLayout(self.vboxlayout)
+
+    def init_widgets(self):
+        """初始化控件"""
+
+        # API接口
+        self.api_web_card = qfw.ComboBoxSettingCard(
+            sett_av_ui_cfg.hitokoto_api,
+            FI.RINGER,
+            SettAvUIString.HITOKOTO_API_CARD_TITLE,
+            SettAvUIString.HITOKOTO_API_CARD_CONTEXT,
+            [SettAvUIString.HITOKOTO_API_CARD_TEXT_HITOKOTO],
+        )
+
+        # 刷新时间
+        self.renew_time = qfw.RangeSettingCard(
+            sett_av_ui_cfg.hitokoto_renew_time,
+            FI.DATE_TIME,
+            SettAvUIString.HITOKOTO_RENEW_TIME_CARD_TITLE,
+            SettAvUIString.HITOKOTO_RENEW_TIME_CARD_CONTEXT,
+        )
+
+
 class SettingAudiovisualUI(QFrame):
     """孙页面：视听（ 首选项 的子页面）的基础UI类，
-    此页面包含了视觉效果与音频效果等可调整设置选项，包含六个部分：音乐、音效、朗读、主题、字体、一言，
+    此页面包含了视觉效果与音频效果等可调整设置选项，包含五个部分：音乐、音效、朗读、主题、一言，
     引用时可作 SettAvUI / subsubpage_setting_audiovisual"""
 
     def __init__(self, parent=None):
@@ -269,6 +310,7 @@ class SettingAudiovisualUI(QFrame):
         self.sound_interface = SoundSettingGroup()
         self.read_interface = ReadSettingGroup()
         self.theme_interface = ThemeSettingGroup()
+        self.hitokoto_interface = HitokotoSettingGroup()
 
         # 添加标签页
         self.add_sub_interface(
@@ -290,6 +332,11 @@ class SettingAudiovisualUI(QFrame):
             self.theme_interface,
             SettAvUIString.THEME_SETT_GR_OBJNAME,
             SettAvUIString.THEME_SETT_GR_NAVNAME,
+        )
+        self.add_sub_interface(
+            self.hitokoto_interface,
+            SettAvUIString.HITOKOTO_SETT_GR_OBJNAME,
+            SettAvUIString.HITOKOTO_SETT_GR_NAVNAME,
         )
 
         # 连接信号并初始化当前标签页

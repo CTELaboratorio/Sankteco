@@ -5,6 +5,8 @@
     },
     "Av": {
         "dark_light": "Auto",
+        "hitokoto_api": "https://v1.hitokoto.cn/",
+        "hitokoto_renew_time": 332,
         "music_path": "O:/ĈTEL/祈福Sankteco",
         "music_pause_smoothly": 2,
         "music_play_smoothly": 1,
