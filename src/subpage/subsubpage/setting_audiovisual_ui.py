@@ -1,6 +1,6 @@
 """
-孙页面：视听（ 首选项 的子页面），
-此页面包含了视觉效果与音频效果等可调整设置选项，包含五个部分：音乐、音效、朗读、主题、一言，
+孙页面:视听( 首选项 的子页面), 
+此页面包含了视觉效果与音频效果等可调整设置选项, 包含五个部分:音乐, 音效, 朗读, 主题, 一言, 
 引用时可作 SettAvUI / subsubpage_setting_audiovisual
 """
 
@@ -28,7 +28,7 @@ def set_widget_to_layout(wlist: list, layout: QLayout):
 
 
 class MusicSettingGroup(QWidget):
-    """音乐 部分，继承自 QWidget，
+    """音乐 部分, 继承自 QWidget,
     引用时可作 MusicSettGr"""
 
     def __init__(self):
@@ -97,7 +97,7 @@ class MusicSettingGroup(QWidget):
 
 
 class SoundSettingGroup(QWidget):
-    """音效 部分，继承自 QWidget，
+    """音效 部分, 继承自 QWidget,
     引用时可作 SoundSettGr"""
 
     def __init__(self):
@@ -153,7 +153,7 @@ class SoundSettingGroup(QWidget):
 
 
 class ReadSettingGroup(QWidget):
-    """朗读 部分，继承自 QWidget，
+    """朗读 部分, 继承自 QWidget,
     引用时可作 ReadSettGr"""
 
     def __init__(self):
@@ -200,7 +200,7 @@ class ReadSettingGroup(QWidget):
 
 
 class ThemeSettingGroup(QWidget):
-    """主题 部分，继承自 QWidget，
+    """主题 部分, 继承自 QWidget,
     引用时可作 ThemeSettGr"""
 
     def __init__(self):
@@ -249,7 +249,7 @@ class ThemeSettingGroup(QWidget):
 
 
 class HitokotoSettingGroup(QWidget):
-    """一言 部分，继承自 QWidget，
+    """一言 部分, 继承自 QWidget,
     引用时可作 HitokotoSettGr"""
 
     def __init__(self):
@@ -290,8 +290,8 @@ class HitokotoSettingGroup(QWidget):
 
 
 class SettingAudiovisualUI(QFrame):
-    """孙页面：视听（ 首选项 的子页面）的基础UI类，
-    此页面包含了视觉效果与音频效果等可调整设置选项，包含五个部分：音乐、音效、朗读、主题、一言，
+    """孙页面:视听( 首选项 的子页面)的基础UI类,
+    此页面包含了视觉效果与音频效果等可调整设置选项, 包含五个部分:音乐, 音效, 朗读, 主题, 一言,
     引用时可作 SettAvUI / subsubpage_setting_audiovisual"""
 
     def __init__(self, parent=None):
@@ -300,7 +300,7 @@ class SettingAudiovisualUI(QFrame):
         from PySide2.QtCore import Qt, QMargins
         from PySide2.QtWidgets import QStackedWidget
 
-        # 初始化顶部导航栏与多页面，初始化布局
+        # 初始化顶部导航栏与多页面, 初始化布局
         self.pivot = qfw.Pivot(self)
         self.stackedWidget = QStackedWidget(self)
         self.vboxlayout = QVBoxLayout(self)

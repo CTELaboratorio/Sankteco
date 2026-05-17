@@ -1,6 +1,6 @@
 """
-子页面：首选项，
-此页面包含了本项目的可调整设置选项，包含六个孙页面：基本、视听、联动、语言、更新、调试，
+子页面:首选项, 
+此页面包含了本项目的可调整设置选项, 包含六个孙页面:基本, 视听, 联动, 语言, 更新, 调试, 
 引用时可作 SettUI / subpage_settings
 """
 
@@ -11,8 +11,8 @@ from app_const_var import SettUIString
 
 
 class SettingsUI(QFrame):
-    """子页面：首选项的基础UI类，
-    此页面包含了本项目的可调整设置选项，包含六个孙页面：基本、视听、联动、语言、更新、调试，
+    """子页面:首选项的基础UI类,
+    此页面包含了本项目的可调整设置选项, 包含六个孙页面:基本, 视听, 联动, 语言, 更新, 调试,
     引用时可作 SettUI / subpage_settings"""
 
     def __init__(self, parent=None):
@@ -49,7 +49,7 @@ class SettingsUI(QFrame):
 
     def init_widgets(self):
         """初始化控件"""
-        
+
         # 提示文本
         self.tip_titlelabel = qfw.TitleLabel(SettUIString.TIP_TITLE)
         self.tip_strongbodylabel = qfw.StrongBodyLabel(SettUIString.TIP_CONTEXT)

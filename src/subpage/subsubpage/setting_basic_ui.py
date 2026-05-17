@@ -1,6 +1,6 @@
 """
-孙页面：基本（ 首选项 的子页面），
-此页面包含了本项目基本的可调整设置选项，包含三个部分：名单、普通抽选、快速抽选，
+孙页面:基本( 首选项 的子页面), 
+此页面包含了本项目基本的可调整设置选项, 包含三个部分:名单, 普通抽选, 快速抽选, 
 引用时可作 SettBasicUI / subsubpage_setting_basic
 """
 
@@ -17,8 +17,8 @@ qfw.qconfig.load(AssetsPathTXT.APP_CONFIG, sett_basic_ui_cfg)
 
 
 class NowNamelistSettingCard(qfw.ExpandGroupSettingCard):
-    """当前名单设置组 选项卡，从属于 名单 部分，
-    继承自 手风琴设置组卡片 ExpandGroupSettingCard，
+    """当前名单设置组 选项卡, 从属于 名单 部分,
+    继承自 手风琴设置组卡片 ExpandGroupSettingCard,
     引用时可作 NowNamelistSett"""
 
     def __init__(self, parent=None):
@@ -82,7 +82,7 @@ class NowNamelistSettingCard(qfw.ExpandGroupSettingCard):
 
 
 class NamelistSettingGroup(QWidget):
-    """名单 部分，继承自 QWidget，
+    """名单 部分, 继承自 QWidget,
     引用时可作 NamelistSettGr"""
 
     def __init__(self):
@@ -109,7 +109,7 @@ class NamelistSettingGroup(QWidget):
 
 
 class BasicChooseSettingGroup(QWidget):
-    """普通抽选 部分，继承自 QWidget，
+    """普通抽选 部分, 继承自 QWidget,
     引用时可作 BChooseSettGr"""
 
     def __init__(self):
@@ -138,7 +138,7 @@ class BasicChooseSettingGroup(QWidget):
 
 
 class FastChooseSettingGroup(QWidget):
-    """快速抽选 部分，继承自 QWidget，
+    """快速抽选 部分, 继承自 QWidget,
     引用时可作 FChooseSettGr"""
 
     def __init__(self):
@@ -166,8 +166,8 @@ class FastChooseSettingGroup(QWidget):
 
 
 class SettingBasicUI(QFrame):
-    """孙页面：基本（ 首选项 的子页面）的基础UI类，
-    此页面包含了本项目基本的可调整设置选项，包含三个部分：名单、普通抽选、快速抽选，
+    """孙页面:基本( 首选项 的子页面)的基础UI类,
+    此页面包含了本项目基本的可调整设置选项, 包含三个部分:名单, 普通抽选, 快速抽选,
     引用时可作 SettBasicUI / subsubpage_settings_basic"""
 
     def __init__(self, parent=None):
@@ -176,7 +176,7 @@ class SettingBasicUI(QFrame):
         from PySide2.QtCore import Qt, QMargins
         from PySide2.QtWidgets import QStackedWidget
 
-        # 初始化顶部导航栏与多页面，初始化布局
+        # 初始化顶部导航栏与多页面, 初始化布局
         self.pivot = qfw.Pivot(self)
         self.stackedWidget = QStackedWidget(self)
         self.vboxlayout = QVBoxLayout(self)

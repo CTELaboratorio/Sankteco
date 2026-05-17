@@ -1,6 +1,6 @@
 """
-主页面，
-此页面是本项目的主要GUI界面，包含与各子页面的交互逻辑、控件响应等，
+主页面, 
+此页面是本项目的主要GUI界面, 包含与各子页面的交互逻辑, 控件响应等, 
 引用时可作 MainUI
 """
 
@@ -11,7 +11,7 @@ from app_const_var import MainUIString, BasicString, AssetsPathTXT
 
 
 class MainWindow(FluentWindow):
-    """应用程序主窗口，继承自FluentWindow"""
+    """应用程序主窗口, 继承自FluentWindow"""
 
     def __init__(self):
         """初始化主窗口"""
@@ -29,7 +29,7 @@ class MainWindow(FluentWindow):
         # 连接设置子页面信号
         self.subpage_settings.to_basic_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_basic))  # type: ignore
         self.subpage_settings.to_audiovisual_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_audiovisual))  # type: ignore
-        self.subpage_settings.to_language_card.clicked.connect(lambda:self.switchTo(self.subsubpage_setting_language))  # type: ignore
+        self.subpage_settings.to_language_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_language))  # type: ignore
 
     async def import_subpage_information(self):
         """导入并重命名 信息 子页面的协程"""
@@ -77,7 +77,7 @@ class MainWindow(FluentWindow):
         )
 
     def init_navigation(self):
-        """初始化导航栏，添加各个子界面"""
+        """初始化导航栏, 添加各个子界面"""
         from qfluentwidgets import NavigationItemPosition
 
         # 添加子界面及各自的孙页面

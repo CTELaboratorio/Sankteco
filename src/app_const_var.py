@@ -24,7 +24,7 @@ def translate(text: str) -> str:
     # 先获取翻译
     translated = _base(text)
 
-    # 检测语言配置是否为emoji，如果是则使用emoji短代码进行处理
+    # 检测语言配置是否为emoji, 如果是则使用emoji短代码进行处理
     if language_config == "emoji":
         return emoji.emojize(translated, language="alias")
     return translated
@@ -62,7 +62,7 @@ class AssetsPathTXT:
     APP_DEFAULT_SOUND_PATH = "assets/sounds/notice.wav"
 
     # 链接
-    # 加入翻译计划（ 语言 孙页面）
+    # 加入翻译计划( 语言 孙页面)
     JOIN_TRANSLATION_LINK = ""
 
 
@@ -115,7 +115,7 @@ class BasicString:
 
 
 class AppConfigString:
-    """应用配置类 的字符串，仅包含 app_config.py 相关字符串"""
+    """应用配置类 的字符串, 仅包含 app_config.py 相关字符串"""
 
     # 语言 类字符串
     LANGUAGE_GROUP = "Language"
@@ -144,8 +144,12 @@ class AppConfigString:
     AV_HITOKOTO_RENEW_NAME = "hitokoto_renew_time"
 
 
+class PrayUIString:
+    """祈福 子页面字符串, 仅包含 pray_ui.py 相关字符串, 不包含隶属于主程序多UI交互的字符串"""
+
+
 class InfoUIString:
-    """信息 界面字符串，仅包含 imformations_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+    """信息 子页面字符串, 仅包含 imformations_ui.py 相关字符串, 不包含隶属于主程序多UI交互的字符串"""
 
     # ShowInfobar 类
     SHOWINFOBAR_OFFLINE_TITLE = _("错误！")
@@ -158,7 +162,7 @@ class InfoUIString:
     SUPPTCARD_OFFLINEDOCBUTTON = _("查看")
     SUPPTCARD_ONLINEDOCBUTTON = _("查看")
     SUPPTCARD_OFFLINEDOCGROUPTITLE = _("离线帮助文档")
-    SUPPTCARD_OFFLINEDOCGROUPCONTEXT = _("查看保存于本地的帮助文档，如果有的话")
+    SUPPTCARD_OFFLINEDOCGROUPCONTEXT = _("查看保存于本地的帮助文档, 如果有的话")
     SUPPTCARD_ONLINEDOCGROUPTITLE = _("在线帮助文档")
     SUPPTCARD_ONLINEDOCGROUPCONTEXT = _("访问项目官网获取在线帮助文档")
 
@@ -173,7 +177,7 @@ class InfoUIString:
 
 
 class SettUIString:
-    """首选项 界面字符串，仅包含 settings_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+    """首选项 子页面字符串, 仅包含 settings_ui.py 相关字符串, 不包含隶属于主程序多UI交互的字符串"""
 
     # 提示文本
     TIP_TITLE = _("在此处调整程序设置")
@@ -211,7 +215,7 @@ class SettUIString:
 
 
 class SettBasicUIString:
-    """首选项-基本 界面字符串，仅包含 setting_basic_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+    """首选项-基本 孙页面字符串, 仅包含 setting_basic_ui.py 相关字符串, 不包含隶属于主程序多UI交互的字符串"""
 
     # 名单 部分
     # 多名单管理
@@ -257,7 +261,7 @@ class SettBasicUIString:
 
 
 class SettAvUIString:
-    """首选项-视听 界面字符串，仅包含 setting_audiovisual_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+    """首选项-视听 孙页面字符串, 仅包含 setting_audiovisual_ui.py 相关字符串, 不包含隶属于主程序多UI交互的字符串"""
 
     # 音乐 部分
     # 音乐开关
@@ -348,7 +352,7 @@ class SettAvUIString:
 
 
 class SettLangUIString:
-    """首选项-语言 界面字符串，仅包含 setting_language_ui.py 相关字符串，不包含隶属于主程序多UI交互的字符串"""
+    """首选项-语言 孙页面字符串, 仅包含 setting_language_ui.py 相关字符串, 不包含隶属于主程序多UI交互的字符串"""
 
     # 语言选择
     SCREEN_LANGUAGE_TITLE = _("显示语言")
@@ -359,12 +363,12 @@ class SettLangUIString:
 
     # 加入翻译计划
     JOIN_TRANSLATION_TITLE = _("加入翻译计划")
-    JOIN_TRANSLATION_CONTEXT = _("加入项目的在线翻译工程，为本地化做出贡献")
+    JOIN_TRANSLATION_CONTEXT = _("加入项目的在线翻译工程, 为本地化做出贡献")
     JOIN_TRANSLATION_HYPERLINK_TEXT = _("跳转")
 
 
 class MainUIString:
-    """主界面 字符串，包含 main_ui.py 相关字符串，包含隶属于主程序多UI交互的字符串"""
+    """主页面 字符串, 包含 main_ui.py 相关字符串, 包含隶属于主程序多UI交互的字符串"""
 
     # 子页面对象名
     SUBPAGE_INFORMATION_OBJNAME = "subpage_information"
