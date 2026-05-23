@@ -2,5 +2,5 @@
 *.spec
 *.exe
 *.code-workspace
-config/*
-src/test/*
+config/*.*
+src/test/*.*

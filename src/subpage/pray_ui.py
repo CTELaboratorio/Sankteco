@@ -9,13 +9,12 @@ from PySide2.QtWidgets import (
     QFrame,
     QVBoxLayout,
     QHBoxLayout,
+    QGridLayout,
     QWidget,
     QLayout,
     QListWidgetItem,
 )
-from PySide2.QtGui import QColor
 import qfluentwidgets as qfw
-from qfluentwidgets import FluentIcon as FI
 from app_const_var import PrayUIString, AssetsPathTXT
 from app_config import AppCommonConfig
 
@@ -58,10 +57,11 @@ class HitokotoShowGroup(QWidget):
 
     def init_widgets(self):
         """初始化控件"""
+        from PySide2.QtGui import QColor
 
         # 一言显示
         self.hitokoto_show = qfw.StrongBodyLabel("旗开得胜，一举夺魁！")
-        self.hitokoto_show.setTextColor(QColor(0, 255, 0), QColor(255, 0, 0))  # type: ignore
+        self.hitokoto_show.setTextColor(QColor(0, 0, 0), QColor(255, 255, 255))  # type: ignore
 
 
 class PrayResultShowGroup(QWidget):
@@ -92,16 +92,6 @@ class PrayResultShowGroup(QWidget):
         if not (self.pray_result_list == []):
             self.bind_list_to_widget()
 
-    def add_pray_result(self, result_list: list):
-        """清除并添加点名结果"""
-
-        # 清除原有点名结果
-        self.pray_result_list = []
-
-        # 添加新点名结果
-        for result in result_list:
-            self.pray_result_list.append(result)
-
     def bind_list_to_widget(self):
         """将点名结果列表与控件绑定"""
 
@@ -117,52 +107,65 @@ class PrayQuickSettingGroup(QWidget):
     def __init__(self):
         super().__init__()
 
-        # 初始化垂直布局
-        self.vboxlayout = QVBoxLayout(self)
+        # 初始化栅格布局
+        self.gridlayout = QGridLayout(self)
 
-        # 初始化各部分布局
-        self.start_pray_button_layout()
-        self.set_pray_algorithm_combobox()
+        # 初始化各控件与布局
+        self.init_widgets_layouts()
 
-        # 布局列表
-        self.layout_list = [self.spbtn_vboxlayout, self.spacombo_vboxlayout]
+        # 添加控件进布局
+        self.add_widgets_layouts_to_layout()
 
-        # 设置布局
-        set_layouts_to_layout(self.layout_list, self.vboxlayout)
+    def init_widgets_layouts(self):
+        """初始化各控件与布局"""
 
-    def line_1_layout(self):
-        """第一行布局"""
+        # 第一行
+        self.start_pray_button_method()
+        self.pray_namelist_choose_combobox_method()
+        self.set_pray_algorithm_combobox_method()
+        self.set_pray_number_layout_method()
 
-        # 初始化水平布局
-        self.line_1_hboxlayout = QHBoxLayout(self)
+        # 第二行
+        self.set_pray_sex_combobox_method()
+        self.set_pray_group_combobox_method()
+        self.set_pray_tag_combobox_method()
+        self.reset_pray_setting_button_method()
 
-        # 初始化布局
-        self.start_pray_button_layout()
-        self.set_pray_algorithm_combobox()
+    def add_widgets_layouts_to_layout(self):
+        """添加控件与布局进总布局"""
 
-        # 布局列表
-        self.line_1_widget_list = [self.spbtn_vboxlayout, self.spacombo_vboxlayout]
+        # 第一行
+        self.gridlayout.addWidget(self.start_pray_button, 0, 0, 1, 1)  # type: ignore
+        self.gridlayout.addWidget(self.pray_namelist_choose_combobox, 0, 1, 1, 1)  # type: ignore
+        self.gridlayout.addWidget(self.pray_algorithm_combobox, 0, 2, 1, 1)  # type: ignore
+        self.gridlayout.addLayout(self.spnum_hboxlayout, 0, 3, 1, 1)  # type: ignore
 
-        # 设置布局
-        set_layouts_to_layout(self.line_1_widget_list, self.line_1_hboxlayout)
+        # 第二行
+        self.gridlayout.addWidget(self.pray_sex_combobox, 1, 0, 1, 1)  # type: ignore
+        self.gridlayout.addWidget(self.pray_group_combobox, 1, 1, 1, 1)  # type: ignore
+        self.gridlayout.addWidget(self.pray_tag_combobox, 1, 2, 1, 1)  # type: ignore
+        self.gridlayout.addWidget(self.pray_reset_setting_button, 1, 3, 1, 1)  # type: ignore
 
-    def start_pray_button_layout(self):
-        """开始祈福按钮布局, 引用时简写为 spbtn"""
-
-        # 初始化垂直布局
-        self.spbtn_vboxlayout = QVBoxLayout(self)
+    def start_pray_button_method(self):
+        """开始祈福按钮, 引用时简写为 spbtn"""
 
         # 初始化开始祈福按钮
-        self.start_pray_button = qfw.PushButton("祈福")
+        self.start_pray_button = qfw.TogglePushButton("祈福")
 
-        # 设置布局
-        self.spbtn_vboxlayout.addWidget(self.start_pray_button)
+    def pray_namelist_choose_combobox_method(self):
+        """祈福名单选择下拉框, 引用时简写为 pnlccombo"""
 
-    def set_pray_algorithm_combobox(self):
+        # 初始化祈福名单选择下拉框
+        self.pray_namelist_choose_combobox = qfw.ComboBox()
+
+        # 初始化祈福名单选项
+        self.pray_namelist_choose_list = ["1", "2"]
+
+        # 绑定列表到下拉框
+        self.pray_namelist_choose_combobox.addItems(self.pray_namelist_choose_list)
+
+    def set_pray_algorithm_combobox_method(self):
         """设置祈福算法下拉框, 引用时简写为 spacombo"""
-
-        # 初始化垂直布局
-        self.spacombo_vboxlayout = QVBoxLayout(self)
 
         # 初始化祈福算法下拉框
         self.pray_algorithm_combobox = qfw.ComboBox()
@@ -173,7 +176,175 @@ class PrayQuickSettingGroup(QWidget):
         # 绑定列表到下拉框
         self.pray_algorithm_combobox.addItems(self.pray_algorithm_list)
 
-        # 设置布局
-        self.spacombo_vboxlayout.addWidget(self.pray_algorithm_combobox)
+    def set_pray_number_layout_method(self):
+        """设置祈福人数水平布局, 引用时简写为 spnum"""
 
-    # TODO: 祈福数量调整布局
+        # 初始化水平布局
+        self.spnum_hboxlayout = QHBoxLayout(self)
+
+        # 初始化减少按钮
+        self.pray_number_subtract_button = qfw.PushButton("-")
+
+        # 初始化增加按钮
+        self.pray_number_plus_button = qfw.PushButton("+")
+
+        # 初始化当前数量
+        self.pray_number_now = 1
+
+        # 初始化当前数量显示
+        self.pray_number_now_label = qfw.TitleLabel(str(self.pray_number_now))
+
+        # 控件列表
+        self.spnum_widget_list = [
+            self.pray_number_subtract_button,
+            self.pray_number_now_label,
+            self.pray_number_plus_button,
+        ]
+
+        # 设置布局
+        set_widget_to_layout(self.spnum_widget_list, self.spnum_hboxlayout)
+
+        # 更新数量显示
+        self.pray_number_subtract_button.clicked.connect(
+            lambda: self.update_pray_number_now(False)
+        )
+        self.pray_number_plus_button.clicked.connect(
+            lambda: self.update_pray_number_now(True)
+        )
+
+    def update_pray_number_now(self, is_plus: bool):
+        """更新当前祈福人数"""
+
+        # 判断是否为加
+        if is_plus:
+            self.pray_number_now += 1
+        # 判断是否为减
+        else:
+            # 判断当前祈福人数是否大于等于2, 防止出现祈福0人的情况
+            if self.pray_number_now >= 2:
+                self.pray_number_now -= 1
+
+        # 更新文本显示
+        self.pray_number_now_label.setText(str(self.pray_number_now))
+
+    def set_pray_sex_combobox_method(self):
+        """选择特定性别进行祈福, 引用时简写为 spsex"""
+
+        # 初始化下拉框
+        self.pray_sex_combobox = qfw.ComboBox()
+
+        # 初始化下拉框选项
+        self.pray_sex_list = ["所有性别", "男", "女", "非二元性别"]
+
+        # 绑定列表到下拉框
+        self.pray_sex_combobox.addItems(self.pray_sex_list)
+
+    def set_pray_group_combobox_method(self):
+        """选择特定组别进行祈福, 引用时简写为 spgr"""
+
+        # 初始化下拉框
+        self.pray_group_combobox = qfw.ComboBox()
+
+        # 初始化下拉框选项
+        self.pray_group_list = ["示例组别1", "示例组别2"]
+
+        # 绑定列表到下拉框
+        self.pray_group_combobox.addItems(self.pray_group_list)
+
+    def set_pray_tag_combobox_method(self):
+        """选择特定标签进行祈福, 引用时简写为 sptag"""
+
+        # 初始化下拉框
+        self.pray_tag_combobox = qfw.ComboBox()
+
+        # 初始化下拉框选项
+        self.pray_tag_list = ["示例标签1", "示例标签2"]
+
+        # 绑定列表到下拉框
+        self.pray_tag_combobox.addItems(self.pray_tag_list)
+
+    def reset_pray_setting_button_method(self):
+        """重置重选临时名单, 引用时简写为 spsbtn"""
+
+        # 初始化按钮
+        self.pray_reset_setting_button = qfw.PushButton("重置抽选")
+
+
+class PrayStateShowGroup(QWidget):
+    """祈福时实时状态显示, 继承自 QWidget,
+    引用时可作 PrayStaShowGr"""
+
+    def __init__(self):
+        super().__init__()
+
+        # 初始化水平布局
+        self.hboxlayout = QHBoxLayout(self)
+
+        # 初始化控件
+        self.init_widgets()
+
+        # 控件列表
+        self.widget_list = [
+            self.namelist_total_number_label,
+            self.surplus_now_number_label,
+            self.none_label,
+        ]
+
+        # 设置布局
+        set_widget_to_layout(self.widget_list, self.hboxlayout)
+
+    def init_widgets(self):
+        """初始化控件"""
+        from PySide2.QtGui import QColor
+
+        # 名单总人数
+        self.namelist_total_number_label = qfw.StrongBodyLabel("总数: ")
+        self.namelist_total_number_label.setTextColor(QColor(0, 0, 0), QColor(255, 255, 255))  # type: ignore
+
+        # 当前剩余人数
+        self.surplus_now_number_label = qfw.StrongBodyLabel("剩余: ")
+        self.surplus_now_number_label.setTextColor(QColor(0, 0, 0), QColor(255, 255, 255))  # type: ignore
+
+        # FIXME: 占位符
+        self.none_label = qfw.StrongBodyLabel("占位符")
+        self.none_label.setTextColor(QColor(0, 0, 0), QColor(255, 255, 255))  # type: ignore
+
+
+class PrayUI(QFrame):
+    """子页面:祈福的基础UI类,
+    此页面包含了基本点名功能的GUI, 是程序启动时的默认页面,
+    包含四大部分:一言显示, 点名结果显示, 点名快捷设置, 实时资源显示,
+    引用时可作 PrayUI / subpage_pray"""
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        from PySide2.QtCore import QMargins
+
+        # 页面布局
+        self.vboxlayout = QVBoxLayout(self)
+
+        # 初始化控件
+        self.init_widgets()
+
+        # 控件列表
+        self.widgets_list = [
+            self.hitokoto_show_group,
+            self.pray_result_show_group,
+            self.pray_quick_setting_group,
+            self.pray_state_show_group,
+        ]
+
+        # 设置布局
+        set_widget_to_layout(self.widgets_list, self.vboxlayout)
+
+        # 调整布局
+        self.vboxlayout.setContentsMargins(QMargins(30, 30, 30, 30))
+
+    def init_widgets(self):
+        """初始化控件"""
+
+        # 初始化各组控件
+        self.hitokoto_show_group = HitokotoShowGroup()
+        self.pray_result_show_group = PrayResultShowGroup()
+        self.pray_quick_setting_group = PrayQuickSettingGroup()
+        self.pray_state_show_group = PrayStateShowGroup()

@@ -5,8 +5,8 @@
 
 from enum import Enum
 from typing import Type
-from app_const_var import AppConfigString, AssetsPathTXT, AssetsPath
 import qfluentwidgets as qfw
+from app_const_var import AppConfigString, AssetsPath, AssetsPathTXT
 
 
 class ValuesMixin:

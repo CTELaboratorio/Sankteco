@@ -373,6 +373,7 @@ class MainUIString:
     # 子页面对象名
     SUBPAGE_INFORMATION_OBJNAME = "subpage_information"
     SUBPAGE_SETTINGS_OBJNAME = "subpage_settings"
+    SUBPAGE_PRAY_OBJNAME = "subpage_pray"
 
     # 设置 孙页面对象名
     SUBSUBPAGE_SETTIING_BASIC_OBJNAME = "subsubpage_setting_basic"
@@ -382,6 +383,7 @@ class MainUIString:
     # 子页面导航窗口显示字段
     SUBPAGE_INFORMATION_NAVNAME = _("信息")
     SUBPAGE_SETTINGS_NAVNAME = _("首选项")
+    SUBPAGE_PRAY_NAVNAME = _("祈福")
 
     # 设置 孙页面导航窗口显示字段
     SUBSUBPAGE_SETTIING_BASIC_NAVNAME = _("基本")

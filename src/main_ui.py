@@ -67,11 +67,20 @@ class MainWindow(FluentWindow):
             MainUIString.SUBSUBPAGE_SETTIING_LANGUAGE_OBJNAME
         )
 
+    async def import_subpage_pray(self):
+        """导入并重命名 祈福 子页面的协程"""
+        from subpage.pray_ui import PrayUI
+
+        # 祈福 子页面
+        self.subpage_pray = PrayUI(self)
+        self.subpage_pray.setObjectName(MainUIString.SUBPAGE_PRAY_OBJNAME)
+
     async def import_subpage_main(self):
         """导入子页面的基础函数"""
 
         # 创建并发执行任务
         await asyncio.gather(
+            self.import_subpage_pray(),
             self.import_subpage_information(),
             self.import_subpage_settings(),
         )
@@ -81,6 +90,12 @@ class MainWindow(FluentWindow):
         from qfluentwidgets import NavigationItemPosition
 
         # 添加子界面及各自的孙页面
+        self.addSubInterface(
+            self.subpage_pray,
+            FI.QUESTION,
+            MainUIString.SUBPAGE_PRAY_NAVNAME,
+            NavigationItemPosition.TOP,
+        )
         self.addSubInterface(
             self.subpage_settings,
             FI.SETTING,
