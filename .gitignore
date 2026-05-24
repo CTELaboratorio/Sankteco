@@ -3,4 +3,5 @@
 *.exe
 *.code-workspace
 config/*.*
+config/app_config.json
 src/test/*.*
