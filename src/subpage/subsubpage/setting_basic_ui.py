@@ -7,7 +7,8 @@
 from PySide2.QtWidgets import QFrame, QVBoxLayout, QHBoxLayout, QWidget
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
-from app_const_var import SettBasicUIString, AssetsPathTXT
+from app_const_var import AssetsPathTXT
+from ui_str import SettBasicUIString
 from app_config import AppCommonConfig
 
 

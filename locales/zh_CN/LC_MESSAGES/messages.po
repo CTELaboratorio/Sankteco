@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-04-19 15:52+0800\n"
-"PO-Revision-Date: 2026-04-19 16:31+0800\n"
+"POT-Creation-Date: 2026-05-24 14:45+0800\n"
+"PO-Revision-Date: 2026-05-24 14:49+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -14,391 +14,472 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 "X-Generator: Poedit 3.4.4\n"
 
-#: src/app_const_var.py:67
+#: src/ui_str.py:67
+msgid "旗开得胜，一举夺魁！"
+msgstr "旗开得胜，一举夺魁！"
+
+#: src/ui_str.py:70
+msgid "别紧张"
+msgstr "别紧张"
+
+#: src/ui_str.py:73 src/ui_str.py:328
+msgid "祈福"
+msgstr "祈福"
+
+#: src/ui_str.py:74
+msgid "请选择名单"
+msgstr "请选择名单"
+
+#: src/ui_str.py:75
+msgid "Python原生随机算法"
+msgstr "Python原生随机算法"
+
+#: src/ui_str.py:76
+msgid "SecRandom算法"
+msgstr "SecRandom算法"
+
+#: src/ui_str.py:79
+msgid "所有性别"
+msgstr "所有性别"
+
+#: src/ui_str.py:80
+msgid "男"
+msgstr "男"
+
+#: src/ui_str.py:81
+msgid "女"
+msgstr "女"
+
+#: src/ui_str.py:82
+msgid "非二元性别"
+msgstr "非二元性别"
+
+#: src/ui_str.py:83
+msgid "请选择组别"
+msgstr "请选择组别"
+
+#: src/ui_str.py:84
+msgid "请选择标签"
+msgstr "请选择标签"
+
+#: src/ui_str.py:85
+msgid "重置抽选"
+msgstr "重置抽选"
+
+#: src/ui_str.py:88
+msgid "总数: "
+msgstr "总数: "
+
+#: src/ui_str.py:89
+msgid "剩余: "
+msgstr "剩余: "
+
+#: src/ui_str.py:90
+msgid "占位符"
+msgstr "占位符"
+
+#: src/ui_str.py:97
 msgid "错误！"
 msgstr "错误！"
 
-#: src/app_const_var.py:68
+#: src/ui_str.py:98
 msgid "无法找到离线文档！"
 msgstr "无法找到离线文档！"
 
-#: src/app_const_var.py:69
+#: src/ui_str.py:99
 msgid "警告！"
 msgstr "警告！"
 
-#: src/app_const_var.py:70
+#: src/ui_str.py:100
 msgid "无法连接到服务器！"
 msgstr "无法连接到服务器！"
 
-#: src/app_const_var.py:73
+#: src/ui_str.py:103
 msgid "支持"
 msgstr "支持"
 
-#: src/app_const_var.py:74 src/app_const_var.py:75
+#: src/ui_str.py:104 src/ui_str.py:105
 msgid "查看"
 msgstr "查看"
 
-#: src/app_const_var.py:76
+#: src/ui_str.py:106
 msgid "离线帮助文档"
 msgstr "离线帮助文档"
 
-#: src/app_const_var.py:77
-msgid "查看保存于本地的帮助文档，如果有的话"
-msgstr "查看保存于本地的帮助文档，如果有的话"
+#: src/ui_str.py:107
+msgid "查看保存于本地的帮助文档, 如果有的话"
+msgstr "查看保存于本地的帮助文档,如果有的话"
 
-#: src/app_const_var.py:78
+#: src/ui_str.py:108
 msgid "在线帮助文档"
 msgstr "在线帮助文档"
 
-#: src/app_const_var.py:79
+#: src/ui_str.py:109
 msgid "访问项目官网获取在线帮助文档"
 msgstr "访问项目官网获取在线帮助文档"
 
-#: src/app_const_var.py:82 src/app_const_var.py:120
+#: src/ui_str.py:112 src/ui_str.py:150
 msgid "更新"
 msgstr "更新"
 
-#: src/app_const_var.py:83
+#: src/ui_str.py:113
 msgid "正式版"
 msgstr "正式版"
 
-#: src/app_const_var.py:84
+#: src/ui_str.py:114
 msgid "测试版"
 msgstr "测试版"
 
-#: src/app_const_var.py:85
+#: src/ui_str.py:115
 msgid "检查更新"
 msgstr "检查更新"
 
-#: src/app_const_var.py:86
+#: src/ui_str.py:116
 msgid "更新通道"
 msgstr "更新通道"
 
-#: src/app_const_var.py:87
+#: src/ui_str.py:117
 msgid "选择项目从何通道进行更新"
 msgstr "选择项目从何通道进行更新"
 
-#: src/app_const_var.py:88
+#: src/ui_str.py:118
 msgid "当前版本已是最新版本"
 msgstr "当前版本已是最新版本"
 
-#: src/app_const_var.py:95
+#: src/ui_str.py:125
 msgid "在此处调整程序设置"
 msgstr "在此处调整程序设置"
 
-#: src/app_const_var.py:96
+#: src/ui_str.py:126
 msgid "从下面的孙页面中选择其一以更改相关选项"
 msgstr "从下面的孙页面中选择其一以更改相关选项"
 
-#: src/app_const_var.py:99 src/app_const_var.py:104 src/app_const_var.py:109
-#: src/app_const_var.py:114 src/app_const_var.py:119 src/app_const_var.py:124
-#: src/app_const_var.py:266
+#: src/ui_str.py:129 src/ui_str.py:134 src/ui_str.py:139 src/ui_str.py:144
+#: src/ui_str.py:149 src/ui_str.py:154 src/ui_str.py:309
 msgid "跳转"
 msgstr "跳转"
 
-#: src/app_const_var.py:100 src/app_const_var.py:286
+#: src/ui_str.py:130 src/ui_str.py:331
 msgid "基本"
 msgstr "基本"
 
-#: src/app_const_var.py:101
+#: src/ui_str.py:131
 msgid "更改基本设置"
 msgstr "更改基本设置"
 
-#: src/app_const_var.py:105 src/app_const_var.py:287
+#: src/ui_str.py:135 src/ui_str.py:332
 msgid "视听"
 msgstr "视听"
 
-#: src/app_const_var.py:106
+#: src/ui_str.py:136
 msgid "更改背景音乐、音效、朗读等设置"
 msgstr "更改背景音乐、音效、朗读等设置"
 
-#: src/app_const_var.py:110
+#: src/ui_str.py:140
 msgid "联动"
 msgstr "联动"
 
-#: src/app_const_var.py:111
+#: src/ui_str.py:141
 msgid "更改与课表软件的联动设置"
 msgstr "更改与课表软件的联动设置"
 
-#: src/app_const_var.py:115 src/app_const_var.py:288
+#: src/ui_str.py:145 src/ui_str.py:333
 msgid "语言"
 msgstr "语言"
 
-#: src/app_const_var.py:116
+#: src/ui_str.py:146
 msgid "更改界面显示语言"
 msgstr "更改界面显示语言"
 
-#: src/app_const_var.py:121
+#: src/ui_str.py:151
 msgid "更新程序"
 msgstr "更新程序"
 
-#: src/app_const_var.py:125
+#: src/ui_str.py:155
 msgid "调试"
 msgstr "调试"
 
-#: src/app_const_var.py:126
+#: src/ui_str.py:156
 msgid "高级调试选项"
 msgstr "高级调试选项"
 
-#: src/app_const_var.py:134 src/app_const_var.py:142
+#: src/ui_str.py:164 src/ui_str.py:172
 msgid "管理"
 msgstr "管理"
 
-#: src/app_const_var.py:135
+#: src/ui_str.py:165
 msgid "多名单"
 msgstr "多名单"
 
-#: src/app_const_var.py:136
+#: src/ui_str.py:166
 msgid "创建或管理不同名单以供便携使用"
 msgstr "创建或管理不同名单以供便携使用"
 
-#: src/app_const_var.py:139
+#: src/ui_str.py:169
 msgid "设置当前名单"
 msgstr "设置当前名单"
 
-#: src/app_const_var.py:140
+#: src/ui_str.py:170
 msgid "选择要管理的名单并配置"
 msgstr "选择要管理的名单并配置"
 
-#: src/app_const_var.py:141
+#: src/ui_str.py:171
 msgid "选择要管理的名单"
 msgstr "选择要管理的名单"
 
-#: src/app_const_var.py:143
+#: src/ui_str.py:173
 msgid "管理当前选择的名单之内容"
 msgstr "管理当前选择的名单之内容"
 
-#: src/app_const_var.py:144
+#: src/ui_str.py:174
 msgid "添加"
 msgstr "添加"
 
-#: src/app_const_var.py:145
+#: src/ui_str.py:175
 msgid "为所选的名单添加标记"
 msgstr "为所选的名单添加标记"
 
-#: src/app_const_var.py:149
+#: src/ui_str.py:179
 msgid "动画精美度"
 msgstr "动画精美度"
 
-#: src/app_const_var.py:150
+#: src/ui_str.py:180
 msgid "调节抽选时的动画精美程度"
 msgstr "调节抽选时的动画精美程度"
 
-#: src/app_const_var.py:151
+#: src/ui_str.py:181
 msgid "华丽"
 msgstr "华丽"
 
-#: src/app_const_var.py:152
+#: src/ui_str.py:182
 msgid "精美"
 msgstr "精美"
 
-#: src/app_const_var.py:153
+#: src/ui_str.py:183
 msgid "一般"
 msgstr "一般"
 
-#: src/app_const_var.py:154
+#: src/ui_str.py:184
 msgid "快速"
 msgstr "快速"
 
-#: src/app_const_var.py:158
+#: src/ui_str.py:188
 msgid "结果推送方式"
 msgstr "结果推送方式"
 
-#: src/app_const_var.py:159
+#: src/ui_str.py:189
 msgid "选择快速抽选的结果应怎样显示"
 msgstr "选择快速抽选的结果应怎样显示"
 
-#: src/app_const_var.py:160
+#: src/ui_str.py:190
 msgid "显示在ClassIsland"
 msgstr "显示在ClassIsland"
 
-#: src/app_const_var.py:161
+#: src/ui_str.py:191
 msgid "显示在ClassWidget"
 msgstr "显示在ClassWidget"
 
-#: src/app_const_var.py:162
+#: src/ui_str.py:192
 msgid "显示在临时弹窗"
 msgstr "显示在临时弹窗"
 
-#: src/app_const_var.py:170
+#: src/ui_str.py:200
 msgid "名单"
 msgstr "名单"
 
-#: src/app_const_var.py:171
+#: src/ui_str.py:201
 msgid "普通抽选"
 msgstr "普通抽选"
 
-#: src/app_const_var.py:172
+#: src/ui_str.py:202
 msgid "快速抽选"
 msgstr "快速抽选"
 
-#: src/app_const_var.py:180
+#: src/ui_str.py:210
 msgid "音乐开关"
 msgstr "音乐开关"
 
-#: src/app_const_var.py:181
+#: src/ui_str.py:211
 msgid "控制是否在普通抽选时播放背景音乐"
 msgstr "控制是否在普通抽选时播放背景音乐"
 
-#: src/app_const_var.py:184
+#: src/ui_str.py:214
 msgid "音乐文件"
 msgstr "音乐文件"
 
-#: src/app_const_var.py:185
+#: src/ui_str.py:215
 msgid "选择要启用的音乐文件"
 msgstr "选择要启用的音乐文件"
 
-#: src/app_const_var.py:186 src/app_const_var.py:208
+#: src/ui_str.py:216 src/ui_str.py:238
 msgid "选择"
 msgstr "选择"
 
-#: src/app_const_var.py:189
+#: src/ui_str.py:219
 msgid "音乐音量"
 msgstr "音乐音量"
 
-#: src/app_const_var.py:190
+#: src/ui_str.py:220
 msgid "调节音乐在播放时的音量"
 msgstr "调节音乐在播放时的音量"
 
-#: src/app_const_var.py:193
+#: src/ui_str.py:223
 msgid "音乐渐入效果"
 msgstr "音乐渐入效果"
 
-#: src/app_const_var.py:194
+#: src/ui_str.py:224
 msgid "调整音乐播放时渐入效果持续的秒数(s)"
 msgstr "调整音乐播放时渐入效果持续的秒数(s)"
 
-#: src/app_const_var.py:197
+#: src/ui_str.py:227
 msgid "音乐渐出效果"
 msgstr "音乐渐出效果"
 
-#: src/app_const_var.py:198
+#: src/ui_str.py:228
 msgid "调整音乐播放时渐出效果持续的秒数(s)"
 msgstr "调整音乐播放时渐出效果持续的秒数(s)"
 
-#: src/app_const_var.py:202
+#: src/ui_str.py:232
 msgid "音效开关"
 msgstr "音效开关"
 
-#: src/app_const_var.py:203
+#: src/ui_str.py:233
 msgid "控制是否在点名结束后播放抽选音效"
 msgstr "控制是否在点名结束后播放抽选音效"
 
-#: src/app_const_var.py:206
+#: src/ui_str.py:236
 msgid "音效路径"
 msgstr "音效路径"
 
-#: src/app_const_var.py:207
+#: src/ui_str.py:237
 msgid "选择要启用的音效文件"
 msgstr "选择要启用的音效文件"
 
-#: src/app_const_var.py:211
+#: src/ui_str.py:241
 msgid "音效在何时播放"
 msgstr "音效在何时播放"
 
-#: src/app_const_var.py:212 src/app_const_var.py:223
+#: src/ui_str.py:242 src/ui_str.py:253
 msgid "仅普通抽选后"
 msgstr "仅普通抽选后"
 
-#: src/app_const_var.py:213 src/app_const_var.py:224
+#: src/ui_str.py:243 src/ui_str.py:254
 msgid "仅快速抽选后"
 msgstr "仅快速抽选后"
 
-#: src/app_const_var.py:214 src/app_const_var.py:225
+#: src/ui_str.py:244 src/ui_str.py:255
 msgid "两者后"
 msgstr "两者后"
 
-#: src/app_const_var.py:218
+#: src/ui_str.py:248
 msgid "朗读开关"
 msgstr "朗读开关"
 
-#: src/app_const_var.py:219
+#: src/ui_str.py:249
 msgid "控制是否在点名结束后朗读被抽中的名字"
 msgstr "控制是否在点名结束后朗读被抽中的名字"
 
-#: src/app_const_var.py:222
+#: src/ui_str.py:252
 msgid "在何时朗读"
 msgstr "在何时朗读"
 
-#: src/app_const_var.py:229
+#: src/ui_str.py:259
 msgid "深浅模式"
 msgstr "深浅模式"
 
-#: src/app_const_var.py:230
+#: src/ui_str.py:260
 msgid "选择程序显示时的深浅色模式"
 msgstr "选择程序显示时的深浅色模式"
 
-#: src/app_const_var.py:231
+#: src/ui_str.py:261
 msgid "深色"
 msgstr "深色"
 
-#: src/app_const_var.py:232
+#: src/ui_str.py:262
 msgid "浅色"
 msgstr "浅色"
 
-#: src/app_const_var.py:233 src/app_const_var.py:239
+#: src/ui_str.py:263 src/ui_str.py:269
 msgid "跟随系统"
 msgstr "跟随系统"
 
-#: src/app_const_var.py:236
+#: src/ui_str.py:266
 msgid "窗口效果"
 msgstr "窗口效果"
 
-#: src/app_const_var.py:237
+#: src/ui_str.py:267
 msgid "调整程序窗口的显示效果"
 msgstr "调整程序窗口的显示效果"
 
-#: src/app_const_var.py:238
+#: src/ui_str.py:268
 msgid "Mica"
 msgstr "Mica"
 
-#: src/app_const_var.py:248
+#: src/ui_str.py:273
+msgid "一言API"
+msgstr "一言API"
+
+#: src/ui_str.py:274
+msgid "调整一言所使用的API接口地址"
+msgstr "调整一言所使用的API接口地址"
+
+#: src/ui_str.py:278
+msgid "刷新时间"
+msgstr "刷新时间"
+
+#: src/ui_str.py:279
+msgid "调整一言的刷新时间(s)"
+msgstr "调整一言的刷新时间(s)"
+
+#: src/ui_str.py:289
 msgid "音乐"
 msgstr "音乐"
 
-#: src/app_const_var.py:249
+#: src/ui_str.py:290
 msgid "音效"
 msgstr "音效"
 
-#: src/app_const_var.py:250
+#: src/ui_str.py:291
 msgid "朗读"
 msgstr "朗读"
 
-#: src/app_const_var.py:251
+#: src/ui_str.py:292
 msgid "主题"
 msgstr "主题"
 
-#: src/app_const_var.py:258
+#: src/ui_str.py:293
+msgid "一言"
+msgstr "一言"
+
+#: src/ui_str.py:300
 msgid "显示语言"
 msgstr "显示语言"
 
-#: src/app_const_var.py:259
+#: src/ui_str.py:301
 msgid "选择将在屏幕上显示的语言"
 msgstr "选择将在屏幕上显示的语言"
 
-#: src/app_const_var.py:260
-msgid "简体中文"
-msgstr "简体中文"
-
-#: src/app_const_var.py:261
-msgid "世界语"
-msgstr "世界语"
-
-#: src/app_const_var.py:264
+#: src/ui_str.py:307
 msgid "加入翻译计划"
 msgstr "加入翻译计划"
 
-#: src/app_const_var.py:265
-msgid "加入项目的在线翻译工程，为本地化做出贡献"
-msgstr "加入项目的在线翻译工程，为本地化做出贡献"
+#: src/ui_str.py:308
+msgid "加入项目的在线翻译工程, 为本地化做出贡献"
+msgstr "加入项目的在线翻译工程,为本地化做出贡献"
 
-#: src/app_const_var.py:282
+#: src/ui_str.py:326
 msgid "信息"
 msgstr "信息"
 
-#: src/app_const_var.py:283
+#: src/ui_str.py:327
 msgid "首选项"
 msgstr "首选项"
+
+#~ msgid "简体中文"
+#~ msgstr "简体中文"
+
+#~ msgid "世界语"
+#~ msgstr "世界语"
 
 #~ msgid "当前版本"
 #~ msgstr "当前版本"

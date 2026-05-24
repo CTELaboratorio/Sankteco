@@ -15,7 +15,8 @@ from PySide2.QtWidgets import (
     QListWidgetItem,
 )
 import qfluentwidgets as qfw
-from app_const_var import PrayUIString, AssetsPathTXT
+from app_const_var import AssetsPathTXT
+from ui_str import PrayUIString
 from app_config import AppCommonConfig
 
 
@@ -60,7 +61,9 @@ class HitokotoShowGroup(QWidget):
         from PySide2.QtGui import QColor
 
         # 一言显示
-        self.hitokoto_show = qfw.StrongBodyLabel("旗开得胜，一举夺魁！")
+        self.hitokoto_show = qfw.StrongBodyLabel(
+            PrayUIString.HITOKOTO_SHOW_LABEL_DEFAUT
+        )
         self.hitokoto_show.setTextColor(QColor(0, 0, 0), QColor(255, 255, 255))  # type: ignore
 
 
@@ -88,7 +91,7 @@ class PrayResultShowGroup(QWidget):
 
         # 点名结果显示
         self.pray_result_show = qfw.ListWidget()
-        self.pray_result_list = ["别紧张"]
+        self.pray_result_list = [PrayUIString.PRAY_RESULT_LIST_DEFAULT]
         if not (self.pray_result_list == []):
             self.bind_list_to_widget()
 
@@ -150,7 +153,9 @@ class PrayQuickSettingGroup(QWidget):
         """开始祈福按钮, 引用时简写为 spbtn"""
 
         # 初始化开始祈福按钮
-        self.start_pray_button = qfw.TogglePushButton("祈福")
+        self.start_pray_button = qfw.TogglePushButton(
+            PrayUIString.START_PRAY_BUTTON_TEXT
+        )
 
     def pray_namelist_choose_combobox_method(self):
         """祈福名单选择下拉框, 引用时简写为 pnlccombo"""
@@ -159,7 +164,9 @@ class PrayQuickSettingGroup(QWidget):
         self.pray_namelist_choose_combobox = qfw.ComboBox()
 
         # 初始化祈福名单选项
-        self.pray_namelist_choose_list = ["1", "2"]
+        self.pray_namelist_choose_list = [
+            PrayUIString.PRAY_NAMELIST_CHOOSE_LIST_DEFAULT
+        ]
 
         # 绑定列表到下拉框
         self.pray_namelist_choose_combobox.addItems(self.pray_namelist_choose_list)
@@ -171,7 +178,10 @@ class PrayQuickSettingGroup(QWidget):
         self.pray_algorithm_combobox = qfw.ComboBox()
 
         # 初始化祈福算法选项
-        self.pray_algorithm_list = ["Python原生随机算法", "SecRandom算法"]
+        self.pray_algorithm_list = [
+            PrayUIString.PRAY_ALGORITHM_LIST_DEFAULT_1,
+            PrayUIString.PRAY_ALGORITHM_LIST_DEFAULT_2,
+        ]
 
         # 绑定列表到下拉框
         self.pray_algorithm_combobox.addItems(self.pray_algorithm_list)
@@ -183,10 +193,14 @@ class PrayQuickSettingGroup(QWidget):
         self.spnum_hboxlayout = QHBoxLayout(self)
 
         # 初始化减少按钮
-        self.pray_number_subtract_button = qfw.PushButton("-")
+        self.pray_number_subtract_button = qfw.PushButton(
+            PrayUIString.PRAY_NUMBER_SUBTRACT_BUTTON_TEXT
+        )
 
         # 初始化增加按钮
-        self.pray_number_plus_button = qfw.PushButton("+")
+        self.pray_number_plus_button = qfw.PushButton(
+            PrayUIString.PRAY_NUMBER_PLUS_BUTTON_TEXT
+        )
 
         # 初始化当前数量
         self.pray_number_now = 1
@@ -234,7 +248,12 @@ class PrayQuickSettingGroup(QWidget):
         self.pray_sex_combobox = qfw.ComboBox()
 
         # 初始化下拉框选项
-        self.pray_sex_list = ["所有性别", "男", "女", "非二元性别"]
+        self.pray_sex_list = [
+            PrayUIString.PRAY_SEX_LIST_ALL,
+            PrayUIString.PRAY_SEX_LIST_MALE,
+            PrayUIString.PRAY_SEX_LIST_FEMALE,
+            PrayUIString.PRAY_SEX_LIST_NOTBINARY,
+        ]
 
         # 绑定列表到下拉框
         self.pray_sex_combobox.addItems(self.pray_sex_list)
@@ -246,7 +265,7 @@ class PrayQuickSettingGroup(QWidget):
         self.pray_group_combobox = qfw.ComboBox()
 
         # 初始化下拉框选项
-        self.pray_group_list = ["示例组别1", "示例组别2"]
+        self.pray_group_list = [PrayUIString.PRAY_GROUP_LIST_DEFAULT]
 
         # 绑定列表到下拉框
         self.pray_group_combobox.addItems(self.pray_group_list)
@@ -258,7 +277,7 @@ class PrayQuickSettingGroup(QWidget):
         self.pray_tag_combobox = qfw.ComboBox()
 
         # 初始化下拉框选项
-        self.pray_tag_list = ["示例标签1", "示例标签2"]
+        self.pray_tag_list = [PrayUIString.PRAY_TAG_LIST_DEFAULT]
 
         # 绑定列表到下拉框
         self.pray_tag_combobox.addItems(self.pray_tag_list)
@@ -267,11 +286,13 @@ class PrayQuickSettingGroup(QWidget):
         """重置重选临时名单, 引用时简写为 spsbtn"""
 
         # 初始化按钮
-        self.pray_reset_setting_button = qfw.PushButton("重置抽选")
+        self.pray_reset_setting_button = qfw.PushButton(
+            PrayUIString.PRAY_RESET_SETTING_BUTTON_TEXT
+        )
 
 
 class PrayStateShowGroup(QWidget):
-    """祈福时实时状态显示, 继承自 QWidget,
+    """祈福时实时状态显示 部分, 继承自 QWidget,
     引用时可作 PrayStaShowGr"""
 
     def __init__(self):

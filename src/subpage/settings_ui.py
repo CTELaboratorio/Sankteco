@@ -7,7 +7,7 @@
 from PySide2.QtWidgets import QFrame
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
-from app_const_var import SettUIString
+from ui_str import SettUIString
 
 
 class SettingsUI(QFrame):
