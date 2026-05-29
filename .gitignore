@@ -1,7 +1,10 @@
-.vscode/settings.json
+.vscode/*
 *.spec
 *.exe
 *.code-workspace
-config/*.*
-config/app_config.json
-src/test/*.*
+config/*
+src/test/*
+build/*
+dist/*
+start.build/*
+start.dist/*
