@@ -13,7 +13,7 @@ from PySide2.QtCore import Qt
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import AssetsPathTXT
-from ui_str import InfoUIString, BasicString
+from ui.ui_str import InfoUIString, BasicString
 
 
 class ImageViewer(QGraphicsView):

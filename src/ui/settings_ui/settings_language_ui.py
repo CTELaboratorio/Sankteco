@@ -11,7 +11,7 @@ from PySide2.QtWidgets import (
 import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import AssetsPathTXT
-from ui_str import SettLangUIString
+from ui.ui_str import SettLangUIString
 from app_config import AppCommonConfig
 
 # 加载配置文件

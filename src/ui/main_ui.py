@@ -8,7 +8,7 @@ import asyncio
 from qfluentwidgets import FluentWindow
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import AssetsPathTXT
-from ui_str import MainUIString, BasicString
+from .ui_str import MainUIString, BasicString
 
 
 class MainWindow(FluentWindow):
@@ -34,17 +34,17 @@ class MainWindow(FluentWindow):
 
     async def import_subpage_information(self):
         """导入并重命名 信息 子页面的协程"""
-        from subpage.informations_ui import InformationUI
+        from ui.informations_ui.informations_ui import InformationUI
 
         self.subpage_information = InformationUI(self)
         self.subpage_information.setObjectName(MainUIString.SUBPAGE_INFORMATION_OBJNAME)
 
     async def import_subpage_settings(self):
         """导入并重命名 设置 子页面其及所有孙页面的协程"""
-        from subpage.settings_ui import SettingsUI
-        from subpage.subsubpage.setting_basic_ui import SettingBasicUI
-        from subpage.subsubpage.setting_audiovisual_ui import SettingAudiovisualUI
-        from subpage.subsubpage.setting_language_ui import SettingLanguageUI
+        from ui.settings_ui.settings_ui import SettingsUI
+        from ui.settings_ui.settings_basic_ui import SettingBasicUI
+        from ui.settings_ui.settings_audiovisual_ui import SettingAudiovisualUI
+        from ui.settings_ui.settings_language_ui import SettingLanguageUI
 
         # 设置 子页面
         self.subpage_settings = SettingsUI(self)
@@ -70,7 +70,7 @@ class MainWindow(FluentWindow):
 
     async def import_subpage_pray(self):
         """导入并重命名 祈福 子页面的协程"""
-        from subpage.pray_ui import PrayUI
+        from ui.pray_ui.pray_ui import PrayUI
 
         # 祈福 子页面
         self.subpage_pray = PrayUI(self)

@@ -16,7 +16,7 @@ from PySide2.QtWidgets import (
 )
 import qfluentwidgets as qfw
 from app_const_var import AssetsPathTXT
-from ui_str import PrayUIString
+from ui.ui_str import PrayUIString
 from app_config import AppCommonConfig
 
 
