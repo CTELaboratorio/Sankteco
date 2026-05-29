@@ -25,10 +25,10 @@ def set_widget_to_layout(wlist: list, layout: QLayout):
         layout.addWidget(widget)
 
 
-class SettingLanguageUI(QFrame):
+class SettingsLanguageUI(QFrame):
     """孙页面：语言（ 首选项 的子页面）的基础UI类，
     此页面包含了程序显示语言的可调整设置选项，包含一个部分：语言，
-    引用时可作 SettLangUI / subsubpage_setting_language"""
+    引用时可作 SettLangUI / settings_language"""
 
     def __init__(self, parent=None):
         super().__init__(parent)

@@ -290,10 +290,10 @@ class HitokotoSettingGroup(QWidget):
         )
 
 
-class SettingAudiovisualUI(QFrame):
+class SettingsAudiovisualUI(QFrame):
     """孙页面:视听( 首选项 的子页面)的基础UI类,
     此页面包含了视觉效果与音频效果等可调整设置选项, 包含五个部分:音乐, 音效, 朗读, 主题, 一言,
-    引用时可作 SettAvUI / subsubpage_setting_audiovisual"""
+    引用时可作 SettAvUI / settings_audiovisual"""
 
     def __init__(self, parent=None):
         super().__init__(parent)

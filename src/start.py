@@ -1,3 +1,8 @@
+"""
+启动文件, 
+此页面是项目的入口, 运行与编译须从此开始
+"""
+
 import sys
 from PySide2.QtWidgets import QApplication
 from ui.main_ui import MainWindow

@@ -19,7 +19,7 @@ class MainWindow(FluentWindow):
         super().__init__()
 
         # 运行导入子页面的asyncio程序
-        asyncio.run(self.import_subpage_main())
+        asyncio.run(self.import_ui())
 
         # 初始化窗口设置
         self.init_window()
@@ -28,62 +28,62 @@ class MainWindow(FluentWindow):
         self.init_navigation()
 
         # 连接设置子页面信号
-        self.subpage_settings.to_basic_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_basic))  # type: ignore
-        self.subpage_settings.to_audiovisual_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_audiovisual))  # type: ignore
-        self.subpage_settings.to_language_card.clicked.connect(lambda: self.switchTo(self.subsubpage_setting_language))  # type: ignore
+        self.settings_ui.to_basic_card.clicked.connect(lambda: self.switchTo(self.settings_basic_ui))  # type: ignore
+        self.settings_ui.to_audiovisual_card.clicked.connect(lambda: self.switchTo(self.settings_audiovisual_ui))  # type: ignore
+        self.settings_ui.to_language_card.clicked.connect(lambda: self.switchTo(self.settings_language_ui))  # type: ignore
 
-    async def import_subpage_information(self):
+    async def import_information_ui(self):
         """导入并重命名 信息 子页面的协程"""
         from ui.informations_ui.informations_ui import InformationUI
 
-        self.subpage_information = InformationUI(self)
-        self.subpage_information.setObjectName(MainUIString.SUBPAGE_INFORMATION_OBJNAME)
+        self.information_ui = InformationUI(self)
+        self.information_ui.setObjectName(MainUIString.SUBPAGE_INFORMATION_OBJNAME)
 
-    async def import_subpage_settings(self):
+    async def import_settings_ui(self):
         """导入并重命名 设置 子页面其及所有孙页面的协程"""
         from ui.settings_ui.settings_ui import SettingsUI
-        from ui.settings_ui.settings_basic_ui import SettingBasicUI
-        from ui.settings_ui.settings_audiovisual_ui import SettingAudiovisualUI
-        from ui.settings_ui.settings_language_ui import SettingLanguageUI
+        from ui.settings_ui.settings_basic_ui import SettingsBasicUI
+        from ui.settings_ui.settings_audiovisual_ui import SettingsAudiovisualUI
+        from ui.settings_ui.settings_language_ui import SettingsLanguageUI
 
         # 设置 子页面
-        self.subpage_settings = SettingsUI(self)
-        self.subpage_settings.setObjectName(MainUIString.SUBPAGE_SETTINGS_OBJNAME)
+        self.settings_ui = SettingsUI(self)
+        self.settings_ui.setObjectName(MainUIString.SUBPAGE_SETTINGS_OBJNAME)
 
         # 基础 孙页面
-        self.subsubpage_setting_basic = SettingBasicUI(self)
-        self.subsubpage_setting_basic.setObjectName(
+        self.settings_basic_ui = SettingsBasicUI(self)
+        self.settings_basic_ui.setObjectName(
             MainUIString.SUBSUBPAGE_SETTIING_BASIC_OBJNAME
         )
 
         # 视听 孙页面
-        self.subsubpage_setting_audiovisual = SettingAudiovisualUI(self)
-        self.subsubpage_setting_audiovisual.setObjectName(
+        self.settings_audiovisual_ui = SettingsAudiovisualUI(self)
+        self.settings_audiovisual_ui.setObjectName(
             MainUIString.SUBSUBPAGE_SETTIING_AUDIOVISUAL_OBJNAME
         )
 
         # 语言 孙页面
-        self.subsubpage_setting_language = SettingLanguageUI(self)
-        self.subsubpage_setting_language.setObjectName(
+        self.settings_language_ui = SettingsLanguageUI(self)
+        self.settings_language_ui.setObjectName(
             MainUIString.SUBSUBPAGE_SETTIING_LANGUAGE_OBJNAME
         )
 
-    async def import_subpage_pray(self):
+    async def import_pray_ui(self):
         """导入并重命名 祈福 子页面的协程"""
         from ui.pray_ui.pray_ui import PrayUI
 
         # 祈福 子页面
-        self.subpage_pray = PrayUI(self)
-        self.subpage_pray.setObjectName(MainUIString.SUBPAGE_PRAY_OBJNAME)
+        self.pray_ui = PrayUI(self)
+        self.pray_ui.setObjectName(MainUIString.SUBPAGE_PRAY_OBJNAME)
 
-    async def import_subpage_main(self):
+    async def import_ui(self):
         """导入子页面的基础函数"""
 
         # 创建并发执行任务
         await asyncio.gather(
-            self.import_subpage_pray(),
-            self.import_subpage_information(),
-            self.import_subpage_settings(),
+            self.import_pray_ui(),
+            self.import_information_ui(),
+            self.import_settings_ui(),
         )
 
     def init_navigation(self):
@@ -92,37 +92,37 @@ class MainWindow(FluentWindow):
 
         # 添加子界面及各自的孙页面
         self.addSubInterface(
-            self.subpage_pray,
+            self.pray_ui,
             FI.QUESTION,
             MainUIString.SUBPAGE_PRAY_NAVNAME,
             NavigationItemPosition.TOP,
         )
         self.addSubInterface(
-            self.subpage_settings,
+            self.settings_ui,
             FI.SETTING,
             MainUIString.SUBPAGE_SETTINGS_NAVNAME,
             NavigationItemPosition.BOTTOM,
         )
         self.addSubInterface(
-            self.subsubpage_setting_basic,
+            self.settings_basic_ui,
             FI.BRIGHTNESS,
             MainUIString.SUBSUBPAGE_SETTIING_BASIC_NAVNAME,
-            parent=self.subpage_settings,
+            parent=self.settings_ui,
         )
         self.addSubInterface(
-            self.subsubpage_setting_audiovisual,
+            self.settings_audiovisual_ui,
             FI.MEDIA,
             MainUIString.SUBSUBPAGE_SETTIING_AUDIOVISUAL_NAVNAME,
-            parent=self.subpage_settings,
+            parent=self.settings_ui,
         )
         self.addSubInterface(
-            self.subsubpage_setting_language,
+            self.settings_language_ui,
             FI.LANGUAGE,
             MainUIString.SUBSUBPAGE_SETTIING_LANGUAGE_NAVNAME,
-            parent=self.subpage_settings,
+            parent=self.settings_ui,
         )
         self.addSubInterface(
-            self.subpage_information,
+            self.information_ui,
             FI.INFO,
             MainUIString.SUBPAGE_INFORMATION_NAVNAME,
             NavigationItemPosition.BOTTOM,

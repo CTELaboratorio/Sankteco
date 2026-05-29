@@ -166,10 +166,10 @@ class FastChooseSettingGroup(QWidget):
         self.setLayout(self.vboxlayout)
 
 
-class SettingBasicUI(QFrame):
+class SettingsBasicUI(QFrame):
     """孙页面:基本( 首选项 的子页面)的基础UI类,
     此页面包含了本项目基本的可调整设置选项, 包含三个部分:名单, 普通抽选, 快速抽选,
-    引用时可作 SettBasicUI / subsubpage_settings_basic"""
+    引用时可作 SettBasicUI / settings_basic"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
