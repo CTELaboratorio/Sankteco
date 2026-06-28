@@ -14,11 +14,11 @@ import qfluentwidgets as qfw
 from qfluentwidgets import FluentIcon as FI
 from app_const_var import AssetsPathTXT
 from ui.ui_str import SettAvUIString
-from app_config import AppCommonConfig
+from app_config import SettAvUIConfig
 
 
 # 加载配置文件
-sett_av_ui_cfg = AppCommonConfig()
+sett_av_ui_cfg = SettAvUIConfig()
 qfw.qconfig.load(AssetsPathTXT.APP_CONFIG, sett_av_ui_cfg)
 
 

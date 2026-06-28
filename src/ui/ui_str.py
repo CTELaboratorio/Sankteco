@@ -5,13 +5,6 @@ UI字符串文件
 
 import gettext, json
 import emoji
-from qfluentwidgets import qconfig
-from app_const_var import AssetsPathTXT
-from app_config import AppCommonConfig
-
-# 加载配置文件
-ui_str_cfg = AppCommonConfig()
-qconfig.load(AssetsPathTXT.APP_CONFIG, ui_str_cfg)
 
 # 读取配置文件以获取语言配置
 with open("config/app_config.json", "r", encoding="utf-8") as f:

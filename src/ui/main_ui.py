@@ -43,7 +43,7 @@ class MainWindow(FluentWindow):
         """导入并重命名 设置 子页面其及所有孙页面的协程"""
         from ui.settings_ui.settings_ui import SettingsUI
         from ui.settings_ui.settings_basic_ui import SettingsBasicUI
-        from ui.settings_ui.settings_audiovisual_ui import SettingsAudiovisualUI
+        from ui.settings_ui.settings_audiovisual_logic import SettingsAudiovisualLogic
         from ui.settings_ui.settings_language_ui import SettingsLanguageUI
 
         # 设置 子页面
@@ -57,7 +57,7 @@ class MainWindow(FluentWindow):
         )
 
         # 视听 孙页面
-        self.settings_audiovisual_ui = SettingsAudiovisualUI(self)
+        self.settings_audiovisual_ui = SettingsAudiovisualLogic(self)
         self.settings_audiovisual_ui.setObjectName(
             MainUIString.SUBSUBPAGE_SETTIING_AUDIOVISUAL_OBJNAME
         )

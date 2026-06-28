@@ -74,18 +74,8 @@ class AppEnums:
         HITOKOTO = "https://v1.hitokoto.cn/"
 
 
-class AppCommonConfig(qfw.QConfig):
-    """应用配置类"""
-
-    # 语言
-    language = qfw.OptionsConfigItem(
-        AppConfigString.LANGUAGE_GROUP,
-        AppConfigString.LANGUAGE_NAME,
-        AppEnums.LanguageEnum.ZH_CN,
-        qfw.OptionsValidator([AppEnums.LanguageEnum.ZH_CN, AppEnums.LanguageEnum.EO]),
-        qfw.EnumSerializer(AppEnums.LanguageEnum),
-        restart=True,
-    )
+class SettBasicUIConfig(qfw.QConfig):
+    """孙页面:基本( 首选项 的子页面)配置类"""
 
     # 动画精美度
     carton_beauty_level = qfw.OptionsConfigItem(
@@ -119,6 +109,10 @@ class AppCommonConfig(qfw.QConfig):
         qfw.EnumSerializer(AppEnums.FChooseShowResultWayEnum),
         restart=True,
     )
+
+
+class SettAvUIConfig(qfw.QConfig):
+    """孙页面:视听( 首选项 的子页面)配置类"""
 
     # 音乐开关
     music_switch = qfw.ConfigItem(
@@ -255,4 +249,18 @@ class AppCommonConfig(qfw.QConfig):
         AppConfigString.AV_HITOKOTO_RENEW_NAME,
         300,
         qfw.RangeValidator(0, 900),
+    )
+
+
+class SettLangUIConfig(qfw.QConfig):
+    """孙页面:语言( 首选项 的子页面)配置类"""
+
+    # 语言
+    language = qfw.OptionsConfigItem(
+        AppConfigString.LANGUAGE_GROUP,
+        AppConfigString.LANGUAGE_NAME,
+        AppEnums.LanguageEnum.ZH_CN,
+        qfw.OptionsValidator([AppEnums.LanguageEnum.ZH_CN, AppEnums.LanguageEnum.EO]),
+        qfw.EnumSerializer(AppEnums.LanguageEnum),
+        restart=True,
     )

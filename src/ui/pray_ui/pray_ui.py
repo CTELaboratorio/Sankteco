@@ -17,12 +17,13 @@ from PySide2.QtWidgets import (
 import qfluentwidgets as qfw
 from app_const_var import AssetsPathTXT
 from ui.ui_str import PrayUIString
-from app_config import AppCommonConfig
 
+# from app_config import AppCommonConfig
 
+# FIXME: 从配置文件中加载配置文件
 # 加载配置文件
-pray_ui_cfg = AppCommonConfig()
-qfw.qconfig.load(AssetsPathTXT.APP_CONFIG, pray_ui_cfg)
+# pray_ui_cfg = AppCommonConfig()
+# qfw.qconfig.load(AssetsPathTXT.APP_CONFIG, pray_ui_cfg)
 
 
 def set_widget_to_layout(wlist: list, layout: QLayout):
